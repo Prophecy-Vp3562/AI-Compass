@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Productivity & Automation Tools | NEON CURATOR</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "background": "#0a0a0f",
+              "on-surface": "#e4e1e9",
+              "on-surface-variant": "#bbc9cf",
+              "surface-container-low": "#1b1b20",
+              "primary": "#a8e8ff",
+              "primary-container": "#00d4ff",
+              "success": "#10b981",
+              "warning": "#f59e0b",
+              "danger": "#f43f5e"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #0a0a0f;
+            color: #e4e1e9;
+        }
+        .mesh-gradient {
+            background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0a0a0f 100%);
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+        }
+        .animated-box {
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            z-index: 1;
+        }
+        .animated-box::before {
+            content: '';
+            position: absolute;
+            background: radial-gradient(circle at center, rgba(45, 212, 191, 0.15) 0%, transparent 60%);
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            left: -150px;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .animated-box:hover::before {
+            opacity: 1;
+        }
+        .animated-box:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 20px 40px rgba(45,212,191,0.1);
+            border-color: rgba(45, 212, 191, 0.3);
+        }
+        
+        .animated-box .icon-pulse {
+            transition: transform 0.3s ease;
+        }
+        .animated-box:hover .icon-pulse {
+            transform: scale(1.2);
+            color: #5eead4;
+        }
+    </style>
+</head>
+<body class="font-body">
+<div class="mesh-gradient"></div>
+
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-white/5 dark:bg-black/20 backdrop-blur-xl border-b border-white/10 shadow-[0_8px_32px_0_rgba(0,212,255,0.05)]">
+    <div class="flex justify-between items-center h-16 md:h-20 px-4 md:px-12 w-full max-w-[1920px] mx-auto">
+        <a href="index.html" class="text-xl md:text-2xl font-black tracking-tighter text-white bg-clip-text bg-gradient-to-r from-[#a8e8ff] to-[#00d4ff] font-headline" style="-webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+            NEON CURATOR
+        </a>
+        <div class="hidden md:flex gap-8 items-center">
+            <a class="text-white/60 hover:text-white transition-colors font-headline" href="index.html">Explore</a>
+            <a class="text-white font-bold border-b-2 border-[#00d4ff] pb-1 font-headline" href="#">Categories</a>
+        </div>
+    </div>
+</nav>
+
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-[1920px] mx-auto">
+    
+    <div class="mb-16">
+        <a href="index.html" class="inline-flex items-center text-white/50 hover:text-primary transition-colors text-sm font-bold mb-6">
+            <span class="material-symbols-outlined mr-2 text-md">arrow_back</span> Back to Directory
+        </a>
+        <h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter text-white">Productivity</h1>
+        <p class="mt-4 text-on-surface-variant font-medium text-lg max-w-2xl">
+            Automate complex tasks, reclaim your calendar, and manage workflows autonomously.
+        </p>
+    </div>
+
+    <!-- The Box Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <!-- Box 1 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">precision_manufacturing</span>
+                <div class="bg-success/20 text-success text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-success/30">
+                    Free
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">AutoGPT</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Automates complex tasks by breaking goals into steps and executing them independently.
+            </p>
+            <a href="https://agpt.co" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 2 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">assistant</span>
+                <div class="bg-warning/20 text-warning text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-warning/30">
+                    Freemium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">AgentGPT</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Run autonomous AI agents directly in your browser to complete research and execution tasks.
+            </p>
+            <a href="https://agentgpt.reworkd.ai" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 3 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">mail</span>
+                <div class="bg-danger/20 text-danger text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-danger/30">
+                    Premium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Superhuman AI</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Automates email replies, inbox management, and significantly boosts email productivity.
+            </p>
+            <a href="https://superhuman.com" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 4 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">event_available</span>
+                <div class="bg-warning/20 text-warning text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-warning/30">
+                    Freemium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Reclaim AI</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Smart scheduling tool that auto-plans your calendar, tasks, routines, and meetings.
+            </p>
+            <a href="https://reclaim.ai" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 5 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">dynamic_feed</span>
+                <div class="bg-danger/20 text-danger text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-danger/30">
+                    Premium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Motion</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                AI-powered task and project manager that automatically schedules your work across teams.
+            </p>
+            <a href="https://usemotion.com" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 6 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">flowsheet</span>
+                <div class="bg-warning/20 text-warning text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-warning/30">
+                    Freemium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Bardeen AI</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Automates browser tasks like scraping data, filling forms, and workflow automation.
+            </p>
+            <a href="https://bardeen.ai" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 7 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">record_voice_over</span>
+                <div class="bg-warning/20 text-warning text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-warning/30">
+                    Freemium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Otter AI</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Automatically joins calls to record, transcribe, and natively summarize meetings.
+            </p>
+            <a href="https://otter.ai" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 8 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">store</span>
+                <div class="bg-warning/20 text-warning text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-warning/30">
+                    Freemium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Durable AI</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Build websites in seconds, automate business workflows, and manage online presence.
+            </p>
+            <a href="https://durable.co" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 9 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">slideshow</span>
+                <div class="bg-warning/20 text-warning text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-warning/30">
+                    Freemium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Tome AI</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Create stunning presentations automatically using generative AI storytelling frameworks.
+            </p>
+            <a href="https://tome.app" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 10 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">summarize</span>
+                <div class="bg-success/20 text-success text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-success/30">
+                    Free
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Saveto AI</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Browser-based, zero-login media processing platform for rapid audio transcription and summarization.
+            </p>
+            <a href="https://saveto.ai" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 11 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">layers</span>
+                <div class="bg-warning/20 text-warning text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-warning/30">
+                    Freemium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Stacksopt AI</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Advanced AI optimization tool tailored for streamlining complex operational technology stacks.
+            </p>
+            <a href="#" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 12 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">support_agent</span>
+                <div class="bg-danger/20 text-danger text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-danger/30">
+                    Premium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Fin AI</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Intercom's advanced AI agent that uses your support knowledge base to resolve complex customer queries automatically.
+            </p>
+            <a href="https://intercom.com/fin" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 13 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">chat_bubble</span>
+                <div class="bg-warning/20 text-warning text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-warning/30">
+                    Freemium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Wonderchat</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                No-code platform allowing users to rapidly build and deploy AI-powered customer support chatbots.
+            </p>
+            <a href="https://wonderchat.io" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 14 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">account_balance</span>
+                <div class="bg-danger/20 text-danger text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-danger/30">
+                    Premium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Zapro AI</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                B2B AI-driven procurement and spend management platform designed to automate accounts payable and compliance.
+            </p>
+            <a href="https://zapro.ai" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 15 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">library_books</span>
+                <div class="bg-warning/20 text-warning text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-warning/30">
+                    Freemium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Tango AI</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Captures manual processes in real-time to automatically create step-by-step documentation and workflows.
+            </p>
+            <a href="https://tango.us" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 16 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">query_stats</span>
+                <div class="bg-danger/20 text-danger text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-danger/30">
+                    Premium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Fortune AI</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Generative AI analyzing high-level business data and trends for competitive intelligence and research.
+            </p>
+            <a href="#" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 17 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">assignment_turned_in</span>
+                <div class="bg-success/20 text-success text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-success/30">
+                    Free
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Homeworkify</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Accessibility-focused education platform providing students with step-by-step study solutions.
+            </p>
+            <a href="#" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 18 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">account_tree</span>
+                <div class="bg-danger/20 text-danger text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-danger/30">
+                    Premium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Victoria AI</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Workflow automation platform executing complex functional tasks triggered strictly by conversational chats.
+            </p>
+            <a href="#" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 19 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">mic_off</span>
+                <div class="bg-warning/20 text-warning text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-warning/30">
+                    Freemium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Krisp.ai</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Real-time AI voice isolation cutting out background noise, alongside automated meeting transcriptions.
+            </p>
+            <a href="https://krisp.ai" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 20 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">menu_book</span>
+                <div class="bg-success/20 text-success text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-success/30">
+                    Free
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Sobrief.com</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Delivers hyper-concise 10-minute summaries of thousands of non-fiction books via text and audio formats.
+            </p>
+            <a href="https://sobrief.com" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 21 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">forum</span>
+                <div class="bg-warning/20 text-warning text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-warning/30">
+                    Freemium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Chatbase</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Instantly build secure, custom GPTs trained directly on your own internal documentation or website data.
+            </p>
+            <a href="https://chatbase.co" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 22 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">checklist</span>
+                <div class="bg-warning/20 text-warning text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-warning/30">
+                    Freemium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Taskade</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                AI-powered workspace blending tasks, mind maps, and live team collaboration into a single sleek app.
+            </p>
+            <a href="https://taskade.com" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 23 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">keyboard</span>
+                <div class="bg-warning/20 text-warning text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-warning/30">
+                    Freemium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Text Blaze</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Productivity extension employing text snippets and templates to automate repetitive data entry anywhere.
+            </p>
+            <a href="https://blaze.today" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 24 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">picture_as_pdf</span>
+                <div class="bg-warning/20 text-warning text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-warning/30">
+                    Freemium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">AskYourPDF</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Upload massive PDF documents and use conversational AI to extract specific insights or summarize pages.
+            </p>
+            <a href="https://askyourpdf.com" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 25 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">quickreply</span>
+                <div class="bg-success/20 text-success text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-success/30">
+                    Free
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">AskNow AI</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                An intuitive chat interface focusing purely on returning fast, accurate conversational answers to inquiries.
+            </p>
+            <a href="#" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 26 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">play_circle</span>
+                <div class="bg-warning/20 text-warning text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-warning/30">
+                    Freemium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">AudioRead.com</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Turn any article, PDF document, or text excerpt into natural-sounding audio formats on the go.
+            </p>
+            <a href="https://audioread.com" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 27 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">integration_instructions</span>
+                <div class="bg-success/20 text-success text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-success/30">
+                    Free
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Prism AI</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                LaTeX-native, AI-powered workspace designed for scientists and researchers.
+            </p>
+            <a href="https://prism.page/?ref=taaft&utm_source=taaft&utm_medium=referral" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 28 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">webhook</span>
+                <div class="bg-warning/20 text-warning text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-warning/30">
+                    Freemium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">LikeClaw</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Cloud-based platform using autonomous AI agents to execute complex online tasks.
+            </p>
+            <a href="https://likeclaw.ai/?ref=taaft_feat&utm_source=taaft_feat&utm_medium=referral" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 29 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">fact_check</span>
+                <div class="bg-success/20 text-success text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-success/30">
+                    Free
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Betterself Check</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                AI-powered wellness, productivity, and habit tracking check-in app.
+            </p>
+            <a href="https://betterselfcheck.com/self-tests/?ref=taaft&utm_source=taaft&utm_medium=referral" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+        <!-- Box 30 -->
+        <div class="animated-box">
+            <div class="flex justify-between items-start mb-6">
+                <span class="material-symbols-outlined text-4xl text-teal-400 icon-pulse">account_tree</span>
+                <div class="bg-danger/20 text-danger text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-danger/30">
+                    Premium
+                </div>
+            </div>
+            <h3 class="font-headline font-bold text-2xl text-white mb-3">Napkin AI</h3>
+            <p class="text-on-surface-variant text-sm flex-grow mb-8">
+                Transforms standard text into engaging visual diagrams, flowcharts, and infographics.
+            </p>
+            <a href="https://www.napkin.ai/?ref=taaft&utm_source=taaft&utm_medium=referral" target="_blank" class="text-teal-400 text-sm font-bold flex items-center gap-2 group/btn">
+                Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </a>
+        </div>
+
+    </div>
+</main>
+
+</body>
+</html>
