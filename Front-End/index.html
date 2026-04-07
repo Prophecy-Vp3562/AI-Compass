@@ -166,7 +166,10 @@
 <div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full opacity-20 group-focus-within:opacity-40 blur transition-all"></div>
 <div class="relative flex items-center bg-surface-container-lowest/40 backdrop-blur-xl border border-white/15 rounded-full px-4 py-3 md:px-6 md:py-4">
 <span class="material-symbols-outlined text-primary mr-4" style="font-variation-settings: 'FILL' 1;">search</span>
-<input class="bg-transparent border-none focus:ring-0 text-white w-full placeholder:text-white/30 text-sm md:text-base" placeholder="Search AI tools..." type="text"/>
+<input id="searchInput" autocomplete="off" class="bg-transparent border-none focus:ring-0 text-white w-full placeholder:text-white/30 text-sm md:text-base" placeholder="Search AI tools..." type="text"/>
+<!-- Dropdown Box -->
+<div id="searchDropdown" class="absolute top-full left-0 w-full mt-2 bg-[#131318]/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden hidden z-50 max-h-80 overflow-y-auto flex flex-col p-2 space-y-1 bento-scroll">
+</div>
 </div>
 </div>
 <p class="mt-8 text-on-surface-variant font-medium text-center max-w-lg">
@@ -774,6 +777,10 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
 </div>
 </div>
 </div>
+
+<!-- Search Results Grid (Hidden by Default) -->
+<div id="searchResultsGrid" class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 transition-opacity duration-300">
+</div>
 </section>
 </main>
 <!-- Bottom Mobile Nav Shell -->
@@ -873,6 +880,130 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
             featuredGrid.style.display = 'grid';
             
             triggerStaggerAnimation(featuredGrid);
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const searchResultsGrid = document.getElementById('searchResultsGrid');
+        const searchDropdown = document.getElementById('searchDropdown');
+        let searchTimeout;
+
+        document.addEventListener('click', (e) => {
+            if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
+                searchDropdown.classList.add('hidden');
+            }
+        });
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.trim();
+            
+            clearTimeout(searchTimeout);
+            
+            if (query === '') {
+                // Restore current view based on active tab
+                searchDropdown.classList.add('hidden');
+                searchResultsGrid.classList.add('hidden');
+                searchResultsGrid.style.display = 'none';
+                
+                if (btnNewest.classList.contains('bg-primary')) {
+                    newestGrid.classList.remove('hidden');
+                    newestGrid.style.display = 'grid';
+                    sectionTitle.innerHTML = `<span class="w-12 h-0.5 bg-primary"></span> Just Added (Newest AI Tools)`;
+                } else {
+                    featuredGrid.classList.remove('hidden');
+                    featuredGrid.style.display = 'grid';
+                    sectionTitle.innerHTML = `<span class="w-12 h-0.5 bg-primary"></span> Featured Selections`;
+                }
+                return;
+            }
+
+            // Debounce the search request
+            searchTimeout = setTimeout(async () => {
+                try {
+                    const response = await fetch(`http://localhost:3000/api/search?q=${encodeURIComponent(query)}`);
+                    const tools = await response.json();
+                    
+                    // Populate dropdown
+                    if (tools.length > 0) {
+                        searchDropdown.innerHTML = tools.map(tool => `
+                            <div class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-xl cursor-pointer transition-colors group" onclick="document.getElementById('searchInput').value='${tool.name.replace(/'/g, "\\'")}'; document.getElementById('searchInput').dispatchEvent(new Event('input'))">
+                                <span class="material-symbols-outlined text-${tool.color || 'primary'} text-xl group-hover:scale-110 transition-transform">${tool.icon || 'star'}</span>
+                                <div class="flex flex-col">
+                                    <span class="text-white font-medium text-sm font-headline">${tool.name}</span>
+                                    <span class="text-white/50 text-xs">${tool.cat}</span>
+                                </div>
+                            </div>
+                        `).join('');
+                        searchDropdown.classList.remove('hidden');
+                    } else {
+                        searchDropdown.innerHTML = '<div class="px-4 py-3 text-white/50 text-sm text-center">No tools found matching your search.</div>';
+                        searchDropdown.classList.remove('hidden');
+                    }
+                    
+                    // Hide other grids
+                    featuredGrid.classList.add('hidden');
+                    featuredGrid.style.display = 'none';
+                    newestGrid.classList.add('hidden');
+                    newestGrid.style.display = 'none';
+                    
+                    // Update Title
+                    sectionTitle.innerHTML = `<span class="w-12 h-0.5 bg-primary"></span> Search Results for "${query}"`;
+                    
+                    // Render Results
+                    searchResultsGrid.innerHTML = tools.length > 0 ? tools.map(tool => {
+                        if (tool.isNew) {
+                            return `<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
+<div class="relative h-56 flex items-center justify-center bg-gradient-to-br ${tool.gradient || 'from-indigo-900/40 to-black'} overflow-hidden relative">
+${tool.img ? `<div class="absolute inset-0 bg-[url('${tool.img}')] opacity-20"></div>` : ''}
+<span class="material-symbols-outlined text-6xl text-${tool.color || 'primary'}/80 z-10">${tool.icon}</span>
+<div class="absolute top-4 right-4 bg-${tool.color}/20 backdrop-blur-md px-3 py-1 rounded-full border border-${tool.color}/30 z-10">
+<span class="text-[10px] font-bold text-${tool.color} uppercase tracking-widest">${tool.price}</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center gap-2 mb-2"><h3 class="font-headline font-bold text-xl">${tool.name}</h3></div>
+<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">${tool.desc}</p>
+<div class="flex flex-wrap gap-2 mb-8"><span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">${tool.cat}</span></div>
+<div class="mt-auto flex items-center justify-between">
+<a href="${tool.link}" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span></a>
+</div>
+</div>
+</div>`;
+                        } else {
+                            return `<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="${tool.img}" alt="${tool.name}"/>
+<div class="absolute top-4 right-4 bg-${tool.color}/20 backdrop-blur-md px-3 py-1 rounded-full border border-${tool.color}/30">
+<span class="text-[10px] font-bold text-${tool.color} uppercase tracking-widest">${tool.price}</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center gap-2 mb-2">
+<h3 class="font-headline font-bold text-xl">${tool.name}</h3>
+</div>
+<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">${tool.desc}</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">${tool.cat}</span>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<a href="${tool.link}" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">
+Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</a>
+<span class="material-symbols-outlined text-white/20 hover:text-primary cursor-pointer transition-colors">bookmark</span>
+</div>
+</div>
+</div>`;
+                        }
+                    }).join('') : '<p class="col-span-full text-center text-white/50 text-lg">No tools found matching your search.</p>';
+                    
+                    searchResultsGrid.classList.remove('hidden');
+                    searchResultsGrid.style.display = 'grid';
+                    triggerStaggerAnimation(searchResultsGrid);
+                    
+                } catch (error) {
+                    console.error('Error fetching search results:', error);
+                }
+            }, 300);
         });
     </script>
 </body></html>
