@@ -476,7 +476,7 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
             // Debounce the search request
             searchTimeout = setTimeout(async () => {
                 try {
-                    const response = await fetch(`http://localhost:3000/api/search?q=${encodeURIComponent(query)}`);
+                    const response = await fetch(`${API_BASE_URL}/search?q=${encodeURIComponent(query)}`);
                     const tools = await response.json();
                     
                     // Populate dropdown
@@ -561,5 +561,74 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
                 }
             }, 300);
         });
+    </script>
+
+    <script>
+        // --- Dynamic Initialization (Revived) ---
+        async function loadInitialTools() {
+            try {
+                const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:' ? 'http://localhost:3000' : 'https://aicompass-635382.netlify.app';
+                const response = await fetch(`${API_BASE_URL}/tools`);
+                const tools = await response.json();
+                
+                const renderTool = (tool) => {
+                    if (tool.isNew) {
+                            return `<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
+<div class="relative h-56 flex items-center justify-center bg-gradient-to-br ${tool.gradient || 'from-indigo-900/40 to-black'} overflow-hidden relative">
+${tool.img ? `<div class="absolute inset-0 bg-[url('${tool.img}')] opacity-20"></div>` : ''}
+<span class="material-symbols-outlined text-6xl text-${tool.color || 'primary'}/80 z-10">${tool.icon || 'star'}</span>
+<div class="absolute top-4 right-4 bg-${tool.color || 'primary'}/20 backdrop-blur-md px-3 py-1 rounded-full border border-${tool.color || 'primary'}/30 z-10">
+<span class="text-[10px] font-bold text-${tool.color || 'primary'} uppercase tracking-widest">${tool.pricing}</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center gap-2 mb-2"><h3 class="font-headline font-bold text-xl">${tool.name}</h3></div>
+<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">${tool.description}</p>
+<div class="flex flex-wrap gap-2 mb-8"><span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">${tool.category}</span></div>
+<div class="mt-auto flex items-center justify-between">
+<a href="${tool.link}" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span></a>
+</div>
+</div>
+</div>`;
+                    } else {
+                        return `<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="${tool.img}" alt="${tool.name}"/>
+<div class="absolute top-4 right-4 bg-${tool.color || 'primary'}/20 backdrop-blur-md px-3 py-1 rounded-full border border-${tool.color || 'primary'}/30">
+<span class="text-[10px] font-bold text-${tool.color || 'primary'} uppercase tracking-widest">${tool.pricing}</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center gap-2 mb-2">
+<h3 class="font-headline font-bold text-xl">${tool.name}</h3>
+</div>
+<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">${tool.description}</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">${tool.category}</span>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<a href="${tool.link}" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">
+Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</a>
+<span class="material-symbols-outlined text-white/20 hover:text-primary cursor-pointer transition-colors">bookmark</span>
+</div>
+</div>
+</div>`;
+                    }
+                };
+
+                const featuredGrid = document.getElementById('featuredGrid');
+                const newestGrid = document.getElementById('newestGrid');
+
+                if (featuredGrid) featuredGrid.innerHTML = tools.filter(t => !t.isNew).map(renderTool).join('');
+                if (newestGrid) newestGrid.innerHTML = tools.filter(t => t.isNew).map(renderTool).join('');
+
+                if (typeof triggerStaggerAnimation === 'function' && featuredGrid) triggerStaggerAnimation(featuredGrid);
+            } catch (err) {
+                console.error("Failed to fetch initial tools:", err);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', loadInitialTools);
     </script>
 </body></html>
