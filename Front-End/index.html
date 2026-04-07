@@ -4,7 +4,74 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>AI Compass| Discover the Future of AI</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries">
+        // --- Dynamic Initialization ---
+        async function loadInitialTools() {
+            try {
+                const response = await fetch('http://localhost:3000/tools');
+                const tools = await response.json();
+                
+                const renderTool = (tool) => {
+                    if (tool.isNew) {
+                            return `<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
+<div class="relative h-56 flex items-center justify-center bg-gradient-to-br ${tool.gradient || 'from-indigo-900/40 to-black'} overflow-hidden relative">
+${tool.img ? `<div class="absolute inset-0 bg-[url('${tool.img}')] opacity-20"></div>` : ''}
+<span class="material-symbols-outlined text-6xl text-${tool.color || 'primary'}/80 z-10">${tool.icon || 'star'}</span>
+<div class="absolute top-4 right-4 bg-${tool.color || 'primary'}/20 backdrop-blur-md px-3 py-1 rounded-full border border-${tool.color || 'primary'}/30 z-10">
+<span class="text-[10px] font-bold text-${tool.color || 'primary'} uppercase tracking-widest">${tool.pricing}</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center gap-2 mb-2"><h3 class="font-headline font-bold text-xl">${tool.name}</h3></div>
+<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">${tool.description}</p>
+<div class="flex flex-wrap gap-2 mb-8"><span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">${tool.category}</span></div>
+<div class="mt-auto flex items-center justify-between">
+<a href="${tool.link}" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span></a>
+</div>
+</div>
+</div>`;
+                    } else {
+                        return `<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
+<div class="relative h-56 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="${tool.img}" alt="${tool.name}"/>
+<div class="absolute top-4 right-4 bg-${tool.color || 'primary'}/20 backdrop-blur-md px-3 py-1 rounded-full border border-${tool.color || 'primary'}/30">
+<span class="text-[10px] font-bold text-${tool.color || 'primary'} uppercase tracking-widest">${tool.pricing}</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex items-center gap-2 mb-2">
+<h3 class="font-headline font-bold text-xl">${tool.name}</h3>
+</div>
+<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">${tool.description}</p>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">${tool.category}</span>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<a href="${tool.link}" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">
+Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</a>
+<span class="material-symbols-outlined text-white/20 hover:text-primary cursor-pointer transition-colors">bookmark</span>
+</div>
+</div>
+</div>`;
+                    }
+                };
+
+                const featuredGrid = document.getElementById('featuredGrid');
+                const newestGrid = document.getElementById('newestGrid');
+
+                featuredGrid.innerHTML = tools.filter(t => !t.isNew).map(renderTool).join('');
+                newestGrid.innerHTML = tools.filter(t => t.isNew).map(renderTool).join('');
+
+                triggerStaggerAnimation(featuredGrid);
+            } catch (err) {
+                console.error("Failed to fetch initial tools:", err);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', loadInitialTools);
+    </script>
+
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -255,527 +322,12 @@
                 Featured Selections
             </h2>
 <div id="featuredGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 transition-opacity duration-300">
-<!-- Tool Card -->
-<div id="cursor" class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 overflow-hidden">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=600&h=400" alt="Cursor"/>
-<div class="absolute top-4 right-4 bg-warning/20 backdrop-blur-md px-3 py-1 rounded-full border border-warning/30">
-<span class="text-[10px] font-bold text-warning uppercase tracking-widest">Freemium</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2">
-<h3 class="font-headline font-bold text-xl">Cursor</h3>
-</div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">The AI-first Code Editor built for pair programming with an intelligent agent.</p>
-<div class="flex flex-wrap gap-2 mb-8">
-<span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Coding</span>
-</div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://cursor.com" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">
-Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
-</a>
-<span class="material-symbols-outlined text-white/20 hover:text-primary cursor-pointer transition-colors">bookmark</span>
-</div>
-</div>
-</div>
-<!-- Tool Card -->
-<div id="codeium" class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 overflow-hidden">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=600&h=400" alt="Codeium"/>
-<div class="absolute top-4 right-4 bg-success/20 backdrop-blur-md px-3 py-1 rounded-full border border-success/30">
-<span class="text-[10px] font-bold text-success uppercase tracking-widest">Free</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2">
-<h3 class="font-headline font-bold text-xl">Codeium</h3>
-</div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">Free AI code completion and chat that integrates into your favorite IDEs.</p>
-<div class="flex flex-wrap gap-2 mb-8">
-<span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Dev</span>
-</div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://codeium.com" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">
-Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
-</a>
-<span class="material-symbols-outlined text-white/20 hover:text-primary cursor-pointer transition-colors">bookmark</span>
-</div>
-</div>
-</div>
-<!-- Tool Card -->
-<div id="jasper" class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 overflow-hidden">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&q=80&w=600&h=400" alt="Jasper AI"/>
-<div class="absolute top-4 right-4 bg-danger/20 backdrop-blur-md px-3 py-1 rounded-full border border-danger/30">
-<span class="text-[10px] font-bold text-danger uppercase tracking-widest">Premium</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2">
-<h3 class="font-headline font-bold text-xl">Jasper AI</h3>
-</div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">Enterprise-grade AI copilot for marketing copy, campaigns, and content strategy.</p>
-<div class="flex flex-wrap gap-2 mb-8">
-<span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Marketing</span>
-</div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://jasper.ai" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">
-Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
-</a>
-<span class="material-symbols-outlined text-white/20 hover:text-primary cursor-pointer transition-colors">bookmark</span>
-</div>
-</div>
-</div>
-<!-- Tool Card -->
-<div id="hubspot" class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 overflow-hidden">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600&h=400" alt="HubSpot AI"/>
-<div class="absolute top-4 right-4 bg-warning/20 backdrop-blur-md px-3 py-1 rounded-full border border-warning/30">
-<span class="text-[10px] font-bold text-warning uppercase tracking-widest">Freemium</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2">
-<h3 class="font-headline font-bold text-xl">HubSpot AI</h3>
-</div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">AI tools native to your CRM to generate content, emails, and social posts instantly.</p>
-<div class="flex flex-wrap gap-2 mb-8">
-<span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Marketing</span>
-</div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://hubspot.com" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">
-Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
-</a>
-<span class="material-symbols-outlined text-white/20 hover:text-primary cursor-pointer transition-colors">bookmark</span>
-</div>
-</div>
-</div>
-<!-- Tool Card -->
-<div id="runway" class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 overflow-hidden">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=600&h=400" alt="Runway"/>
-<div class="absolute top-4 right-4 bg-warning/20 backdrop-blur-md px-3 py-1 rounded-full border border-warning/30">
-<span class="text-[10px] font-bold text-warning uppercase tracking-widest">Freemium</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2">
-<h3 class="font-headline font-bold text-xl">Runway</h3>
-</div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">Advance your creativity with state-of-the-art AI video editing, generation, and effects.</p>
-<div class="flex flex-wrap gap-2 mb-8">
-<span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Video</span>
-</div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://runwayml.com" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">
-Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
-</a>
-<span class="material-symbols-outlined text-white/20 hover:text-primary cursor-pointer transition-colors">bookmark</span>
-</div>
-</div>
-</div>
-<!-- Tool Card -->
-<div id="suno" class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 overflow-hidden">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&q=80&w=600&h=400" alt="Suno AI"/>
-<div class="absolute top-4 right-4 bg-warning/20 backdrop-blur-md px-3 py-1 rounded-full border border-warning/30">
-<span class="text-[10px] font-bold text-warning uppercase tracking-widest">Freemium</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2">
-<h3 class="font-headline font-bold text-xl">Suno AI</h3>
-</div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">Create original, full-length songs with vocals from simple text descriptions.</p>
-<div class="flex flex-wrap gap-2 mb-8">
-<span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Music</span>
-</div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://suno.com" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">
-Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
-</a>
-<span class="material-symbols-outlined text-white/20 hover:text-primary cursor-pointer transition-colors">bookmark</span>
-</div>
-</div>
-</div>
-<!-- Tool Card -->
-<div id="midjourney" class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 overflow-hidden">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&q=80&w=600&h=400" alt="Midjourney"/>
-<div class="absolute top-4 right-4 bg-danger/20 backdrop-blur-md px-3 py-1 rounded-full border border-danger/30">
-<span class="text-[10px] font-bold text-danger uppercase tracking-widest">Premium</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2">
-<h3 class="font-headline font-bold text-xl">Midjourney</h3>
-</div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">High-fidelity, prompt-based artistic image generation via Discord.</p>
-<div class="flex flex-wrap gap-2 mb-8">
-<span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Design</span>
-</div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://midjourney.com" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">
-Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
-</a>
-<span class="material-symbols-outlined text-white/20 hover:text-primary cursor-pointer transition-colors">bookmark</span>
-</div>
-</div>
-</div>
-<!-- Tool Card -->
-<div id="recraft" class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 overflow-hidden">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=600&h=400" alt="Recraft"/>
-<div class="absolute top-4 right-4 bg-success/20 backdrop-blur-md px-3 py-1 rounded-full border border-success/30">
-<span class="text-[10px] font-bold text-success uppercase tracking-widest">Free</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2">
-<h3 class="font-headline font-bold text-xl">Recraft</h3>
-</div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">AI design engine that lets you create and edit vector art, icons, and 3D images.</p>
-<div class="flex flex-wrap gap-2 mb-8">
-<span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Design</span>
-</div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://recraft.ai" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">
-Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
-</a>
-<span class="material-symbols-outlined text-white/20 hover:text-primary cursor-pointer transition-colors">bookmark</span>
-</div>
-</div>
-</div>
-<!-- Tool Card -->
-<div id="sprout" class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 overflow-hidden">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=600&h=400" alt="Sprout Social"/>
-<div class="absolute top-4 right-4 bg-danger/20 backdrop-blur-md px-3 py-1 rounded-full border border-danger/30">
-<span class="text-[10px] font-bold text-danger uppercase tracking-widest">Premium</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2">
-<h3 class="font-headline font-bold text-xl">Sprout Social</h3>
-</div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">AI-driven social media management, listening, and sentiment analysis platform.</p>
-<div class="flex flex-wrap gap-2 mb-8">
-<span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Social</span>
-</div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://sproutsocial.com" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">
-Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
-</a>
-<span class="material-symbols-outlined text-white/20 hover:text-primary cursor-pointer transition-colors">bookmark</span>
-</div>
-</div>
-</div>
-<!-- Tool Card -->
-<div id="aiprm" class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 overflow-hidden">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1655720828018-edd2daec9349?auto=format&fit=crop&q=80&w=600&h=400" alt="AIPRM"/>
-<div class="absolute top-4 right-4 bg-warning/20 backdrop-blur-md px-3 py-1 rounded-full border border-warning/30">
-<span class="text-[10px] font-bold text-warning uppercase tracking-widest">Freemium</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2">
-<h3 class="font-headline font-bold text-xl">AIPRM</h3>
-</div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">Curated prompt templates for ChatGPT, Midjourney, and more to supercharge workflows.</p>
-<div class="flex flex-wrap gap-2 mb-8">
-<span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Prompt</span>
-</div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://aiprm.com" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">
-Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
-</a>
-<span class="material-symbols-outlined text-white/20 hover:text-primary cursor-pointer transition-colors">bookmark</span>
-</div>
-</div>
-</div>
-<!-- Tool Card -->
-<div id="gptmaker" class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 overflow-hidden">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=600&h=400" alt="GPT Prompt Maker"/>
-<div class="absolute top-4 right-4 bg-success/20 backdrop-blur-md px-3 py-1 rounded-full border border-success/30">
-<span class="text-[10px] font-bold text-success uppercase tracking-widest">Free</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2">
-<h3 class="font-headline font-bold text-xl">GPT Prompt Maker</h3>
-</div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">Framework-based prompt generator for major LLMs using CO-STAR/RISEN.</p>
-<div class="flex flex-wrap gap-2 mb-8">
-<span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Prompt</span>
-</div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://gptpromptmaker.com" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">
-Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
-</a>
-<span class="material-symbols-outlined text-white/20 hover:text-primary cursor-pointer transition-colors">bookmark</span>
-</div>
-</div>
-</div>
-
+<!-- dynamically populated -->
 </div>
 
 <!-- Newest Grid (Hidden by Default) -->
 <div id="newestGrid" class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 transition-opacity duration-300">
-<!-- Tool Card 1 -->
-<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 flex items-center justify-center bg-gradient-to-br from-indigo-900/40 to-black overflow-hidden relative">
-<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20"></div>
-<span class="material-symbols-outlined text-6xl text-primary/80 z-10">integration_instructions</span>
-<div class="absolute top-4 right-4 bg-success/20 backdrop-blur-md px-3 py-1 rounded-full border border-success/30 z-10">
-<span class="text-[10px] font-bold text-success uppercase tracking-widest">Free</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2"><h3 class="font-headline font-bold text-xl">Prism AI</h3></div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">LaTeX-native, AI-powered workspace designed for scientists and researchers.</p>
-<div class="flex flex-wrap gap-2 mb-8"><span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Productivity</span></div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://prism.page/?ref=taaft&utm_source=taaft&utm_medium=referral" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span></a>
-</div>
-</div>
-</div>
-
-<!-- Tool Card 2 -->
-<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 flex items-center justify-center bg-gradient-to-tr from-[#1b1b20] to-[#0d0d12]">
-<span class="material-symbols-outlined text-6xl text-secondary/80">language</span>
-<div class="absolute top-4 right-4 bg-warning/20 backdrop-blur-md px-3 py-1 rounded-full border border-warning/30">
-<span class="text-[10px] font-bold text-warning uppercase tracking-widest">Freemium</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2"><h3 class="font-headline font-bold text-xl">Website Publisher AI</h3></div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">Describe a website and let the AI instantly build, design, and publish it.</p>
-<div class="flex flex-wrap gap-2 mb-8"><span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Coding</span></div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://www.websitepublisher.ai/?ref=taaft_feat&utm_source=taaft_feat&utm_medium=referral" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span></a>
-</div>
-</div>
-</div>
-
-<!-- Tool Card 3 -->
-<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 flex items-center justify-center bg-gradient-to-br from-green-900/30 to-[#0a0a0f]">
-<span class="material-symbols-outlined text-6xl text-success/80">bug_report</span>
-<div class="absolute top-4 right-4 bg-danger/20 backdrop-blur-md px-3 py-1 rounded-full border border-danger/30">
-<span class="text-[10px] font-bold text-danger uppercase tracking-widest">Premium</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2"><h3 class="font-headline font-bold text-xl">Autonoma</h3></div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">AI-powered platform for agentic testing in real browsers and devices.</p>
-<div class="flex flex-wrap gap-2 mb-8"><span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Coding</span></div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://www.getautonoma.com/?ref=taaft&utm_source=taaft&utm_medium=referral" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span></a>
-</div>
-</div>
-</div>
-
-<!-- Tool Card 4 -->
-<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 flex items-center justify-center bg-gradient-to-tl from-purple-900/30 to-[#0a0a0f]">
-<span class="material-symbols-outlined text-6xl text-purple-400/80">webhook</span>
-<div class="absolute top-4 right-4 bg-warning/20 backdrop-blur-md px-3 py-1 rounded-full border border-warning/30">
-<span class="text-[10px] font-bold text-warning uppercase tracking-widest">Freemium</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2"><h3 class="font-headline font-bold text-xl">LikeClaw</h3></div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">Cloud-based platform using autonomous AI agents to execute complex online tasks.</p>
-<div class="flex flex-wrap gap-2 mb-8"><span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Productivity</span></div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://likeclaw.ai/?ref=taaft_feat&utm_source=taaft_feat&utm_medium=referral" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span></a>
-</div>
-</div>
-</div>
-
-<!-- Tool Card 5 -->
-<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 flex items-center justify-center bg-gradient-to-bl from-blue-900/30 to-[#0a0a0f]">
-<span class="material-symbols-outlined text-6xl text-blue-400/80">campaign</span>
-<div class="absolute top-4 right-4 bg-warning/20 backdrop-blur-md px-3 py-1 rounded-full border border-warning/30">
-<span class="text-[10px] font-bold text-warning uppercase tracking-widest">Freemium</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2"><h3 class="font-headline font-bold text-xl">Averi AI</h3></div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">AI marketing workspace for startups to draft and publish SEO optimized content.</p>
-<div class="flex flex-wrap gap-2 mb-8"><span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Marketing</span></div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://www.averi.ai/?ref=taaft&utm_source=taaft&utm_medium=referral" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span></a>
-</div>
-</div>
-</div>
-
-<!-- Tool Card 6 -->
-<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 flex items-center justify-center bg-gradient-to-r from-teal-900/30 to-[#0a0a0f]">
-<span class="material-symbols-outlined text-6xl text-teal-400/80">music_video</span>
-<div class="absolute top-4 right-4 bg-success/20 backdrop-blur-md px-3 py-1 rounded-full border border-success/30">
-<span class="text-[10px] font-bold text-success uppercase tracking-widest">Free</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2"><h3 class="font-headline font-bold text-xl">Freebeat</h3></div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">Turns audio tracks into fully edited, beat-synced AI music videos.</p>
-<div class="flex flex-wrap gap-2 mb-8"><span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Video</span></div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://freebeat.ai/?utm_source=TAAFT&utm_medium=referral&utm_campaign=TAAFT_20250325&utm_content=submittool" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span></a>
-</div>
-</div>
-</div>
-
-<!-- Tool Card 7 -->
-<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 flex items-center justify-center bg-gradient-to-l from-orange-900/30 to-[#0a0a0f]">
-<span class="material-symbols-outlined text-6xl text-orange-400/80">movie</span>
-<div class="absolute top-4 right-4 bg-danger/20 backdrop-blur-md px-3 py-1 rounded-full border border-danger/30">
-<span class="text-[10px] font-bold text-danger uppercase tracking-widest">Premium</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2"><h3 class="font-headline font-bold text-xl">Kinovi AI</h3></div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">AI-powered studio for creating directed, cinematic cinematic video clips.</p>
-<div class="flex flex-wrap gap-2 mb-8"><span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Video</span></div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://kinovi.ai/?ref=taaft&utm_source=taaft&utm_medium=referral" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span></a>
-</div>
-</div>
-</div>
-
-<!-- Tool Card 8 -->
-<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 flex items-center justify-center bg-gradient-to-b from-[#1b1b20] to-cyan-900/30">
-<span class="material-symbols-outlined text-6xl text-cyan-400/80">fact_check</span>
-<div class="absolute top-4 right-4 bg-success/20 backdrop-blur-md px-3 py-1 rounded-full border border-success/30">
-<span class="text-[10px] font-bold text-success uppercase tracking-widest">Free</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2"><h3 class="font-headline font-bold text-xl">Betterself Check</h3></div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">AI-powered wellness, productivity, and habit tracking check-in app.</p>
-<div class="flex flex-wrap gap-2 mb-8"><span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Productivity</span></div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://betterselfcheck.com/self-tests/?ref=taaft&utm_source=taaft&utm_medium=referral" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span></a>
-</div>
-</div>
-</div>
-
-<!-- Tool Card 9 -->
-<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 flex items-center justify-center bg-gradient-to-t from-red-900/30 to-[#0a0a0f]">
-<span class="material-symbols-outlined text-6xl text-red-500/80">theaters</span>
-<div class="absolute top-4 right-4 bg-warning/20 backdrop-blur-md px-3 py-1 rounded-full border border-warning/30">
-<span class="text-[10px] font-bold text-warning uppercase tracking-widest">Freemium</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2"><h3 class="font-headline font-bold text-xl">Scenes AI</h3></div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">Professional-grade platform that transforms text prompts into complete videos.</p>
-<div class="flex flex-wrap gap-2 mb-8"><span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Video</span></div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://www.usescenes.com/?ref=taaft&utm_source=taaft&utm_medium=referral" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span></a>
-</div>
-</div>
-</div>
-
-<!-- Tool Card 10 -->
-<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 flex items-center justify-center bg-gradient-to-br from-pink-900/30 to-[#0a0a0f]">
-<span class="material-symbols-outlined text-6xl text-pink-400/80">chat</span>
-<div class="absolute top-4 right-4 bg-success/20 backdrop-blur-md px-3 py-1 rounded-full border border-success/30">
-<span class="text-[10px] font-bold text-success uppercase tracking-widest">Free</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2"><h3 class="font-headline font-bold text-xl">Chatte</h3></div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">An advanced and conversational text-generation interface for rich dialogues.</p>
-<div class="flex flex-wrap gap-2 mb-8"><span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Writing</span></div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://chattee.ai/?ref=taaft&utm_source=taaft&utm_medium=referral" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span></a>
-</div>
-</div>
-</div>
-
-<!-- Tool Card 11 -->
-<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 flex items-center justify-center bg-gradient-to-bl from-yellow-900/30 to-[#0a0a0f]">
-<span class="material-symbols-outlined text-6xl text-yellow-500/80">menu_book</span>
-<div class="absolute top-4 right-4 bg-warning/20 backdrop-blur-md px-3 py-1 rounded-full border border-warning/30">
-<span class="text-[10px] font-bold text-warning uppercase tracking-widest">Freemium</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2"><h3 class="font-headline font-bold text-xl">Lorekeeper</h3></div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">AI tool designed for immersive worldbuilding and complex character character role-playing.</p>
-<div class="flex flex-wrap gap-2 mb-8"><span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Writing</span></div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://lore-keeper.com/register?ref=taaft&utm_source=taaft&utm_medium=referral" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span></a>
-</div>
-</div>
-</div>
-
-<!-- Tool Card 12 -->
-<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 flex items-center justify-center bg-gradient-to-tl from-indigo-900/30 to-[#0a0a0f]">
-<span class="material-symbols-outlined text-6xl text-indigo-400/80">account_tree</span>
-<div class="absolute top-4 right-4 bg-danger/20 backdrop-blur-md px-3 py-1 rounded-full border border-danger/30">
-<span class="text-[10px] font-bold text-danger uppercase tracking-widest">Premium</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2"><h3 class="font-headline font-bold text-xl">Napkin AI</h3></div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">Transforms standard text into engaging visual diagrams, flowcharts, and infographics.</p>
-<div class="flex flex-wrap gap-2 mb-8"><span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Productivity</span></div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://www.napkin.ai/?ref=taaft&utm_source=taaft&utm_medium=referral" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span></a>
-</div>
-</div>
-</div>
-
-<!-- Tool Card 13 -->
-<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 flex items-center justify-center bg-gradient-to-tr from-cyan-900/30 to-[#0a0a0f]">
-<span class="material-symbols-outlined text-6xl text-cyan-500/80">smart_display</span>
-<div class="absolute top-4 right-4 bg-warning/20 backdrop-blur-md px-3 py-1 rounded-full border border-warning/30">
-<span class="text-[10px] font-bold text-warning uppercase tracking-widest">Freemium</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2"><h3 class="font-headline font-bold text-xl">tool.video</h3></div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">An all-in-one AI video toolkit featuring integrations like Sora 2 and auto-watermarking.</p>
-<div class="flex flex-wrap gap-2 mb-8"><span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Video</span></div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://tool.video/" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span></a>
-</div>
-</div>
-</div>
-
-<!-- Tool Card 14 -->
-<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
-<div class="relative h-56 flex items-center justify-center bg-gradient-to-r from-blue-700/30 to-purple-800/20">
-<span class="material-symbols-outlined text-6xl text-blue-300/80">record_voice_over</span>
-<div class="absolute top-4 right-4 bg-success/20 backdrop-blur-md px-3 py-1 rounded-full border border-success/30">
-<span class="text-[10px] font-bold text-success uppercase tracking-widest">Free</span>
-</div>
-</div>
-<div class="p-6 flex flex-col flex-grow">
-<div class="flex items-center gap-2 mb-2"><h3 class="font-headline font-bold text-xl">AIDubbing.io</h3></div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">Video localization platform generating multi-lingual native lip-sync dubs.</p>
-<div class="flex flex-wrap gap-2 mb-8"><span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">Video</span></div>
-<div class="mt-auto flex items-center justify-between">
-<a href="https://aidubbing.io/audio-translate?ref=taaft&utm_source=taaft&utm_medium=referral" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span></a>
-</div>
-</div>
-</div>
+<!-- dynamically populated -->
 </div>
 
 <!-- Search Results Grid (Hidden by Default) -->
@@ -920,7 +472,7 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
             // Debounce the search request
             searchTimeout = setTimeout(async () => {
                 try {
-                    const response = await fetch(`http://localhost:3000/api/search?q=${encodeURIComponent(query)}`);
+                    const response = await fetch(`http://localhost:3000/search?q=${encodeURIComponent(query)}`);
                     const tools = await response.json();
                     
                     // Populate dropdown
@@ -930,7 +482,7 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
                                 <span class="material-symbols-outlined text-${tool.color || 'primary'} text-xl group-hover:scale-110 transition-transform">${tool.icon || 'star'}</span>
                                 <div class="flex flex-col">
                                     <span class="text-white font-medium text-sm font-headline">${tool.name}</span>
-                                    <span class="text-white/50 text-xs">${tool.cat}</span>
+                                    <span class="text-white/50 text-xs">${tool.category}</span>
                                 </div>
                             </div>
                         `).join('');
@@ -957,13 +509,13 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
 ${tool.img ? `<div class="absolute inset-0 bg-[url('${tool.img}')] opacity-20"></div>` : ''}
 <span class="material-symbols-outlined text-6xl text-${tool.color || 'primary'}/80 z-10">${tool.icon}</span>
 <div class="absolute top-4 right-4 bg-${tool.color}/20 backdrop-blur-md px-3 py-1 rounded-full border border-${tool.color}/30 z-10">
-<span class="text-[10px] font-bold text-${tool.color} uppercase tracking-widest">${tool.price}</span>
+<span class="text-[10px] font-bold text-${tool.color} uppercase tracking-widest">${tool.pricing}</span>
 </div>
 </div>
 <div class="p-6 flex flex-col flex-grow">
 <div class="flex items-center gap-2 mb-2"><h3 class="font-headline font-bold text-xl">${tool.name}</h3></div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">${tool.desc}</p>
-<div class="flex flex-wrap gap-2 mb-8"><span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">${tool.cat}</span></div>
+<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">${tool.description}</p>
+<div class="flex flex-wrap gap-2 mb-8"><span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">${tool.category}</span></div>
 <div class="mt-auto flex items-center justify-between">
 <a href="${tool.link}" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span></a>
 </div>
@@ -974,16 +526,16 @@ ${tool.img ? `<div class="absolute inset-0 bg-[url('${tool.img}')] opacity-20"><
 <div class="relative h-56 overflow-hidden">
 <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="${tool.img}" alt="${tool.name}"/>
 <div class="absolute top-4 right-4 bg-${tool.color}/20 backdrop-blur-md px-3 py-1 rounded-full border border-${tool.color}/30">
-<span class="text-[10px] font-bold text-${tool.color} uppercase tracking-widest">${tool.price}</span>
+<span class="text-[10px] font-bold text-${tool.color} uppercase tracking-widest">${tool.pricing}</span>
 </div>
 </div>
 <div class="p-6 flex flex-col flex-grow">
 <div class="flex items-center gap-2 mb-2">
 <h3 class="font-headline font-bold text-xl">${tool.name}</h3>
 </div>
-<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">${tool.desc}</p>
+<p class="text-on-surface-variant text-sm line-clamp-2 mb-6 h-10">${tool.description}</p>
 <div class="flex flex-wrap gap-2 mb-8">
-<span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">${tool.cat}</span>
+<span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">${tool.category}</span>
 </div>
 <div class="mt-auto flex items-center justify-between">
 <a href="${tool.link}" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">
