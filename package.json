@@ -1,0 +1,26 @@
+{
+  "name": "ai-compass",
+  "version": "1.0.0",
+  "description": "Your intelligent guide to the AI universe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Prophecy-Vp3562/AI-Compass.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Prophecy-Vp3562/AI-Compass/issues"
+  },
+  "homepage": "https://github.com/Prophecy-Vp3562/AI-Compass#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "serverless-http": "^4.0.0"
+  }
+}

@@ -1,9 +1,8 @@
 const express = require('express');
+const serverless = require('serverless-http');
 const cors = require('cors');
 
 const app = express();
-const port = process.env.PORT || 3000;
-
 app.use(cors());
 app.use(express.json());
 
@@ -19,7 +18,6 @@ const aiTools = [
   { id: 'sprout', name: 'Sprout Social', desc: 'AI-driven social media management, listening, and sentiment analysis platform.', cat: 'Social', icon: 'forum', price: 'Premium', color: 'danger', link: 'https://sproutsocial.com', img: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=600&h=400' },
   { id: 'aiprm', name: 'AIPRM', desc: 'Curated prompt templates for ChatGPT, Midjourney, and more to supercharge workflows.', cat: 'Prompt', icon: 'terminal', price: 'Freemium', color: 'warning', link: 'https://aiprm.com', img: 'https://images.unsplash.com/photo-1655720828018-edd2daec9349?auto=format&fit=crop&q=80&w=600&h=400' },
   { id: 'gptmaker', name: 'GPT Prompt Maker', desc: 'Framework-based prompt generator for major LLMs using CO-STAR/RISEN.', cat: 'Prompt', icon: 'terminal', price: 'Free', color: 'success', link: 'https://gptpromptmaker.com', img: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=600&h=400' },
-  // Tools from Newest section
   { id: 'prismai', name: 'Prism AI', desc: 'LaTeX-native, AI-powered workspace designed for scientists and researchers.', cat: 'Productivity', icon: 'integration_instructions', price: 'Free', color: 'success', link: 'https://prism.page/?ref=taaft&utm_source=taaft&utm_medium=referral', img: 'https://www.transparenttextures.com/patterns/cubes.png', isNew: true, gradient: 'from-indigo-900/40 to-black' },
   { id: 'websitepublisher', name: 'Website Publisher AI', desc: 'Describe a website and let the AI instantly build, design, and publish it.', cat: 'Coding', icon: 'language', price: 'Freemium', color: 'warning', link: 'https://www.websitepublisher.ai/?ref=taaft_feat&utm_source=taaft_feat&utm_medium=referral', isNew: true, gradient: 'from-[#1b1b20] to-[#0d0d12]' },
   { id: 'autonoma', name: 'Autonoma', desc: 'AI-powered platform for agentic testing in real browsers and devices.', cat: 'Coding', icon: 'bug_report', price: 'Premium', color: 'danger', link: 'https://www.getautonoma.com/?ref=taaft&utm_source=taaft&utm_medium=referral', isNew: true, gradient: 'from-green-900/30 to-[#0a0a0f]' },
@@ -36,7 +34,9 @@ const aiTools = [
   { id: 'aidubbing', name: 'AIDubbing.io', desc: 'Video localization platform generating multi-lingual native lip-sync dubs.', cat: 'Video', icon: 'record_voice_over', price: 'Free', color: 'success', link: 'https://aidubbing.io/audio-translate?ref=taaft&utm_source=taaft&utm_medium=referral', isNew: true, gradient: 'from-blue-700/30 to-purple-800/20' }
 ];
 
-app.get('/api/search', (req, res) => {
+const router = express.Router();
+
+router.get('/search', (req, res) => {
   const query = req.query.q;
   if (!query) {
     return res.json([]);
@@ -52,6 +52,9 @@ app.get('/api/search', (req, res) => {
   res.json(results);
 });
 
-app.listen(port, () => {
-  console.log(`Backend API running on http://localhost:${port}`);
-});
+// Since Netlify redirects /api/* to /.netlify/functions/api,
+// we mount our router to whatever the base path is.
+app.use('/api', router); // For local testing
+app.use('/.netlify/functions/api', router); // For explicit requests
+
+module.exports.handler = serverless(app);

@@ -1,0 +1,10 @@
+[build]
+  publish = "Front-End"
+  # This tells Netlify where your serverless functions are located
+  functions = "netlify/functions"
+  command = "npm install"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
