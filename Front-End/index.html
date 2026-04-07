@@ -143,21 +143,14 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
       }
     </script>
 <style>
+        body { cursor: auto !important; }
+
         body {
             background-color: #0a0a0f;
             color: #e4e1e9;
             cursor: none;
         }
-        .cursor-follower {
-            width: 24px;
-            height: 24px;
-            border: 2px solid #00d4ff;
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.1s ease;
-        }
+        
         .glass-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
@@ -197,7 +190,7 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
 </head>
 <body class="font-body selection:bg-primary-container selection:text-on-primary-container">
 <div class="mesh-gradient"></div>
-<div class="cursor-follower hidden md:block"></div>
+
 <!-- Top Navigation Shell -->
 <nav class="fixed top-0 w-full z-50 bg-white/5 dark:bg-black/20 backdrop-blur-xl border-b border-white/10 shadow-[0_8px_32px_0_rgba(0,212,255,0.05)]">
 <div class="flex justify-between items-center h-16 md:h-20 px-4 md:px-12 w-full max-w-[1920px] mx-auto">
@@ -356,22 +349,7 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
 </nav>
 <!-- Script for custom cursor follower -->
 <script>
-        document.addEventListener('mousemove', e => {
-            const cursor = document.querySelector('.cursor-follower');
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-
-        document.querySelectorAll('a, button, .cursor-pointer').forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                document.querySelector('.cursor-follower').style.transform = 'scale(2)';
-                document.querySelector('.cursor-follower').style.backgroundColor = 'rgba(0, 212, 255, 0.1)';
-            });
-            el.addEventListener('mouseleave', () => {
-                document.querySelector('.cursor-follower').style.transform = 'scale(1)';
-                document.querySelector('.cursor-follower').style.backgroundColor = 'transparent';
-            });
-        });
+        
 
         document.getElementById('btnScrollLeft').addEventListener('click', () => {
              document.getElementById('categoryContainer').scrollBy({ left: -300, behavior: 'smooth' });
@@ -416,7 +394,7 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
             
             featuredGrid.classList.add('hidden'); featuredGrid.style.display = 'none';
             if(document.getElementById('topRatedGrid')) { document.getElementById('topRatedGrid').classList.add('hidden'); document.getElementById('topRatedGrid').style.display = 'none'; }
-            if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
+    if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
 
             newestGrid.classList.remove('hidden');
             newestGrid.style.display = 'grid';
@@ -431,8 +409,6 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
             sectionTitle.innerHTML = `<span class="w-12 h-0.5 bg-primary"></span> Featured Selections`;
 
             newestGrid.classList.add('hidden'); newestGrid.style.display = 'none';
-            if(document.getElementById('topRatedGrid')) { document.getElementById('topRatedGrid').classList.add('hidden'); document.getElementById('topRatedGrid').style.display = 'none'; }
-            if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
 
             featuredGrid.classList.remove('hidden');
             featuredGrid.style.display = 'grid';
@@ -449,10 +425,8 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
             
             featuredGrid.classList.add('hidden'); featuredGrid.style.display = 'none';
             if(document.getElementById('topRatedGrid')) { document.getElementById('topRatedGrid').classList.add('hidden'); document.getElementById('topRatedGrid').style.display = 'none'; }
-            if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
+    if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
             newestGrid.classList.add('hidden'); newestGrid.style.display = 'none';
-            if(document.getElementById('topRatedGrid')) { document.getElementById('topRatedGrid').classList.add('hidden'); document.getElementById('topRatedGrid').style.display = 'none'; }
-            if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
             if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
             
             const trGrid = document.getElementById('topRatedGrid');
@@ -471,10 +445,8 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
             
             featuredGrid.classList.add('hidden'); featuredGrid.style.display = 'none';
             if(document.getElementById('topRatedGrid')) { document.getElementById('topRatedGrid').classList.add('hidden'); document.getElementById('topRatedGrid').style.display = 'none'; }
-            if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
+    if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
             newestGrid.classList.add('hidden'); newestGrid.style.display = 'none';
-            if(document.getElementById('topRatedGrid')) { document.getElementById('topRatedGrid').classList.add('hidden'); document.getElementById('topRatedGrid').style.display = 'none'; }
-            if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
             if(document.getElementById('topRatedGrid')) { document.getElementById('topRatedGrid').classList.add('hidden'); document.getElementById('topRatedGrid').style.display = 'none'; }
             
             const osGrid = document.getElementById('openSourceGrid');
@@ -484,7 +456,8 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
                 triggerStaggerAnimation(osGrid);
             }
         });
-\n        // Search functionality
+
+        // Search functionality
         const searchInput = document.getElementById('searchInput');
         const searchResultsGrid = document.getElementById('searchResultsGrid');
         const searchDropdown = document.getElementById('searchDropdown');
@@ -549,10 +522,8 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
                     // Hide other grids
                     featuredGrid.classList.add('hidden'); featuredGrid.style.display = 'none';
             if(document.getElementById('topRatedGrid')) { document.getElementById('topRatedGrid').classList.add('hidden'); document.getElementById('topRatedGrid').style.display = 'none'; }
-            if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
+    if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
                     newestGrid.classList.add('hidden'); newestGrid.style.display = 'none';
-            if(document.getElementById('topRatedGrid')) { document.getElementById('topRatedGrid').classList.add('hidden'); document.getElementById('topRatedGrid').style.display = 'none'; }
-            if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
                     
                     // Update Title
                     sectionTitle.innerHTML = `<span class="w-12 h-0.5 bg-primary"></span> Search Results for "${query}"`;
