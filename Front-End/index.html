@@ -894,8 +894,9 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
             }
         });
 
-        // Set your backend URL here. Change this when you deploy to Render!
-        const API_BASE_URL = 'https://aicompass-635382.netlify.app';
+        // Dynamically detects if you are on PC or Netlify!
+        const isLocalHost = window.location.hostname === 'localhost' || window.location.protocol === 'file:';
+        const API_BASE_URL = isLocalHost ? 'http://localhost:3000' : 'https://aicompass-635382.netlify.app';
 
         searchInput.addEventListener('input', (e) => {
             const query = e.target.value.trim();

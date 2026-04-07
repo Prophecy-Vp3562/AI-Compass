@@ -58,3 +58,11 @@ app.use('/api', router); // For local testing
 app.use('/.netlify/functions/api', router); // For explicit requests
 
 module.exports.handler = serverless(app);
+
+// Local Dev Listener
+if (require.main === module) {
+  const port = process.env.PORT || 3000;
+  app.listen(port, () => {
+    console.log(`Backend API is active on http://localhost:${port}`);
+  });
+}

@@ -1,8 +1,8 @@
 @echo off
 echo Starting AI-Compass Backend API...
-start /b cmd /c "cd /d %~dp0\backend && node index.js"
+start /b cmd /c "cd /d %~dp0 && node netlify/functions/api.js"
 echo Waiting for backend to start...
 timeout /t 2 /nobreak >nul
 echo Opening AI-Compass Frontend...
-start "" "%~dp0\Front-End\index.html"
+start "" "%~dp0Front-End\index.html"
 exit
