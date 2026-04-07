@@ -446,6 +446,10 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
             }
         });
 
+        // Dynamically detects if you are on PC or Netlify!
+        const isLocalHost = window.location.hostname === 'localhost' || window.location.protocol === 'file:';
+        const API_BASE_URL = isLocalHost ? 'http://localhost:3000' : 'https://aicompass-635382.netlify.app';
+
         searchInput.addEventListener('input', (e) => {
             const query = e.target.value.trim();
             
@@ -472,7 +476,7 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
             // Debounce the search request
             searchTimeout = setTimeout(async () => {
                 try {
-                    const response = await fetch(`http://localhost:3000/search?q=${encodeURIComponent(query)}`);
+                    const response = await fetch(`http://localhost:3000/api/search?q=${encodeURIComponent(query)}`);
                     const tools = await response.json();
                     
                     // Populate dropdown
