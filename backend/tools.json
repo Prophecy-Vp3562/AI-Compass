@@ -1,39 +1,93 @@
 [
   {
+    "id": "chatgpt",
+    "name": "ChatGPT",
+    "category": "Writing",
+    "description": "The industry-leading conversational AI model by OpenAI.",
+    "features": [
+      "Generative answers",
+      "Data analysis",
+      "Vision capabilities",
+      "Code writing"
+    ],
+    "pricing": "Freemium",
+    "link": "https://chatgpt.com",
+    "tags": [
+      "LLM",
+      "AI chatbot",
+      "productivity"
+    ],
+    "color": "danger",
+    "icon": "forum",
+    "isTopRated": true,
+    "img": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=600&h=400&auto=format&fit=crop"
+  },
+  {
     "id": "cursor",
     "name": "Cursor",
     "category": "Coding",
     "description": "The AI-first Code Editor built for pair programming with an intelligent agent.",
-    "features": ["AI code completion", "Chat with codebase", "In-editor bug fixes", "VS Code compatible"],
+    "features": [
+      "AI code completion",
+      "Chat with codebase",
+      "In-editor bug fixes",
+      "VS Code compatible"
+    ],
     "pricing": "Freemium",
     "link": "https://cursor.com",
-    "tags": ["developer tools", "copilot", "IDE", "programming"],
+    "tags": [
+      "developer tools",
+      "copilot",
+      "IDE",
+      "programming"
+    ],
     "color": "warning",
     "icon": "code",
-    "img": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=600&h=400"
+    "img": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=600&h=400",
+    "isTopRated": true
   },
   {
     "id": "codeium",
     "name": "Codeium",
     "category": "Coding",
     "description": "Free AI code completion and chat that integrates into your favorite IDEs.",
-    "features": ["Autocomplete in 70+ languages", "IDE extensions", "Enterprise security", "Code search"],
+    "features": [
+      "Autocomplete in 70+ languages",
+      "IDE extensions",
+      "Enterprise security",
+      "Code search"
+    ],
     "pricing": "Free",
     "link": "https://codeium.com",
-    "tags": ["autocompletion", "free", "coding assistant"],
+    "tags": [
+      "autocompletion",
+      "free",
+      "coding assistant"
+    ],
     "color": "success",
     "icon": "code",
-    "img": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=600&h=400"
+    "img": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=600&h=400",
+    "isOpenSource": true
   },
   {
     "id": "jasper",
     "name": "Jasper AI",
     "category": "Marketing",
     "description": "Enterprise-grade AI copilot for marketing copy, campaigns, and content strategy.",
-    "features": ["Brand voice matching", "SEO integrated", "Campaign workflows", "Team collaboration"],
+    "features": [
+      "Brand voice matching",
+      "SEO integrated",
+      "Campaign workflows",
+      "Team collaboration"
+    ],
     "pricing": "Premium",
     "link": "https://jasper.ai",
-    "tags": ["copywriting", "SEO", "blogging", "ads"],
+    "tags": [
+      "copywriting",
+      "SEO",
+      "blogging",
+      "ads"
+    ],
     "color": "danger",
     "icon": "rocket_launch",
     "img": "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&q=80&w=600&h=400"
@@ -43,10 +97,19 @@
     "name": "HubSpot AI",
     "category": "Marketing",
     "description": "AI tools native to your CRM to generate content, emails, and social posts instantly.",
-    "features": ["Content generation", "Email drafting", "Sales insights", "Workflow automation"],
+    "features": [
+      "Content generation",
+      "Email drafting",
+      "Sales insights",
+      "Workflow automation"
+    ],
     "pricing": "Freemium",
     "link": "https://hubspot.com",
-    "tags": ["CRM", "email marketing", "sales"],
+    "tags": [
+      "CRM",
+      "email marketing",
+      "sales"
+    ],
     "color": "warning",
     "icon": "rocket_launch",
     "img": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600&h=400"
@@ -56,62 +119,112 @@
     "name": "Runway",
     "category": "Video",
     "description": "Advance your creativity with state-of-the-art AI video editing, generation, and effects.",
-    "features": ["Gen-1 and Gen-2 video", "Text to video", "Video to video", "Background removal"],
+    "features": [
+      "Gen-1 and Gen-2 video",
+      "Text to video",
+      "Video to video",
+      "Background removal"
+    ],
     "pricing": "Freemium",
     "link": "https://runwayml.com",
-    "tags": ["video generation", "VFX", "editing"],
+    "tags": [
+      "video generation",
+      "VFX",
+      "editing"
+    ],
     "color": "warning",
     "icon": "video_library",
-    "img": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=600&h=400"
+    "img": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=600&h=400",
+    "isTopRated": true
   },
   {
     "id": "suno",
     "name": "Suno AI",
     "category": "Music",
     "description": "Create original, full-length songs with vocals from simple text descriptions.",
-    "features": ["Vocals generation", "Instrumentals", "Multiple languages", "Music styles"],
+    "features": [
+      "Vocals generation",
+      "Instrumentals",
+      "Multiple languages",
+      "Music styles"
+    ],
     "pricing": "Freemium",
     "link": "https://suno.com",
-    "tags": ["music generation", "audio", "songs"],
+    "tags": [
+      "music generation",
+      "audio",
+      "songs"
+    ],
     "color": "warning",
     "icon": "music_note",
-    "img": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&q=80&w=600&h=400"
+    "img": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&q=80&w=600&h=400",
+    "isTopRated": true
   },
   {
     "id": "midjourney",
     "name": "Midjourney",
     "category": "Image Gen",
     "description": "High-fidelity, prompt-based artistic image generation via Discord.",
-    "features": ["High resolution", "Discord integration", "Artistic styles", "V5 model"],
+    "features": [
+      "High resolution",
+      "Discord integration",
+      "Artistic styles",
+      "V5 model"
+    ],
     "pricing": "Premium",
     "link": "https://midjourney.com",
-    "tags": ["art", "image generation", "discord"],
+    "tags": [
+      "art",
+      "image generation",
+      "discord"
+    ],
     "color": "danger",
     "icon": "image",
-    "img": "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&q=80&w=600&h=400"
+    "img": "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&q=80&w=600&h=400",
+    "isTopRated": true
   },
   {
     "id": "recraft",
     "name": "Recraft",
     "category": "Image Gen",
     "description": "AI design engine that lets you create and edit vector art, icons, and 3D images.",
-    "features": ["Vector generation", "Style consistency", "Icon packs", "Mockups"],
+    "features": [
+      "Vector generation",
+      "Style consistency",
+      "Icon packs",
+      "Mockups"
+    ],
     "pricing": "Free",
     "link": "https://recraft.ai",
-    "tags": ["vectors", "svg", "icons", "design"],
+    "tags": [
+      "vectors",
+      "svg",
+      "icons",
+      "design"
+    ],
     "color": "success",
     "icon": "image",
-    "img": "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=600&h=400"
+    "img": "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=600&h=400",
+    "isOpenSource": true
   },
   {
     "id": "sprout",
     "name": "Sprout Social",
     "category": "Social Media",
     "description": "AI-driven social media management, listening, and sentiment analysis platform.",
-    "features": ["Sentiment analysis", "Post scheduling", "Analytics insights", "Audience engagement"],
+    "features": [
+      "Sentiment analysis",
+      "Post scheduling",
+      "Analytics insights",
+      "Audience engagement"
+    ],
     "pricing": "Premium",
     "link": "https://sproutsocial.com",
-    "tags": ["social media", "analytics", "management"],
+    "tags": [
+      "social media",
+      "analytics",
+      "management"
+    ],
     "color": "danger",
     "icon": "forum",
     "img": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=600&h=400"
@@ -121,10 +234,19 @@
     "name": "AIPRM",
     "category": "Prompt Gen",
     "description": "Curated prompt templates for ChatGPT, Midjourney, and more to supercharge workflows.",
-    "features": ["One-click prompts", "Community library", "Custom prompts", "SEO tools"],
+    "features": [
+      "One-click prompts",
+      "Community library",
+      "Custom prompts",
+      "SEO tools"
+    ],
     "pricing": "Freemium",
     "link": "https://aiprm.com",
-    "tags": ["prompts", "productivity", "chatgpt"],
+    "tags": [
+      "prompts",
+      "productivity",
+      "chatgpt"
+    ],
     "color": "warning",
     "icon": "terminal",
     "img": "https://images.unsplash.com/photo-1655720828018-edd2daec9349?auto=format&fit=crop&q=80&w=600&h=400"
@@ -134,23 +256,40 @@
     "name": "GPT Prompt Maker",
     "category": "Prompt Gen",
     "description": "Framework-based prompt generator for major LLMs using CO-STAR/RISEN.",
-    "features": ["Framework support", "Custom variables", "Export to clipboard"],
+    "features": [
+      "Framework support",
+      "Custom variables",
+      "Export to clipboard"
+    ],
     "pricing": "Free",
     "link": "https://gptpromptmaker.com",
-    "tags": ["prompt engineering", "generator"],
+    "tags": [
+      "prompt engineering",
+      "generator"
+    ],
     "color": "success",
     "icon": "terminal",
-    "img": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=600&h=400"
+    "img": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=600&h=400",
+    "isOpenSource": true
   },
   {
     "id": "prismai",
     "name": "Prism AI",
     "category": "Productivity",
     "description": "LaTeX-native, AI-powered workspace designed for scientists and researchers.",
-    "features": ["LaTeX syntax", "PDF analysis", "Citation management", "Math problem solving"],
+    "features": [
+      "LaTeX syntax",
+      "PDF analysis",
+      "Citation management",
+      "Math problem solving"
+    ],
     "pricing": "Free",
     "link": "https://prism.page",
-    "tags": ["research", "academia", "latex"],
+    "tags": [
+      "research",
+      "academia",
+      "latex"
+    ],
     "color": "success",
     "icon": "integration_instructions",
     "isNew": true,
@@ -162,10 +301,19 @@
     "name": "Website Publisher AI",
     "category": "Coding",
     "description": "Describe a website and let the AI instantly build, design, and publish it.",
-    "features": ["Text-to-website", "Hosting included", "Custom domains", "SEO friendly"],
+    "features": [
+      "Text-to-website",
+      "Hosting included",
+      "Custom domains",
+      "SEO friendly"
+    ],
     "pricing": "Freemium",
     "link": "https://www.websitepublisher.ai",
-    "tags": ["website builder", "no-code", "web design"],
+    "tags": [
+      "website builder",
+      "no-code",
+      "web design"
+    ],
     "color": "warning",
     "icon": "language",
     "isNew": true,
@@ -176,10 +324,19 @@
     "name": "Autonoma",
     "category": "Coding",
     "description": "AI-powered platform for agentic testing in real browsers and devices.",
-    "features": ["E2E testing", "Cross-browser", "Self-healing tests", "Visual regression"],
+    "features": [
+      "E2E testing",
+      "Cross-browser",
+      "Self-healing tests",
+      "Visual regression"
+    ],
     "pricing": "Premium",
     "link": "https://www.getautonoma.com",
-    "tags": ["QA", "testing", "automation"],
+    "tags": [
+      "QA",
+      "testing",
+      "automation"
+    ],
     "color": "danger",
     "icon": "bug_report",
     "isNew": true,
@@ -190,10 +347,19 @@
     "name": "LikeClaw",
     "category": "Productivity",
     "description": "Cloud-based platform using autonomous AI agents to execute complex online tasks.",
-    "features": ["Autonomous agents", "Web scraping", "Workflow builders", "API integrations"],
+    "features": [
+      "Autonomous agents",
+      "Web scraping",
+      "Workflow builders",
+      "API integrations"
+    ],
     "pricing": "Freemium",
     "link": "https://likeclaw.ai",
-    "tags": ["agents", "tasks", "cloud"],
+    "tags": [
+      "agents",
+      "tasks",
+      "cloud"
+    ],
     "color": "warning",
     "icon": "webhook",
     "isNew": true,
@@ -204,10 +370,19 @@
     "name": "Averi AI",
     "category": "Marketing",
     "description": "AI marketing workspace for startups to draft and publish SEO optimized content.",
-    "features": ["SEO tools", "Content drafting", "Plagiarism check", "Direct publishing"],
+    "features": [
+      "SEO tools",
+      "Content drafting",
+      "Plagiarism check",
+      "Direct publishing"
+    ],
     "pricing": "Freemium",
     "link": "https://www.averi.ai",
-    "tags": ["startup", "marketing", "SEO"],
+    "tags": [
+      "startup",
+      "marketing",
+      "SEO"
+    ],
     "color": "warning",
     "icon": "campaign",
     "isNew": true,
@@ -218,10 +393,19 @@
     "name": "Freebeat",
     "category": "Video",
     "description": "Turns audio tracks into fully edited, beat-synced AI music videos.",
-    "features": ["Beat synchronization", "Visual effects", "Audio analysis", "Export to 4K"],
+    "features": [
+      "Beat synchronization",
+      "Visual effects",
+      "Audio analysis",
+      "Export to 4K"
+    ],
     "pricing": "Free",
     "link": "https://freebeat.ai",
-    "tags": ["music video", "beats", "editing"],
+    "tags": [
+      "music video",
+      "beats",
+      "editing"
+    ],
     "color": "success",
     "icon": "music_video",
     "isNew": true,
@@ -232,10 +416,19 @@
     "name": "Kinovi AI",
     "category": "Video",
     "description": "AI-powered studio for creating directed, cinematic cinematic video clips.",
-    "features": ["Cinematic generation", "Camera controls", "Lighting directions", "High resolution"],
+    "features": [
+      "Cinematic generation",
+      "Camera controls",
+      "Lighting directions",
+      "High resolution"
+    ],
     "pricing": "Premium",
     "link": "https://kinovi.ai",
-    "tags": ["film", "cinematic", "video gen"],
+    "tags": [
+      "film",
+      "cinematic",
+      "video gen"
+    ],
     "color": "danger",
     "icon": "movie",
     "isNew": true,
@@ -246,10 +439,19 @@
     "name": "Betterself Check",
     "category": "Productivity",
     "description": "AI-powered wellness, productivity, and habit tracking check-in app.",
-    "features": ["Habit tracking", "Wellness checks", "Goal setting", "Daily reminders"],
+    "features": [
+      "Habit tracking",
+      "Wellness checks",
+      "Goal setting",
+      "Daily reminders"
+    ],
     "pricing": "Free",
     "link": "https://betterselfcheck.com",
-    "tags": ["habits", "wellness", "lifestyle"],
+    "tags": [
+      "habits",
+      "wellness",
+      "lifestyle"
+    ],
     "color": "success",
     "icon": "fact_check",
     "isNew": true,
@@ -260,10 +462,19 @@
     "name": "Scenes AI",
     "category": "Video",
     "description": "Professional-grade platform that transforms text prompts into complete videos.",
-    "features": ["Storyboarding", "Text to video", "Asset library", "Audio tracks"],
+    "features": [
+      "Storyboarding",
+      "Text to video",
+      "Asset library",
+      "Audio tracks"
+    ],
     "pricing": "Freemium",
     "link": "https://www.usescenes.com",
-    "tags": ["storyboard", "creation", "professional"],
+    "tags": [
+      "storyboard",
+      "creation",
+      "professional"
+    ],
     "color": "warning",
     "icon": "theaters",
     "isNew": true,
@@ -274,10 +485,19 @@
     "name": "Chatte",
     "category": "Writing",
     "description": "An advanced and conversational text-generation interface for rich dialogues.",
-    "features": ["Persona building", "Rich text editing", "Export history", "Memory tracking"],
+    "features": [
+      "Persona building",
+      "Rich text editing",
+      "Export history",
+      "Memory tracking"
+    ],
     "pricing": "Free",
     "link": "https://chattee.ai",
-    "tags": ["chatbot", "dialogue", "writing"],
+    "tags": [
+      "chatbot",
+      "dialogue",
+      "writing"
+    ],
     "color": "success",
     "icon": "chat",
     "isNew": true,
@@ -288,10 +508,20 @@
     "name": "Lorekeeper",
     "category": "Writing",
     "description": "AI tool designed for immersive worldbuilding and complex character role-playing.",
-    "features": ["Worldbuilding bibles", "Character arcs", "Plot generation", "Interactive RPG"],
+    "features": [
+      "Worldbuilding bibles",
+      "Character arcs",
+      "Plot generation",
+      "Interactive RPG"
+    ],
     "pricing": "Freemium",
     "link": "https://lore-keeper.com",
-    "tags": ["fiction", "rpg", "authors", "story"],
+    "tags": [
+      "fiction",
+      "rpg",
+      "authors",
+      "story"
+    ],
     "color": "warning",
     "icon": "menu_book",
     "isNew": true,
@@ -302,10 +532,19 @@
     "name": "Napkin AI",
     "category": "Productivity",
     "description": "Transforms standard text into engaging visual diagrams, flowcharts, and infographics.",
-    "features": ["Text to diagram", "Infographic templates", "Export to PDF/PNG", "Collaboration"],
+    "features": [
+      "Text to diagram",
+      "Infographic templates",
+      "Export to PDF/PNG",
+      "Collaboration"
+    ],
     "pricing": "Premium",
     "link": "https://www.napkin.ai",
-    "tags": ["diagrams", "visuals", "charts"],
+    "tags": [
+      "diagrams",
+      "visuals",
+      "charts"
+    ],
     "color": "danger",
     "icon": "account_tree",
     "isNew": true,
@@ -316,24 +555,43 @@
     "name": "tool.video",
     "category": "Video",
     "description": "An all-in-one AI video toolkit featuring integrations like Sora 2 and auto-watermarking.",
-    "features": ["Multiple video models", "Watermarking", "Batch processing", "API access"],
+    "features": [
+      "Multiple video models",
+      "Watermarking",
+      "Batch processing",
+      "API access"
+    ],
     "pricing": "Freemium",
     "link": "https://tool.video",
-    "tags": ["toolkit", "sora", "video"],
+    "tags": [
+      "toolkit",
+      "sora",
+      "video"
+    ],
     "color": "warning",
     "icon": "smart_display",
     "isNew": true,
-    "gradient": "from-cyan-900/30 to-[#0a0a0f]"
+    "gradient": "from-cyan-900/30 to-[#0a0a0f]",
+    "isOpenSource": true
   },
   {
     "id": "aidubbing",
     "name": "AIDubbing.io",
     "category": "Video",
     "description": "Video localization platform generating multi-lingual native lip-sync dubs.",
-    "features": ["Lip-sync technology", "Multiple languages", "Voice cloning", "Subtitles export"],
+    "features": [
+      "Lip-sync technology",
+      "Multiple languages",
+      "Voice cloning",
+      "Subtitles export"
+    ],
     "pricing": "Free",
     "link": "https://aidubbing.io",
-    "tags": ["dubbing", "localization", "audio"],
+    "tags": [
+      "dubbing",
+      "localization",
+      "audio"
+    ],
     "color": "success",
     "icon": "record_voice_over",
     "isNew": true,

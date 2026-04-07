@@ -331,7 +331,11 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
 </div>
 
 <!-- Search Results Grid (Hidden by Default) -->
-<div id="searchResultsGrid" class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 transition-opacity duration-300">
+<div id="topRatedGrid" class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 transition-opacity duration-300"></div>
+<!-- Open Source Grid (Hidden by Default) -->
+<div id="openSourceGrid" class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 transition-opacity duration-300"></div>
+
+<!-- Search Results Grid (Hidden by Default) --> class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 transition-opacity duration-300">
 </div>
 </section>
 </main>
@@ -410,8 +414,9 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
             
             sectionTitle.innerHTML = `<span class="w-12 h-0.5 bg-primary"></span> Just Added (Newest AI Tools)`;
             
-            featuredGrid.classList.add('hidden');
-            featuredGrid.style.display = 'none';
+            featuredGrid.classList.add('hidden'); featuredGrid.style.display = 'none';
+            if(document.getElementById('topRatedGrid')) { document.getElementById('topRatedGrid').classList.add('hidden'); document.getElementById('topRatedGrid').style.display = 'none'; }
+            if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
 
             newestGrid.classList.remove('hidden');
             newestGrid.style.display = 'grid';
@@ -425,8 +430,9 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
             
             sectionTitle.innerHTML = `<span class="w-12 h-0.5 bg-primary"></span> Featured Selections`;
 
-            newestGrid.classList.add('hidden');
-            newestGrid.style.display = 'none';
+            newestGrid.classList.add('hidden'); newestGrid.style.display = 'none';
+            if(document.getElementById('topRatedGrid')) { document.getElementById('topRatedGrid').classList.add('hidden'); document.getElementById('topRatedGrid').style.display = 'none'; }
+            if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
 
             featuredGrid.classList.remove('hidden');
             featuredGrid.style.display = 'grid';
@@ -434,7 +440,51 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
             triggerStaggerAnimation(featuredGrid);
         });
 
-        // Search functionality
+        
+        btnTopRated.addEventListener('click', () => {
+            resetButtons();
+            btnTopRated.className = "filter-btn whitespace-nowrap px-4 py-1.5 rounded-full bg-primary text-on-primary text-sm font-bold transition-colors shadow-[0_0_15px_rgba(0,212,255,0.3)] cursor-pointer";
+            
+            sectionTitle.innerHTML = `<span class="w-12 h-0.5 bg-primary"></span> Top Rated AI Tools`;
+            
+            featuredGrid.classList.add('hidden'); featuredGrid.style.display = 'none';
+            if(document.getElementById('topRatedGrid')) { document.getElementById('topRatedGrid').classList.add('hidden'); document.getElementById('topRatedGrid').style.display = 'none'; }
+            if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
+            newestGrid.classList.add('hidden'); newestGrid.style.display = 'none';
+            if(document.getElementById('topRatedGrid')) { document.getElementById('topRatedGrid').classList.add('hidden'); document.getElementById('topRatedGrid').style.display = 'none'; }
+            if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
+            if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
+            
+            const trGrid = document.getElementById('topRatedGrid');
+            if(trGrid) {
+                trGrid.classList.remove('hidden');
+                trGrid.style.display = 'grid';
+                triggerStaggerAnimation(trGrid);
+            }
+        });
+
+        btnOpenSource.addEventListener('click', () => {
+            resetButtons();
+            btnOpenSource.className = "filter-btn whitespace-nowrap px-4 py-1.5 rounded-full bg-primary text-on-primary text-sm font-bold transition-colors shadow-[0_0_15px_rgba(0,212,255,0.3)] cursor-pointer";
+            
+            sectionTitle.innerHTML = `<span class="w-12 h-0.5 bg-primary"></span> Open Source Tools`;
+            
+            featuredGrid.classList.add('hidden'); featuredGrid.style.display = 'none';
+            if(document.getElementById('topRatedGrid')) { document.getElementById('topRatedGrid').classList.add('hidden'); document.getElementById('topRatedGrid').style.display = 'none'; }
+            if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
+            newestGrid.classList.add('hidden'); newestGrid.style.display = 'none';
+            if(document.getElementById('topRatedGrid')) { document.getElementById('topRatedGrid').classList.add('hidden'); document.getElementById('topRatedGrid').style.display = 'none'; }
+            if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
+            if(document.getElementById('topRatedGrid')) { document.getElementById('topRatedGrid').classList.add('hidden'); document.getElementById('topRatedGrid').style.display = 'none'; }
+            
+            const osGrid = document.getElementById('openSourceGrid');
+            if(osGrid) {
+                osGrid.classList.remove('hidden');
+                osGrid.style.display = 'grid';
+                triggerStaggerAnimation(osGrid);
+            }
+        });
+\n        // Search functionality
         const searchInput = document.getElementById('searchInput');
         const searchResultsGrid = document.getElementById('searchResultsGrid');
         const searchDropdown = document.getElementById('searchDropdown');
@@ -497,10 +547,12 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
                     }
                     
                     // Hide other grids
-                    featuredGrid.classList.add('hidden');
-                    featuredGrid.style.display = 'none';
-                    newestGrid.classList.add('hidden');
-                    newestGrid.style.display = 'none';
+                    featuredGrid.classList.add('hidden'); featuredGrid.style.display = 'none';
+            if(document.getElementById('topRatedGrid')) { document.getElementById('topRatedGrid').classList.add('hidden'); document.getElementById('topRatedGrid').style.display = 'none'; }
+            if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
+                    newestGrid.classList.add('hidden'); newestGrid.style.display = 'none';
+            if(document.getElementById('topRatedGrid')) { document.getElementById('topRatedGrid').classList.add('hidden'); document.getElementById('topRatedGrid').style.display = 'none'; }
+            if(document.getElementById('openSourceGrid')) { document.getElementById('openSourceGrid').classList.add('hidden'); document.getElementById('openSourceGrid').style.display = 'none'; }
                     
                     // Update Title
                     sectionTitle.innerHTML = `<span class="w-12 h-0.5 bg-primary"></span> Search Results for "${query}"`;
@@ -622,6 +674,10 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
 
                 if (featuredGrid) featuredGrid.innerHTML = tools.filter(t => !t.isNew).map(renderTool).join('');
                 if (newestGrid) newestGrid.innerHTML = tools.filter(t => t.isNew).map(renderTool).join('');
+                const topRatedGrid = document.getElementById('topRatedGrid');
+                const openSourceGrid = document.getElementById('openSourceGrid');
+                if (topRatedGrid) topRatedGrid.innerHTML = tools.filter(t => t.isTopRated).map(renderTool).join('');
+                if (openSourceGrid) openSourceGrid.innerHTML = tools.filter(t => t.isOpenSource).map(renderTool).join('');
 
                 if (typeof triggerStaggerAnimation === 'function' && featuredGrid) triggerStaggerAnimation(featuredGrid);
             } catch (err) {
