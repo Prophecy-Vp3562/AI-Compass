@@ -1,0 +1,78 @@
+body {
+    background-color: #0a0a0f;
+    color: #e4e1e9;
+    cursor: auto !important; /* Ensure cursor is visible if user had hidden it before */
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #a8e8ff, #00d4ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mesh-gradient {
+    background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0a0a0f 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.bento-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.bento-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@keyframes staggerFadeUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-stagger {
+    opacity: 0;
+    animation: staggerFadeUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes expandFluidWave {
+    0% {
+        transform: translate(-50%, -50%) scale(0.01);
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
+
+.liquid-wave {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10;
+    animation: expandFluidWave 2s cubic-bezier(0.15, 0.85, 0.35, 1.2) forwards;
+    transform-origin: center center;
+    transform: translate(-50%, -50%) scale(0.01);
+    background: radial-gradient(circle, 
+        rgba(56, 189, 248, 0.4) 0%, 
+        rgba(14, 165, 233, 0.15) 30%, 
+        rgba(2, 132, 199, 0.05) 60%, 
+        transparent 100%);
+    backdrop-filter: blur(6px) saturate(120%);
+    -webkit-backdrop-filter: blur(6px) saturate(120%);
+}

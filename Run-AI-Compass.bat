@@ -1,4 +1,8 @@
 @echo off
-echo Starting AI-Compass with Netlify Dev...
-echo This will start both the frontend and the local serverless functions automatically!
-cmd /k "cd /d %~dp0 && npx netlify dev"
+echo ==============================================
+echo Starting AI-Compass 
+echo Unified Express Backend & SPA Frontend
+echo ==============================================
+
+start http://localhost:3000
+cmd /k "cd /d %~dp0 && npm start"
