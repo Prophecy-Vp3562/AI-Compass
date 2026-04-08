@@ -635,25 +635,23 @@
   },
   {
     "id": "taskade",
-    "name": "Taskade AI",
+    "name": "Taskade",
     "category": "Productivity",
-    "description": "Outlines, mind maps, and automated task workflows in one app.",
+    "description": "AI-powered workspace blending tasks, mind maps, and live team collaboration into a single sleek app.",
     "features": [
-      "Mind mapping",
-      "Workflow automation",
-      "Chatbot",
-      "Outlines"
+      "Extracted from UI",
+      "Taskade",
+      "Productivity",
+      "Freemium"
     ],
     "pricing": "Freemium",
     "link": "https://taskade.com",
     "tags": [
       "productivity",
-      "mindmap",
-      "tasks"
+      "ui extraction"
     ],
     "color": "warning",
-    "icon": "account_tree",
-    "isTopRated": false,
+    "icon": "checklist",
     "img": "https://picsum.photos/seed/taskade/600/400"
   },
   {
@@ -797,25 +795,23 @@
   },
   {
     "id": "copyai",
-    "name": "Copy.ai",
+    "name": "Copy AI",
     "category": "Writing",
-    "description": "Generate high-converting marketing copy in seconds.",
+    "description": "Create engaging marketing content, outlines, and captions using free templates.",
     "features": [
-      "Email copy",
-      "Social posts",
-      "Blog drafts",
-      "Translating"
+      "Extracted from UI",
+      "Copy AI",
+      "Writing",
+      "Freemium"
     ],
     "pricing": "Freemium",
     "link": "https://copy.ai",
     "tags": [
-      "copywriting",
-      "marketing",
-      "content"
+      "writing",
+      "ui extraction"
     ],
-    "color": "danger",
-    "icon": "edit_document",
-    "isTopRated": false,
+    "color": "warning",
+    "icon": "content_copy",
     "img": "https://picsum.photos/seed/copyai/600/400"
   },
   {
@@ -1955,26 +1951,23 @@
   },
   {
     "id": "sora",
-    "name": "OpenAI Sora",
+    "name": "Sora",
     "category": "Video",
-    "description": "An AI model that can create realistic and imaginative scenes from text instructions.",
+    "description": "OpenAI's text-to-video model capable of generating up to a minute of high-fidelity video.",
     "features": [
-      "Text to video",
-      "High-fidelity generation",
-      "Physics simulation",
-      "Multi-shot consistency"
+      "Extracted from UI",
+      "Sora",
+      "Video",
+      "Premium"
     ],
     "pricing": "Premium",
     "link": "https://openai.com/sora",
     "tags": [
       "video",
-      "openai",
-      "generative"
+      "ui extraction"
     ],
-    "color": "warning",
-    "icon": "videocam",
-    "isNew": true,
-    "isTopRated": true,
+    "color": "danger",
+    "icon": "auto_awesome_motion",
     "img": "https://picsum.photos/seed/sora/600/400"
   },
   {
@@ -3644,27 +3637,6 @@
     "img": "https://picsum.photos/seed/chatbase/600/400"
   },
   {
-    "id": "taskade",
-    "name": "Taskade",
-    "category": "Productivity",
-    "description": "AI-powered workspace blending tasks, mind maps, and live team collaboration into a single sleek app.",
-    "features": [
-      "Extracted from UI",
-      "Taskade",
-      "Productivity",
-      "Freemium"
-    ],
-    "pricing": "Freemium",
-    "link": "https://taskade.com",
-    "tags": [
-      "productivity",
-      "ui extraction"
-    ],
-    "color": "warning",
-    "icon": "checklist",
-    "img": "https://picsum.photos/seed/taskade/600/400"
-  },
-  {
     "id": "textblaze",
     "name": "Text Blaze",
     "category": "Productivity",
@@ -3999,27 +3971,6 @@
     "color": "warning",
     "icon": "group",
     "img": "https://picsum.photos/seed/characterai/600/400"
-  },
-  {
-    "id": "sora",
-    "name": "Sora",
-    "category": "Video",
-    "description": "OpenAI's text-to-video model capable of generating up to a minute of high-fidelity video.",
-    "features": [
-      "Extracted from UI",
-      "Sora",
-      "Video",
-      "Premium"
-    ],
-    "pricing": "Premium",
-    "link": "https://openai.com/sora",
-    "tags": [
-      "video",
-      "ui extraction"
-    ],
-    "color": "danger",
-    "icon": "auto_awesome_motion",
-    "img": "https://picsum.photos/seed/sora/600/400"
   },
   {
     "id": "lumadreammachine",
@@ -4421,27 +4372,6 @@
     "img": "https://picsum.photos/seed/aidungeon/600/400"
   },
   {
-    "id": "copyai",
-    "name": "Copy AI",
-    "category": "Writing",
-    "description": "Create engaging marketing content, outlines, and captions using free templates.",
-    "features": [
-      "Extracted from UI",
-      "Copy AI",
-      "Writing",
-      "Freemium"
-    ],
-    "pricing": "Freemium",
-    "link": "https://copy.ai",
-    "tags": [
-      "writing",
-      "ui extraction"
-    ],
-    "color": "warning",
-    "icon": "content_copy",
-    "img": "https://picsum.photos/seed/copyai/600/400"
-  },
-  {
     "id": "rehumanizeio",
     "name": "Rehumanize.io",
     "category": "Writing",
@@ -4587,5 +4517,265 @@
     "color": "success",
     "icon": "translate",
     "img": "https://picsum.photos/seed/doclingo/600/400"
+  },
+  {
+    "id": "ollama",
+    "name": "Ollama",
+    "category": "Coding",
+    "description": "Get up and running with large language models locally. Run Llama 3, Phi 3, Mistral, Gemma, and other models.",
+    "features": [
+      "Local execution",
+      "Model library",
+      "CLI interface",
+      "API support"
+    ],
+    "pricing": "Free",
+    "link": "https://ollama.com",
+    "tags": [
+      "local",
+      "llm",
+      "open source"
+    ],
+    "color": "primary",
+    "icon": "terminal",
+    "isOpenSource": true,
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/ollama/600/400"
+  },
+  {
+    "id": "llamacpp",
+    "name": "LLaMA.cpp",
+    "category": "Coding",
+    "description": "Port of Facebook's LLaMA model in C/C++. Run massive LLMs efficiently on everyday hardware.",
+    "features": [
+      "Hardware efficient",
+      "CPU inference",
+      "Quantization",
+      "No dependencies"
+    ],
+    "pricing": "Free",
+    "link": "https://github.com/ggerganov/llama.cpp",
+    "tags": [
+      "cpp",
+      "inference",
+      "efficiency"
+    ],
+    "color": "success",
+    "icon": "memory",
+    "isOpenSource": true,
+    "img": "https://picsum.photos/seed/llamacpp/600/400"
+  },
+  {
+    "id": "comfyui",
+    "name": "ComfyUI",
+    "category": "Image Gen",
+    "description": "The most powerful and modular stable diffusion GUI with a graph/nodes interface.",
+    "features": [
+      "Node-based workflow",
+      "Advanced SD",
+      "Custom pipelines",
+      "ControlNet"
+    ],
+    "pricing": "Free",
+    "link": "https://github.com/comfyanonymous/ComfyUI",
+    "tags": [
+      "image generation",
+      "gui",
+      "stable diffusion"
+    ],
+    "color": "danger",
+    "icon": "account_tree",
+    "isOpenSource": true,
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/comfyui/600/400"
+  },
+  {
+    "id": "langchain",
+    "name": "LangChain",
+    "category": "Coding",
+    "description": "A framework for developing applications powered by language models with composability.",
+    "features": [
+      "Agent framework",
+      "RAG chains",
+      "Vector store integrations",
+      "Memory"
+    ],
+    "pricing": "Free",
+    "link": "https://python.langchain.com",
+    "tags": [
+      "framework",
+      "llm",
+      "python"
+    ],
+    "color": "primary",
+    "icon": "link",
+    "isOpenSource": true,
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/langchain/600/400"
+  },
+  {
+    "id": "vllm",
+    "name": "vLLM",
+    "category": "Coding",
+    "description": "A high-throughput and memory-efficient LLM serving engine for production scale execution.",
+    "features": [
+      "PagedAttention",
+      "High throughput",
+      "OpenAI compatible API",
+      "Continuous batching"
+    ],
+    "pricing": "Free",
+    "link": "https://github.com/vllm-project/vllm",
+    "tags": [
+      "serving",
+      "production",
+      "fast"
+    ],
+    "color": "warning",
+    "icon": "bolt",
+    "isOpenSource": true,
+    "img": "https://picsum.photos/seed/vllm/600/400"
+  },
+  {
+    "id": "openinterpreter",
+    "name": "Open Interpreter",
+    "category": "Productivity",
+    "description": "Let language models run code on your computer in an open-source, locally running interface.",
+    "features": [
+      "Local code execution",
+      "Desktop control",
+      "Terminal interface",
+      "Web browsing"
+    ],
+    "pricing": "Free",
+    "link": "https://github.com/OpenInterpreter/open-interpreter",
+    "tags": [
+      "agent",
+      "cli",
+      "desktop"
+    ],
+    "color": "secondary",
+    "icon": "terminal",
+    "isOpenSource": true,
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/openint/600/400"
+  },
+  {
+    "id": "gpt4all",
+    "name": "GPT4All",
+    "category": "Productivity",
+    "description": "A free-to-use, locally running, privacy-aware chatbot. No GPU or internet required.",
+    "features": [
+      "Zero internet",
+      "Desktop GUI",
+      "Private chat",
+      "Documentation interaction"
+    ],
+    "pricing": "Free",
+    "link": "https://gpt4all.io",
+    "tags": [
+      "desktop",
+      "private",
+      "local"
+    ],
+    "color": "success",
+    "icon": "security",
+    "isOpenSource": true,
+    "img": "https://picsum.photos/seed/gpt4all/600/400"
+  },
+  {
+    "id": "difyai",
+    "name": "Dify AI",
+    "category": "Coding",
+    "description": "An open-source LLM app development platform. Orchestrate AI workflows and applications rapidly.",
+    "features": [
+      "Visual builder",
+      "BaaS",
+      "RAG engine",
+      "Team collaboration"
+    ],
+    "pricing": "Freemium",
+    "link": "https://dify.ai",
+    "tags": [
+      "builder",
+      "platform",
+      "nocode"
+    ],
+    "color": "primary",
+    "icon": "dashboard_customize",
+    "isOpenSource": true,
+    "img": "https://picsum.photos/seed/dify/600/400"
+  },
+  {
+    "id": "anythingllm",
+    "name": "AnythingLLM",
+    "category": "Productivity",
+    "description": "The all-in-one desktop & docker AI application that gives anyone a full RAG suite.",
+    "features": [
+      "RAG desktop application",
+      "Local vector DB",
+      "Document chatting",
+      "Whitelabeling"
+    ],
+    "pricing": "Free",
+    "link": "https://useanything.com",
+    "tags": [
+      "rag",
+      "chat",
+      "app"
+    ],
+    "color": "danger",
+    "icon": "folder_open",
+    "isOpenSource": true,
+    "img": "https://picsum.photos/seed/anythingllm/600/400"
+  },
+  {
+    "id": "lmstudio",
+    "name": "LM Studio",
+    "category": "Coding",
+    "description": "Discover, download, and run local LLMs in a beautiful UI. Drop-in replacement for OpenAI endpoints.",
+    "features": [
+      "Hugging Face integration",
+      "Server mode",
+      "Model discovery",
+      "Cross-platform"
+    ],
+    "pricing": "Free",
+    "link": "https://lmstudio.ai",
+    "tags": [
+      "gui",
+      "local",
+      "server"
+    ],
+    "color": "warning",
+    "icon": "find_in_page",
+    "isOpenSource": true,
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/lmstudio/600/400"
+  },
+  {
+    "id": "notebooklm",
+    "name": "Google NotebookLM",
+    "category": "Productivity",
+    "description": "An AI-first notebook by Google. Upload your documents to ground the AI in your own sources and let it answer questions or summarize insights instantly.",
+    "features": [
+      "Source grounding",
+      "Audio Overviews",
+      "Google Drive sync",
+      "Auto-summarization"
+    ],
+    "pricing": "Free",
+    "link": "https://notebooklm.google.com/",
+    "tags": [
+      "google",
+      "research",
+      "notes",
+      "rag"
+    ],
+    "color": "primary",
+    "icon": "auto_stories",
+    "isOpenSource": false,
+    "isTopRated": true,
+    "img": "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&q=80&w=600&h=400"
   }
 ]
