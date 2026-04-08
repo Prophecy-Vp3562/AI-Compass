@@ -1,159 +1,352 @@
 <!DOCTYPE html>
 <html class="dark" lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>AI Compass | Discover the Future of AI</title>
-    
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    <link href="css/style.css" rel="stylesheet"/>
 
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "background": "#0a0a0f",
-              "on-surface": "#e4e1e9",
-              "on-surface-variant": "#bbc9cf",
-              "surface-container-low": "#1b1b20",
-              "surface-container-lowest": "#0e0e13",
-              "primary": "#a8e8ff",
-              "secondary": "#ddb7ff",
-              "success": "#10b981",
-              "warning": "#f59e0b",
-              "danger": "#f43f5e",
-              "tertiary-container": "#ffaaca"
-            },
-            fontFamily: {
-              "headline": ["Space Grotesk"],
-              "body": ["Inter"]
-            }
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>AI Compass | Discover the Future of AI</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#0a0a0f",
+            "on-surface": "#e4e1e9",
+            "on-surface-variant": "#bbc9cf",
+            "surface-container-low": "#1b1b20",
+            "surface-container-lowest": "#0e0e13",
+            "primary": "#a8e8ff",
+            "secondary": "#ddb7ff",
+            "success": "#10b981",
+            "warning": "#f59e0b",
+            "danger": "#f43f5e",
+            "tertiary-container": "#ffaaca"
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk"],
+            "body": ["Inter"]
           }
         }
       }
-    </script>
+    }
+  </script>
 </head>
+
 <body class="font-body selection:bg-primary-container selection:text-on-primary-container">
-    <div class="mesh-gradient"></div>
+  <div class="mesh-gradient"></div>
 
-    <!-- Top Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-white/5 dark:bg-black/20 backdrop-blur-xl border-b border-white/10 shadow-[0_8px_32px_0_rgba(0,212,255,0.05)]">
-        <div class="flex justify-between items-center h-16 md:h-20 px-4 md:px-12 w-full max-w-[1920px] mx-auto">
-            <div class="text-xl md:text-2xl font-black tracking-tighter text-white bg-clip-text bg-gradient-to-r from-[#a8e8ff] to-[#00d4ff] font-headline cursor-pointer" onclick="window.location.reload()">
-                NEON CURATOR
-            </div>
-            <div class="hidden md:flex gap-8 items-center">
-                <a class="text-white font-bold border-b-2 border-[#00d4ff] pb-1 font-headline" href="#">Explore</a>
-                <a class="text-white/60 hover:text-white transition-colors font-headline" href="#categories">Categories</a>
-                <a class="text-white/60 hover:text-white transition-colors font-headline" href="#">Pricing</a>
-            </div>
+  <!-- Top Navigation -->
+  <nav
+    class="fixed top-0 w-full z-50 bg-white/5 dark:bg-black/20 backdrop-blur-xl border-b border-white/10 shadow-[0_8px_32px_0_rgba(0,212,255,0.05)]">
+    <div class="flex justify-between items-center h-16 md:h-20 px-4 md:px-12 w-full max-w-[1920px] mx-auto">
+      <div
+        class="text-xl md:text-2xl font-black tracking-tighter text-white bg-clip-text bg-gradient-to-r from-[#a8e8ff] to-[#00d4ff] font-headline cursor-pointer"
+        onclick="window.location.reload()">
+        Ai Compass
+      </div>
+      <div class="hidden md:flex gap-8 items-center ml-auto mr-4">
+        <a class="text-white font-bold border-b-2 border-[#00d4ff] pb-1 font-headline" href="#">Explore</a>
+        <a class="text-white/60 hover:text-white transition-colors font-headline" href="#categories">Categories</a>
+        <a class="text-white/60 hover:text-white transition-colors font-headline" href="#">Pricing</a>
+      </div>
+      <!-- Profile Button -->
+      <button id="profileBtn" class="relative flex items-center gap-2.5 group cursor-pointer">
+        <div
+          class="w-9 h-9 rounded-full bg-gradient-to-br from-[#00d4ff] to-[#a855f7] flex items-center justify-center text-black font-bold text-sm shadow-[0_0_14px_rgba(0,212,255,0.4)] group-hover:shadow-[0_0_22px_rgba(0,212,255,0.7)] transition-shadow">
+          <span class="material-symbols-outlined text-[18px]">person</span>
         </div>
-    </nav>
-    
-    <main class="pt-20 pb-24 md:pb-0">
-        <!-- Hero Section -->
-        <section class="relative min-h-[870px] flex flex-col items-center justify-center px-6 overflow-hidden">
-            <div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
-            <div class="absolute bottom-1/4 -right-20 w-80 h-80 bg-secondary/10 rounded-full blur-[100px]"></div>
-            <h1 class="font-headline text-4xl sm:text-5xl md:text-8xl lg:text-[100px] font-bold tracking-tighter text-center leading-tight mb-6 md:mb-8 mt-10 md:mt-0">
-                Discover the <br/>
-                <span class="text-gradient">Future of AI</span>
-            </h1>
-            
-            <!-- Search Bar -->
-            <div class="relative w-full max-w-2xl group z-20">
-                <div class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full opacity-20 group-focus-within:opacity-40 blur transition-all"></div>
-                <div class="relative flex items-center bg-surface-container-lowest/40 backdrop-blur-xl border border-white/15 rounded-full px-4 py-3 md:px-6 md:py-4">
-                    <span class="material-symbols-outlined text-primary mr-4" style="font-variation-settings: 'FILL' 1;">search</span>
-                    <input id="searchInput" autocomplete="off" class="bg-transparent border-none focus:ring-0 text-white w-full placeholder:text-white/30 text-sm md:text-base" placeholder="Search AI tools..." type="text"/>
-                    <div id="searchDropdown" class="absolute top-full left-0 w-full mt-2 bg-[#131318]/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden hidden z-50 max-h-80 overflow-y-auto flex flex-col p-2 space-y-1 bento-scroll"></div>
-                </div>
-            </div>
-            <p class="mt-8 text-on-surface-variant font-medium text-center max-w-lg">
-                Curated directory of the world's most powerful AI tools. Editorial precision, human-verified.
-            </p>
-        </section>
+        <span
+          class="hidden lg:block text-sm font-semibold text-white/80 group-hover:text-white transition-colors">Profile</span>
+        <span
+          class="material-symbols-outlined text-white/30 text-base group-hover:text-white/60 transition-colors hidden lg:block">keyboard_arrow_down</span>
+        <!-- Dropdown -->
+        <div id="profileDropdown"
+          class="hidden absolute top-12 right-0 w-52 bg-[#0f0f1a] border border-white/10 rounded-2xl shadow-2xl py-2 z-50 backdrop-blur-xl text-left">
+          <div class="px-4 py-3 border-b border-white/10">
+            <p class="text-sm font-bold text-white">My Account</p>
+            <p class="text-xs text-white/40 mt-0.5">Manage your profile</p>
+          </div>
+          <a href="#"
+            class="flex items-center gap-3 px-4 py-2.5 hover:bg-white/5 transition-colors text-sm text-white/70 hover:text-white">
+            <span class="material-symbols-outlined text-base">manage_accounts</span>Settings
+          </a>
+          <a href="#"
+            class="flex items-center gap-3 px-4 py-2.5 hover:bg-white/5 transition-colors text-sm text-white/70 hover:text-white">
+            <span class="material-symbols-outlined text-base">bookmark</span>Saved Tools
+          </a>
+          <a href="#"
+            class="flex items-center gap-3 px-4 py-2.5 hover:bg-white/5 transition-colors text-sm text-white/70 hover:text-white">
+            <span class="material-symbols-outlined text-base">logout</span>Sign Out
+          </a>
+        </div>
+      </button>
+    </div>
+  </nav>
 
-        <!-- Category Nav -->
-        <section id="categories" class="px-6 md:px-12 py-12">
-            <div class="flex items-center justify-between mb-8">
-                <h2 class="font-headline text-2xl font-bold">Categories</h2>
-                <div class="flex gap-2">
-                    <button id="btnScrollLeft" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5"><span class="material-symbols-outlined">chevron_left</span></button>
-                    <button id="btnScrollRight" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5"><span class="material-symbols-outlined">chevron_right</span></button>
-                </div>
-            </div>
-            <div id="categoryContainer" class="flex overflow-x-auto gap-4 bento-scroll pb-6" style="scrollbar-width: none; -ms-overflow-style: none;">
-                <div class="flex-none w-48 h-48 glass-card rounded-lg p-6 flex flex-col justify-between hover:scale-105 hover:bg-white/10 transition-all cursor-pointer group" onclick="filterByCategory('Productivity')">
-                    <span class="material-symbols-outlined text-teal-400 text-3xl">task_alt</span>
-                    <div><p class="font-headline font-bold text-lg">Productivity</p></div>
-                </div>
-                <div class="flex-none w-48 h-48 glass-card rounded-lg p-6 flex flex-col justify-between hover:scale-105 hover:bg-white/10 transition-all cursor-pointer group" onclick="filterByCategory('Writing')">
-                    <span class="material-symbols-outlined text-purple-400 text-3xl">edit_document</span>
-                    <div><p class="font-headline font-bold text-lg">Writing</p></div>
-                </div>
-                <div class="flex-none w-48 h-48 glass-card rounded-lg p-6 flex flex-col justify-between hover:scale-105 hover:bg-white/10 transition-all cursor-pointer group" onclick="filterByCategory('Marketing')">
-                    <span class="material-symbols-outlined text-primary text-3xl">rocket_launch</span>
-                    <div><p class="font-headline font-bold text-lg">Marketing</p></div>
-                </div>
-                <div class="flex-none w-48 h-48 glass-card rounded-lg p-6 flex flex-col justify-between hover:scale-105 hover:bg-white/10 transition-all cursor-pointer group" onclick="filterByCategory('Coding')">
-                    <span class="material-symbols-outlined text-secondary text-3xl">code</span>
-                    <div><p class="font-headline font-bold text-lg">Coding & Dev</p></div>
-                </div>
-                <div class="flex-none w-48 h-48 glass-card rounded-lg p-6 flex flex-col justify-between hover:scale-105 hover:bg-white/10 transition-all cursor-pointer group" onclick="filterByCategory('Video')">
-                    <span class="material-symbols-outlined text-warning text-3xl">video_library</span>
-                    <div><p class="font-headline font-bold text-lg">Video Gen</p></div>
-                </div>
-                <div class="flex-none w-48 h-48 glass-card rounded-lg p-6 flex flex-col justify-between hover:scale-105 hover:bg-white/10 transition-all cursor-pointer group" onclick="filterByCategory('Music')">
-                    <span class="material-symbols-outlined text-success text-3xl">music_note</span>
-                    <div><p class="font-headline font-bold text-lg">Music Gen</p></div>
-                </div>
-                <div class="flex-none w-48 h-48 glass-card rounded-lg p-6 flex flex-col justify-between hover:scale-105 hover:bg-white/10 transition-all cursor-pointer group" onclick="filterByCategory('Image Gen')">
-                    <span class="material-symbols-outlined text-tertiary-container text-3xl">image</span>
-                    <div><p class="font-headline font-bold text-lg">Image Gen</p></div>
-                </div>
-                <div class="flex-none w-48 h-48 glass-card rounded-lg p-6 flex flex-col justify-between hover:scale-105 hover:bg-white/10 transition-all cursor-pointer group" onclick="filterByCategory('Social Media')">
-                    <span class="material-symbols-outlined text-[#f43f5e] text-3xl">forum</span>
-                    <div><p class="font-headline font-bold text-lg">Social Media</p></div>
-                </div>
-                <div class="flex-none w-48 h-48 glass-card rounded-lg p-6 flex flex-col justify-between hover:scale-105 hover:bg-white/10 transition-all cursor-pointer group" onclick="filterByCategory('Prompt Gen')">
-                    <span class="material-symbols-outlined text-primary text-3xl">terminal</span>
-                    <div><p class="font-headline font-bold text-lg">Prompt Gen</p></div>
-                </div>
-            </div>
-        </section>
+  <main class="pt-20 pb-24 md:pb-0">
+    <!-- Hero Section -->
+    <section class="relative min-h-[870px] flex flex-col items-center justify-center px-6 overflow-hidden">
+      <div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-1/4 -right-20 w-80 h-80 bg-secondary/10 rounded-full blur-[100px]"></div>
+      <!-- Parallax Floating Tool Icons -->
+      <div class="absolute top-[20%] left-[10%] opacity-20 hidden lg:block hover:opacity-100 transition-opacity">
+        <img class="w-20 h-20 rounded-2xl border border-white/10 backdrop-blur-md"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPoD_LdhH-zlR9XaJbBMFL02L-bkB1AsZ--FdhfkgGqkr6LKs79vzBJb777Q0mdH4wXdheAQe3QC5ePpTBYj4E8t-G5weJgvfEpifpAR2ncggiOos2BCK9Y8dxEh_Fm29gRDWCiXZpETAHHEmPr4wq5g4GIug-49QZY5z814qxDFsxONA0MBJOTArAA_IC5ORTQ-MO6yylLV_tbtIf2vvdRCPYZxIWfmYwMINYIfzXoxPlUJbHE72v0XSLJOK0l4mGxQMwW8RNNWi2"
+          alt="chatgpt float" />
+      </div>
+      <div class="absolute bottom-[30%] right-[15%] opacity-20 hidden lg:block hover:opacity-100 transition-opacity">
+        <img class="w-24 h-24 rounded-2xl border border-white/10 backdrop-blur-md"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0wxJno89Hcuhqp1j8b2tCjxW_C1hnI6XBc9bWmEL3C8e52Y5M57qrcMWVAmGh7Eq8SOzYnLP1mdk6l3_9OGaHGnk5Mmd_DihgskGPSbKfnxTEievj9bUd0XYMhB8ClfdOSvwLi3W_P76dn6T50ZzoHft0-dVpgeRVc0pJmjoT58DI2NENDH8t_3WZkpy-1uNwIgn4TdNnI1QHNgQnMwgPRJ-pd_71pkl2O10JfQoHAlZG1bmKLBdgvoVpRNyPtj6_y1qvc3YcTl6e"
+          alt="midjourney float" />
+      </div>
+      <h1
+        class="font-headline text-4xl sm:text-5xl md:text-8xl lg:text-[100px] font-bold tracking-tighter text-center leading-tight mb-6 md:mb-8 mt-10 md:mt-0">
+        Discover the <br />
+        <span class="text-gradient">Future of AI</span>
+      </h1>
 
-        <!-- Sticky Filter Bar -->
-        <section class="sticky top-20 z-40 px-6 md:px-12 py-6">
-            <div class="max-w-[1920px] mx-auto bg-surface-container-low/80 backdrop-blur-2xl border border-white/10 rounded-2xl md:rounded-full px-4 md:px-8 py-4 md:py-3 flex flex-col md:flex-row items-start md:items-center justify-between shadow-2xl gap-4 md:gap-0">
-                <div class="flex items-center gap-4 overflow-x-auto no-scrollbar w-full md:w-auto pb-2 md:pb-0">
-                    <button id="btnFeatured" class="filter-btn whitespace-nowrap px-4 py-1.5 rounded-full bg-primary text-on-primary text-sm font-bold transition-colors shadow-[0_0_15px_rgba(0,212,255,0.3)]">Featured</button>
-                    <button id="btnTopRated" class="filter-btn whitespace-nowrap px-4 py-1.5 rounded-full border border-white/10 hover:bg-white/5 text-sm font-medium transition-colors">Top Rated</button>
-                    <button id="btnNewest" class="filter-btn whitespace-nowrap px-4 py-1.5 rounded-full border border-white/10 hover:bg-white/5 text-sm font-medium transition-colors">Newest</button>
-                    <button id="btnOpenSource" class="filter-btn whitespace-nowrap px-4 py-1.5 rounded-full border border-white/10 hover:bg-white/5 text-sm font-medium transition-colors">Open Source</button>
-                </div>
-            </div>
-        </section>
+      <!-- Search Bar -->
+      <div class="relative w-full max-w-2xl group z-20">
+        <div
+          class="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full opacity-20 group-focus-within:opacity-40 blur transition-all">
+        </div>
+        <div
+          class="relative flex items-center bg-surface-container-lowest/40 backdrop-blur-xl border border-white/15 rounded-full px-4 py-3 md:px-6 md:py-4">
+          <span class="material-symbols-outlined text-primary mr-4"
+            style="font-variation-settings: 'FILL' 1;">search</span>
+          <input id="searchInput" autocomplete="off"
+            class="bg-transparent border-none focus:ring-0 text-white w-full placeholder:text-white/30 text-sm md:text-base"
+            placeholder="Search AI tools..." type="text" />
+          <div id="searchDropdown"
+            class="absolute top-full left-0 w-full mt-2 bg-[#131318]/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden hidden z-50 max-h-80 overflow-y-auto flex flex-col p-2 space-y-1 bento-scroll">
+          </div>
+        </div>
+      </div>
+      <p class="mt-8 text-on-surface-variant font-medium text-center max-w-lg">
+        Curated directory of the world's most powerful AI tools. Editorial precision, human-verified.
+      </p>
+    </section>
 
-        <!-- Main Tools Grids -->
-        <section class="px-6 md:px-12 py-12 max-w-[1920px] mx-auto min-h-[500px]">
-            <h2 id="sectionTitle" class="font-headline text-3xl font-bold mb-10 flex items-center gap-3">
-                <span class="w-12 h-0.5 bg-primary"></span>
-                Featured Selections
-            </h2>
-            
-            <div id="featuredGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 transition-opacity duration-300"></div>
-            <div id="newestGrid" class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 transition-opacity duration-300"></div>
-            <div id="topRatedGrid" class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 transition-opacity duration-300"></div>
-            <div id="openSourceGrid" class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 transition-opacity duration-300"></div>
-            <div id="searchResultsGrid" class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 transition-opacity duration-300"></div>
-        </section>
-    </main>
-    
-    <script src="js/main.js"></script>
+    <!-- Category Nav -->
+    <section id="categories" class="px-6 md:px-12 py-12">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="font-headline text-2xl font-bold">Categories</h2>
+        <div class="flex gap-2">
+          <button id="btnScrollLeft"
+            class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5"><span
+              class="material-symbols-outlined">chevron_left</span></button>
+          <button id="btnScrollRight"
+            class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5"><span
+              class="material-symbols-outlined">chevron_right</span></button>
+        </div>
+      </div>
+      <div id="categoryContainer" class="flex overflow-x-auto gap-4 bento-scroll pb-6"
+        style="scrollbar-width: none; -ms-overflow-style: none;">
+        <!-- Productivity -->
+        <div
+          class="flex-none w-48 h-48 rounded-lg overflow-hidden cursor-pointer group relative transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_32px_rgba(20,184,166,0.25)]"
+          onclick="filterByCategory('Productivity')">
+          <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=400&h=400&q=75"
+            alt="Productivity"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-teal-900/30"></div>
+          <div class="relative h-full p-5 flex flex-col justify-between">
+            <span class="material-symbols-outlined text-teal-400 text-3xl drop-shadow-lg">task_alt</span>
+            <div>
+              <p class="font-headline font-bold text-lg text-white drop-shadow">Productivity</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Writing & Humanizer -->
+        <div
+          class="flex-none w-48 h-48 rounded-lg overflow-hidden cursor-pointer group relative transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_32px_rgba(168,85,247,0.25)]"
+          onclick="filterByCategory('Writing')">
+          <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=400&h=400&q=75"
+            alt="Writing"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-purple-900/30"></div>
+          <div class="relative h-full p-5 flex flex-col justify-between">
+            <span class="material-symbols-outlined text-purple-400 text-3xl drop-shadow-lg">edit_document</span>
+            <div>
+              <p class="font-headline font-bold text-lg text-white drop-shadow">Writing</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Marketing -->
+        <div
+          class="flex-none w-48 h-48 rounded-lg overflow-hidden cursor-pointer group relative transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_32px_rgba(0,212,255,0.25)]"
+          onclick="filterByCategory('Marketing')">
+          <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=400&h=400&q=75"
+            alt="Marketing"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-cyan-900/30"></div>
+          <div class="relative h-full p-5 flex flex-col justify-between">
+            <span class="material-symbols-outlined text-[#00d4ff] text-3xl drop-shadow-lg">rocket_launch</span>
+            <div>
+              <p class="font-headline font-bold text-lg text-white drop-shadow">Marketing</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coding & Dev -->
+        <div
+          class="flex-none w-48 h-48 rounded-lg overflow-hidden cursor-pointer group relative transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_32px_rgba(221,183,255,0.25)]"
+          onclick="filterByCategory('Coding')">
+          <img src="https://images.unsplash.com/photo-1587620962725-abab19836100?auto=format&fit=crop&w=400&h=400&q=75"
+            alt="Coding"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-violet-900/30"></div>
+          <div class="relative h-full p-5 flex flex-col justify-between">
+            <span class="material-symbols-outlined text-[#ddb7ff] text-3xl drop-shadow-lg">code</span>
+            <div>
+              <p class="font-headline font-bold text-lg text-white drop-shadow">Coding &amp; Dev</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Gen -->
+        <div
+          class="flex-none w-48 h-48 rounded-lg overflow-hidden cursor-pointer group relative transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_32px_rgba(245,158,11,0.25)]"
+          onclick="filterByCategory('Video')">
+          <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=400&h=400&q=75"
+            alt="Video"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-amber-900/30"></div>
+          <div class="relative h-full p-5 flex flex-col justify-between">
+            <span class="material-symbols-outlined text-amber-400 text-3xl drop-shadow-lg">video_library</span>
+            <div>
+              <p class="font-headline font-bold text-lg text-white drop-shadow">Video Gen</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Music Gen -->
+        <div
+          class="flex-none w-48 h-48 rounded-lg overflow-hidden cursor-pointer group relative transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_32px_rgba(16,185,129,0.25)]"
+          onclick="filterByCategory('Music')">
+          <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=400&h=400&q=75"
+            alt="Music"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-emerald-900/30"></div>
+          <div class="relative h-full p-5 flex flex-col justify-between">
+            <span class="material-symbols-outlined text-emerald-400 text-3xl drop-shadow-lg">music_note</span>
+            <div>
+              <p class="font-headline font-bold text-lg text-white drop-shadow">Music Gen</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image Gen -->
+        <div
+          class="flex-none w-48 h-48 rounded-lg overflow-hidden cursor-pointer group relative transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_32px_rgba(255,210,180,0.25)]"
+          onclick="filterByCategory('Image Gen')">
+          <img src="https://images.unsplash.com/photo-1642427749670-f20e2e76ed8c?auto=format&fit=crop&w=400&h=400&q=75"
+            alt="Image Gen"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-pink-900/30"></div>
+          <div class="relative h-full p-5 flex flex-col justify-between">
+            <span class="material-symbols-outlined text-pink-300 text-3xl drop-shadow-lg">image</span>
+            <div>
+              <p class="font-headline font-bold text-lg text-white drop-shadow">Image Gen</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Media -->
+        <div
+          class="flex-none w-48 h-48 rounded-lg overflow-hidden cursor-pointer group relative transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_32px_rgba(244,63,94,0.25)]"
+          onclick="filterByCategory('Social Media')">
+          <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=400&h=400&q=75"
+            alt="Social Media"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-rose-900/30"></div>
+          <div class="relative h-full p-5 flex flex-col justify-between">
+            <span class="material-symbols-outlined text-rose-400 text-3xl drop-shadow-lg">forum</span>
+            <div>
+              <p class="font-headline font-bold text-lg text-white drop-shadow">Social Media</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Prompt Gen -->
+        <div
+          class="flex-none w-48 h-48 rounded-lg overflow-hidden cursor-pointer group relative transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_32px_rgba(0,212,255,0.25)]"
+          onclick="filterByCategory('Prompt Gen')">
+          <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=400&h=400&q=75"
+            alt="Prompt"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-sky-900/30"></div>
+          <div class="relative h-full p-5 flex flex-col justify-between">
+            <span class="material-symbols-outlined text-sky-400 text-3xl drop-shadow-lg">terminal</span>
+            <div>
+              <p class="font-headline font-bold text-lg text-white drop-shadow">Prompt Gen</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sticky Filter Bar -->
+    <section class="sticky top-20 z-40 px-6 md:px-12 py-6">
+      <div
+        class="max-w-[1920px] mx-auto bg-surface-container-low/80 backdrop-blur-2xl border border-white/10 rounded-2xl md:rounded-full px-4 md:px-8 py-4 md:py-3 flex flex-col md:flex-row items-start md:items-center justify-between shadow-2xl gap-4 md:gap-0">
+        <div class="flex items-center gap-4 overflow-x-auto no-scrollbar w-full md:w-auto pb-2 md:pb-0">
+          <button id="btnFeatured"
+            class="filter-btn whitespace-nowrap px-4 py-1.5 rounded-full bg-primary text-on-primary text-sm font-bold transition-colors shadow-[0_0_15px_rgba(0,212,255,0.3)]">Featured</button>
+          <button id="btnTopRated"
+            class="filter-btn whitespace-nowrap px-4 py-1.5 rounded-full border border-white/10 hover:bg-white/5 text-sm font-medium transition-colors">Top
+            Rated</button>
+          <button id="btnNewest"
+            class="filter-btn whitespace-nowrap px-4 py-1.5 rounded-full border border-white/10 hover:bg-white/5 text-sm font-medium transition-colors">Newest</button>
+          <button id="btnOpenSource"
+            class="filter-btn whitespace-nowrap px-4 py-1.5 rounded-full border border-white/10 hover:bg-white/5 text-sm font-medium transition-colors">Open
+            Source</button>
+          <div class="w-px h-5 bg-white/10 mx-1 hidden md:block"></div>
+          <button id="btnFree"
+            class="filter-btn whitespace-nowrap px-4 py-1.5 rounded-full border border-success/40 text-success hover:bg-success/10 text-sm font-medium transition-colors flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-success inline-block"></span>Free
+          </button>
+          <button id="btnPremium"
+            class="filter-btn whitespace-nowrap px-4 py-1.5 rounded-full border border-danger/40 text-danger hover:bg-danger/10 text-sm font-medium transition-colors flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-danger inline-block"></span>Premium
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Tools Grids -->
+    <section class="px-6 md:px-12 py-12 max-w-[1920px] mx-auto min-h-[500px]">
+      <h2 id="sectionTitle" class="font-headline text-3xl font-bold mb-10 flex items-center gap-3">
+        <span class="w-12 h-0.5 bg-primary"></span>
+        Featured Selections
+      </h2>
+
+      <div id="featuredGrid"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 transition-opacity duration-300"></div>
+      <div id="newestGrid"
+        class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 transition-opacity duration-300"></div>
+      <div id="topRatedGrid"
+        class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 transition-opacity duration-300"></div>
+      <div id="openSourceGrid"
+        class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 transition-opacity duration-300"></div>
+      <div id="searchResultsGrid"
+        class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 transition-opacity duration-300"></div>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
 </body>
+
 </html>

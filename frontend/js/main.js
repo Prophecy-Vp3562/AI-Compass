@@ -12,6 +12,8 @@ const btnFeatured = document.getElementById('btnFeatured');
 const btnNewest = document.getElementById('btnNewest');
 const btnTopRated = document.getElementById('btnTopRated');
 const btnOpenSource = document.getElementById('btnOpenSource');
+const btnFree = document.getElementById('btnFree');
+const btnPremium = document.getElementById('btnPremium');
 
 const searchInput = document.getElementById('searchInput');
 const searchDropdown = document.getElementById('searchDropdown');
@@ -95,11 +97,13 @@ function resetButtons() {
     [btnFeatured, btnNewest, btnTopRated, btnOpenSource].forEach(btn => {
         if(btn) btn.className = "filter-btn whitespace-nowrap px-4 py-1.5 rounded-full border border-white/10 hover:bg-white/5 text-sm font-medium transition-colors cursor-pointer";
     });
+    if(btnFree) btnFree.className = "filter-btn whitespace-nowrap px-4 py-1.5 rounded-full border border-success/40 text-success hover:bg-success/10 text-sm font-medium transition-colors flex items-center gap-1.5 cursor-pointer";
+    if(btnPremium) btnPremium.className = "filter-btn whitespace-nowrap px-4 py-1.5 rounded-full border border-danger/40 text-danger hover:bg-danger/10 text-sm font-medium transition-colors flex items-center gap-1.5 cursor-pointer";
 }
 
 function setActiveButton(btn) {
     resetButtons();
-    if(btn) btn.className = "filter-btn whitespace-nowrap px-4 py-1.5 rounded-full bg-primary text-on-primary text-sm font-bold transition-colors shadow-[0_0_15px_rgba(0,212,255,0.3)] cursor-pointer";
+    if(btn) btn.className = "filter-btn whitespace-nowrap px-4 py-1.5 rounded-full bg-primary text-on-primary text-sm font-bold transition-colors shadow-[0_0_15px_rgba(0,212,255,0.3)] cursor-pointer flex items-center gap-1.5";
 }
 
 function triggerStaggerAnimation(grid) {
@@ -141,6 +145,10 @@ function renderActiveTab() {
         renderTopRatedTab();
     } else if (btnOpenSource && btnOpenSource.classList.contains('bg-primary')) {
         renderOpenSourceTab();
+    } else if (btnFree && btnFree.classList.contains('bg-primary')) {
+        renderFreeTab();
+    } else if (btnPremium && btnPremium.classList.contains('bg-primary')) {
+        renderPremiumTab();
     } else {
         renderFeaturedTab();
     }
@@ -174,11 +182,38 @@ function renderOpenSourceTab() {
     showGrid(openSourceGrid);
 }
 
+function renderFreeTab() {
+    setActiveButton(btnFree);
+    sectionTitle.innerHTML = `<span class="w-12 h-0.5 bg-primary"></span> Free Tools`;
+    searchResultsGrid.innerHTML = allTools.filter(t => t.pricing && t.pricing.toLowerCase() === 'free').map(renderToolCard).join('');
+    showGrid(searchResultsGrid);
+}
+
+function renderPremiumTab() {
+    setActiveButton(btnPremium);
+    sectionTitle.innerHTML = `<span class="w-12 h-0.5 bg-primary"></span> Premium Tools`;
+    searchResultsGrid.innerHTML = allTools.filter(t => t.pricing && t.pricing.toLowerCase() === 'premium').map(renderToolCard).join('');
+    showGrid(searchResultsGrid);
+}
+
 // Event Listeners for Tabs
 if(btnFeatured) btnFeatured.addEventListener('click', renderFeaturedTab);
 if(btnNewest) btnNewest.addEventListener('click', renderNewestTab);
 if(btnTopRated) btnTopRated.addEventListener('click', renderTopRatedTab);
 if(btnOpenSource) btnOpenSource.addEventListener('click', renderOpenSourceTab);
+if(btnFree) btnFree.addEventListener('click', renderFreeTab);
+if(btnPremium) btnPremium.addEventListener('click', renderPremiumTab);
+
+// Profile Dropdown functionality
+const profileBtn = document.getElementById('profileBtn');
+const profileDropdown = document.getElementById('profileDropdown');
+
+if(profileBtn && profileDropdown) {
+    profileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        profileDropdown.classList.toggle('hidden');
+    });
+}
 
 // Category Scrolling
 document.getElementById('btnScrollLeft')?.addEventListener('click', () => {
@@ -193,6 +228,16 @@ let searchTimeout;
 document.addEventListener('click', (e) => {
     if (searchInput && searchDropdown && !searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
         searchDropdown.classList.add('hidden');
+        const searchOverlay = document.getElementById('searchOverlay');
+        const searchContainer = document.getElementById('searchContainer');
+        if (searchOverlay && searchContainer) {
+            searchOverlay.classList.add('opacity-0');
+            setTimeout(() => { if(searchOverlay.classList.contains('opacity-0')) searchOverlay.classList.add('hidden'); }, 300);
+            searchContainer.classList.remove('scale-105', '-translate-y-2');
+        }
+    }
+    if (profileDropdown && !profileDropdown.contains(e.target) && !profileBtn.contains(e.target)) {
+        profileDropdown.classList.add('hidden');
     }
 });
 
@@ -209,6 +254,37 @@ if(searchInput) {
         wave.style.left = `${clickX}px`; wave.style.top = `${clickY}px`;
         document.body.appendChild(wave);
         wave.addEventListener('animationend', () => wave.remove());
+    });
+
+    searchInput.addEventListener('focus', () => {
+        const searchOverlay = document.getElementById('searchOverlay');
+        const searchContainer = document.getElementById('searchContainer');
+        if (searchOverlay && searchContainer) {
+            searchOverlay.classList.remove('hidden');
+            setTimeout(() => searchOverlay.classList.remove('opacity-0'), 10);
+            searchContainer.classList.add('scale-105', '-translate-y-2');
+        }
+    });
+
+    searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            const query = e.target.value.trim();
+            if (query !== '') {
+                const sectionTitle = document.getElementById('sectionTitle');
+                if (sectionTitle) sectionTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                searchDropdown.classList.add('hidden');
+                const searchOverlay = document.getElementById('searchOverlay');
+                const searchContainer = document.getElementById('searchContainer');
+                if (searchOverlay && searchContainer) {
+                    searchOverlay.classList.add('opacity-0');
+                    setTimeout(() => { if(searchOverlay.classList.contains('opacity-0')) searchOverlay.classList.add('hidden'); }, 300);
+                    searchContainer.classList.remove('scale-105', '-translate-y-2');
+                }
+                searchInput.blur();
+            }
+        }
     });
 
     searchInput.addEventListener('input', (e) => {
@@ -228,7 +304,7 @@ if(searchInput) {
                 
                 if (tools.length > 0) {
                     searchDropdown.innerHTML = tools.map(tool => `
-                        <div class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-xl cursor-pointer transition-colors group" onclick="document.getElementById('searchInput').value='${tool.name.replace(/'/g, "\\'")}'; document.getElementById('searchInput').dispatchEvent(new Event('input'))">
+                        <div class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-xl cursor-pointer transition-colors group" onclick="document.getElementById('searchInput').value='${tool.name.replace(/'/g, "\\'")}'; document.getElementById('searchInput').dispatchEvent(new Event('input')); setTimeout(() => document.getElementById('searchInput').dispatchEvent(new KeyboardEvent('keydown', {key: 'Enter'})), 100);">
                             <span class="material-symbols-outlined text-${tool.color || 'primary'} text-xl group-hover:scale-110 transition-transform">${tool.icon || 'star'}</span>
                             <div class="flex flex-col">
                                 <span class="text-white font-medium text-sm font-headline">${tool.name}</span>

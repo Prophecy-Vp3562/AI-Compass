@@ -20,7 +20,7 @@
     "color": "danger",
     "icon": "forum",
     "isTopRated": true,
-    "img": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=600&h=400&auto=format&fit=crop"
+    "img": "https://picsum.photos/seed/chatgpt/600/400"
   },
   {
     "id": "cursor",
@@ -294,7 +294,7 @@
     "icon": "integration_instructions",
     "isNew": true,
     "gradient": "from-indigo-900/40 to-black",
-    "img": "https://www.transparenttextures.com/patterns/cubes.png"
+    "img": "https://picsum.photos/seed/prismai/600/400"
   },
   {
     "id": "websitepublisher",
@@ -317,7 +317,8 @@
     "color": "warning",
     "icon": "language",
     "isNew": true,
-    "gradient": "from-[#1b1b20] to-[#0d0d12]"
+    "gradient": "from-[#1b1b20] to-[#0d0d12]",
+    "img": "https://picsum.photos/seed/websitepublisher/600/400"
   },
   {
     "id": "autonoma",
@@ -340,7 +341,8 @@
     "color": "danger",
     "icon": "bug_report",
     "isNew": true,
-    "gradient": "from-green-900/30 to-[#0a0a0f]"
+    "gradient": "from-green-900/30 to-[#0a0a0f]",
+    "img": "https://picsum.photos/seed/autonoma/600/400"
   },
   {
     "id": "likeclaw",
@@ -363,7 +365,8 @@
     "color": "warning",
     "icon": "webhook",
     "isNew": true,
-    "gradient": "from-purple-900/30 to-[#0a0a0f]"
+    "gradient": "from-purple-900/30 to-[#0a0a0f]",
+    "img": "https://picsum.photos/seed/likeclaw/600/400"
   },
   {
     "id": "averi",
@@ -386,7 +389,8 @@
     "color": "warning",
     "icon": "campaign",
     "isNew": true,
-    "gradient": "from-blue-900/30 to-[#0a0a0f]"
+    "gradient": "from-blue-900/30 to-[#0a0a0f]",
+    "img": "https://picsum.photos/seed/averi/600/400"
   },
   {
     "id": "freebeat",
@@ -409,7 +413,8 @@
     "color": "success",
     "icon": "music_video",
     "isNew": true,
-    "gradient": "from-teal-900/30 to-[#0a0a0f]"
+    "gradient": "from-teal-900/30 to-[#0a0a0f]",
+    "img": "https://picsum.photos/seed/freebeat/600/400"
   },
   {
     "id": "kinovi",
@@ -432,7 +437,8 @@
     "color": "danger",
     "icon": "movie",
     "isNew": true,
-    "gradient": "from-orange-900/30 to-[#0a0a0f]"
+    "gradient": "from-orange-900/30 to-[#0a0a0f]",
+    "img": "https://picsum.photos/seed/kinovi/600/400"
   },
   {
     "id": "betterself",
@@ -455,7 +461,8 @@
     "color": "success",
     "icon": "fact_check",
     "isNew": true,
-    "gradient": "from-[#1b1b20] to-cyan-900/30"
+    "gradient": "from-[#1b1b20] to-cyan-900/30",
+    "img": "https://picsum.photos/seed/betterself/600/400"
   },
   {
     "id": "scenes",
@@ -478,7 +485,8 @@
     "color": "warning",
     "icon": "theaters",
     "isNew": true,
-    "gradient": "from-red-900/30 to-[#0a0a0f]"
+    "gradient": "from-red-900/30 to-[#0a0a0f]",
+    "img": "https://picsum.photos/seed/scenes/600/400"
   },
   {
     "id": "chatte",
@@ -501,7 +509,8 @@
     "color": "success",
     "icon": "chat",
     "isNew": true,
-    "gradient": "from-pink-900/30 to-[#0a0a0f]"
+    "gradient": "from-pink-900/30 to-[#0a0a0f]",
+    "img": "https://picsum.photos/seed/chatte/600/400"
   },
   {
     "id": "lorekeeper",
@@ -525,7 +534,8 @@
     "color": "warning",
     "icon": "menu_book",
     "isNew": true,
-    "gradient": "from-yellow-900/30 to-[#0a0a0f]"
+    "gradient": "from-yellow-900/30 to-[#0a0a0f]",
+    "img": "https://picsum.photos/seed/lorekeeper/600/400"
   },
   {
     "id": "napkin",
@@ -548,7 +558,8 @@
     "color": "danger",
     "icon": "account_tree",
     "isNew": true,
-    "gradient": "from-indigo-900/30 to-[#0a0a0f]"
+    "gradient": "from-indigo-900/30 to-[#0a0a0f]",
+    "img": "https://picsum.photos/seed/napkin/600/400"
   },
   {
     "id": "toolvideo",
@@ -572,7 +583,8 @@
     "icon": "smart_display",
     "isNew": true,
     "gradient": "from-cyan-900/30 to-[#0a0a0f]",
-    "isOpenSource": true
+    "isOpenSource": true,
+    "img": "https://picsum.photos/seed/toolvideo/600/400"
   },
   {
     "id": "aidubbing",
@@ -595,6 +607,3985 @@
     "color": "success",
     "icon": "record_voice_over",
     "isNew": true,
-    "gradient": "from-blue-700/30 to-purple-800/20"
+    "gradient": "from-blue-700/30 to-purple-800/20",
+    "img": "https://picsum.photos/seed/aidubbing/600/400"
+  },
+  {
+    "id": "notion-ai",
+    "name": "Notion AI",
+    "category": "Productivity",
+    "description": "Draft, edit, and summarize everything inside Notion instantly.",
+    "features": [
+      "Summarization",
+      "Text drafting",
+      "Translation",
+      "Brainstorming"
+    ],
+    "pricing": "Premium",
+    "link": "https://notion.so/product/ai",
+    "tags": [
+      "workspace",
+      "notes",
+      "writing"
+    ],
+    "color": "secondary",
+    "icon": "task_alt",
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/notion-ai/600/400"
+  },
+  {
+    "id": "taskade",
+    "name": "Taskade AI",
+    "category": "Productivity",
+    "description": "Outlines, mind maps, and automated task workflows in one app.",
+    "features": [
+      "Mind mapping",
+      "Workflow automation",
+      "Chatbot",
+      "Outlines"
+    ],
+    "pricing": "Freemium",
+    "link": "https://taskade.com",
+    "tags": [
+      "productivity",
+      "mindmap",
+      "tasks"
+    ],
+    "color": "warning",
+    "icon": "account_tree",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/taskade/600/400"
+  },
+  {
+    "id": "otter",
+    "name": "Otter.ai",
+    "category": "Productivity",
+    "description": "AI meeting assistant that records, transcribes, and summarizes.",
+    "features": [
+      "Transcription",
+      "Meeting summaries",
+      "Action items",
+      "Live captions"
+    ],
+    "pricing": "Freemium",
+    "link": "https://otter.ai",
+    "tags": [
+      "meetings",
+      "transcription",
+      "audio"
+    ],
+    "color": "success",
+    "icon": "mic",
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/otter/600/400"
+  },
+  {
+    "id": "fireflies",
+    "name": "Fireflies.ai",
+    "category": "Productivity",
+    "description": "Keep your entire team aligned with automated meeting notes.",
+    "features": [
+      "Note-taking",
+      "CRM sync",
+      "Searchable audio",
+      "Metrics tracking"
+    ],
+    "pricing": "Freemium",
+    "link": "https://fireflies.ai",
+    "tags": [
+      "meetings",
+      "notes",
+      "sales"
+    ],
+    "color": "danger",
+    "icon": "assignment",
+    "isNew": true,
+    "img": "https://picsum.photos/seed/fireflies/600/400"
+  },
+  {
+    "id": "perplexity",
+    "name": "Perplexity",
+    "category": "Productivity",
+    "description": "AI-powered search engine delivering real-time factual answers.",
+    "features": [
+      "Web search",
+      "Citation sourcing",
+      "Follow-up questions",
+      "File uploads"
+    ],
+    "pricing": "Freemium",
+    "link": "https://perplexity.ai",
+    "tags": [
+      "search",
+      "research",
+      "LLM"
+    ],
+    "color": "primary",
+    "icon": "search",
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/perplexity/600/400"
+  },
+  {
+    "id": "claude",
+    "name": "Claude",
+    "category": "Productivity",
+    "description": "Helpful, harmless, and honest AI assistant by Anthropic.",
+    "features": [
+      "Large context window",
+      "Coding",
+      "Writing",
+      "Analysis"
+    ],
+    "pricing": "Freemium",
+    "link": "https://claude.ai",
+    "tags": [
+      "LLM",
+      "assistant",
+      "research"
+    ],
+    "color": "warning",
+    "icon": "psychology",
+    "isTopRated": true,
+    "isNew": true,
+    "img": "https://picsum.photos/seed/claude/600/400"
+  },
+  {
+    "id": "reclaim",
+    "name": "Reclaim",
+    "category": "Productivity",
+    "description": "Smart calendar app that builds your schedule for you.",
+    "features": [
+      "Habit tracking",
+      "Time blocking",
+      "Task integration",
+      "Team syncing"
+    ],
+    "pricing": "Freemium",
+    "link": "https://reclaim.ai",
+    "tags": [
+      "calendar",
+      "schedule",
+      "time management"
+    ],
+    "color": "success",
+    "icon": "calendar_month",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/reclaim/600/400"
+  },
+  {
+    "id": "motion",
+    "name": "Motion",
+    "category": "Productivity",
+    "description": "AI schedules your tasks, meetings, and projects automatically.",
+    "features": [
+      "Auto-scheduling",
+      "Project manager",
+      "Meeting bookings",
+      "Daily plans"
+    ],
+    "pricing": "Premium",
+    "link": "https://usemotion.com",
+    "tags": [
+      "calendar",
+      "management",
+      "auto"
+    ],
+    "color": "primary",
+    "icon": "schedule",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/motion/600/400"
+  },
+  {
+    "id": "copyai",
+    "name": "Copy.ai",
+    "category": "Writing",
+    "description": "Generate high-converting marketing copy in seconds.",
+    "features": [
+      "Email copy",
+      "Social posts",
+      "Blog drafts",
+      "Translating"
+    ],
+    "pricing": "Freemium",
+    "link": "https://copy.ai",
+    "tags": [
+      "copywriting",
+      "marketing",
+      "content"
+    ],
+    "color": "danger",
+    "icon": "edit_document",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/copyai/600/400"
+  },
+  {
+    "id": "writesonic",
+    "name": "Writesonic",
+    "category": "Writing",
+    "description": "AI writer for SEO optimized blog posts and articles.",
+    "features": [
+      "SEO optimization",
+      "Article generation",
+      "Landing pages",
+      "Ads copy"
+    ],
+    "pricing": "Freemium",
+    "link": "https://writesonic.com",
+    "tags": [
+      "SEO",
+      "blogging",
+      "writing"
+    ],
+    "color": "warning",
+    "icon": "article",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/writesonic/600/400"
+  },
+  {
+    "id": "rytr",
+    "name": "Rytr",
+    "category": "Writing",
+    "description": "Fast, responsive AI writing assistant for daily tasks.",
+    "features": [
+      "Emails",
+      "Tones of voice",
+      "Multi-language",
+      "Short-form copy"
+    ],
+    "pricing": "Freemium",
+    "link": "https://rytr.me",
+    "tags": [
+      "writing",
+      "emails",
+      "assistant"
+    ],
+    "color": "success",
+    "icon": "draw",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/rytr/600/400"
+  },
+  {
+    "id": "sudowrite",
+    "name": "Sudowrite",
+    "category": "Writing",
+    "description": "The AI creative writing partner for fiction authors.",
+    "features": [
+      "Story pacing",
+      "Character brainstoming",
+      "Descriptive text",
+      "Plot generator"
+    ],
+    "pricing": "Premium",
+    "link": "https://sudowrite.com",
+    "tags": [
+      "creative",
+      "fiction",
+      "authors"
+    ],
+    "color": "secondary",
+    "icon": "auto_stories",
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/sudowrite/600/400"
+  },
+  {
+    "id": "quillbot",
+    "name": "QuillBot",
+    "category": "Writing",
+    "description": "Paraphrasing tool to ensure your writing is clear and concise.",
+    "features": [
+      "Paraphraser",
+      "Grammar checker",
+      "Plagiarism checker",
+      "Summarizer"
+    ],
+    "pricing": "Freemium",
+    "link": "https://quillbot.com",
+    "tags": [
+      "editing",
+      "grammar",
+      "rewriting"
+    ],
+    "color": "success",
+    "icon": "spellcheck",
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/quillbot/600/400"
+  },
+  {
+    "id": "grammarlygo",
+    "name": "GrammarlyGO",
+    "category": "Writing",
+    "description": "Contextually aware AI drafting inside Grammarly.",
+    "features": [
+      "Inline text generation",
+      "Tone adjustments",
+      "Grammar fixes",
+      "Ideation"
+    ],
+    "pricing": "Freemium",
+    "link": "https://grammarly.com",
+    "tags": [
+      "grammar",
+      "drafting",
+      "extension"
+    ],
+    "color": "success",
+    "icon": "fact_check",
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/grammarlygo/600/400"
+  },
+  {
+    "id": "frase",
+    "name": "Frase",
+    "category": "Writing",
+    "description": "Research, write, and optimize high-quality SEO content.",
+    "features": [
+      "Content briefs",
+      "Competitor analysis",
+      "SEO scoring",
+      "AI writing"
+    ],
+    "pricing": "Premium",
+    "link": "https://frase.io",
+    "tags": [
+      "SEO",
+      "research",
+      "content"
+    ],
+    "color": "primary",
+    "icon": "find_in_page",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/frase/600/400"
+  },
+  {
+    "id": "github-copilot",
+    "name": "GitHub Copilot",
+    "category": "Coding",
+    "description": "Your AI pair programmer, natively integrated into editors.",
+    "features": [
+      "Inline suggestions",
+      "Chat",
+      "Code explanation",
+      "Test generation"
+    ],
+    "pricing": "Premium",
+    "link": "https://github.com/features/copilot",
+    "tags": [
+      "IDE",
+      "pair programming",
+      "snippets"
+    ],
+    "color": "warning",
+    "icon": "code",
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/github-copilot/600/400"
+  },
+  {
+    "id": "tabnine",
+    "name": "Tabnine",
+    "category": "Coding",
+    "description": "Privacy-first AI code completion tool running locally or in cloud.",
+    "features": [
+      "Secure code completion",
+      "Local execution",
+      "Chat interface",
+      "Team learning"
+    ],
+    "pricing": "Freemium",
+    "link": "https://tabnine.com",
+    "tags": [
+      "privacy",
+      "autocomplete",
+      "IDE"
+    ],
+    "color": "primary",
+    "icon": "memory",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/tabnine/600/400"
+  },
+  {
+    "id": "blackbox",
+    "name": "Blackbox AI",
+    "category": "Coding",
+    "description": "Extract code from videos and get instant AI code chat responses.",
+    "features": [
+      "Video to code",
+      "Autocomplete",
+      "Code chat",
+      "Search"
+    ],
+    "pricing": "Freemium",
+    "link": "https://blackbox.ai",
+    "tags": [
+      "extensions",
+      "extraction",
+      "chat"
+    ],
+    "color": "danger",
+    "icon": "data_object",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/blackbox/600/400"
+  },
+  {
+    "id": "sourcegraph-cody",
+    "name": "Sourcegraph Cody",
+    "category": "Coding",
+    "description": "AI coding assistant that knows your entire codebase.",
+    "features": [
+      "Codebase search",
+      "Contextual chat",
+      "Refactoring",
+      "Documentation"
+    ],
+    "pricing": "Freemium",
+    "link": "https://sourcegraph.com/cody",
+    "tags": [
+      "enterprise",
+      "search",
+      "codebase"
+    ],
+    "color": "success",
+    "icon": "plumbing",
+    "isNew": true,
+    "img": "https://picsum.photos/seed/sourcegraph-cody/600/400"
+  },
+  {
+    "id": "mintlify",
+    "name": "Mintlify",
+    "category": "Coding",
+    "description": "Beautiful documentation generated automatically from your code.",
+    "features": [
+      "Auto-docs",
+      "Custom branding",
+      "MDX support",
+      "Analytics"
+    ],
+    "pricing": "Freemium",
+    "link": "https://mintlify.com",
+    "tags": [
+      "documentation",
+      "MDX",
+      "generator"
+    ],
+    "color": "warning",
+    "icon": "description",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/mintlify/600/400"
+  },
+  {
+    "id": "v0",
+    "name": "v0 by Vercel",
+    "category": "Coding",
+    "description": "Generative UI system that builds React components from text.",
+    "features": [
+      "UI generation",
+      "React/Tailwind",
+      "Iterative design",
+      "Vercel integration"
+    ],
+    "pricing": "Freemium",
+    "link": "https://v0.dev",
+    "tags": [
+      "UI",
+      "React",
+      "Tailwind"
+    ],
+    "color": "secondary",
+    "icon": "web",
+    "isNew": true,
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/v0/600/400"
+  },
+  {
+    "id": "synthesia",
+    "name": "Synthesia",
+    "category": "Video",
+    "description": "Create professional videos with AI avatars in over 120 languages.",
+    "features": [
+      "Custom avatars",
+      "Text-to-speech",
+      "Video templates",
+      "Localization"
+    ],
+    "pricing": "Premium",
+    "link": "https://synthesia.io",
+    "tags": [
+      "avatars",
+      "presentation",
+      "enterprise"
+    ],
+    "color": "danger",
+    "icon": "recent_actors",
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/synthesia/600/400"
+  },
+  {
+    "id": "heygen",
+    "name": "HeyGen",
+    "category": "Video",
+    "description": "Produce stunning AI videos with hyper-realistic avatars.",
+    "features": [
+      "Avatar cloning",
+      "Voice cloning",
+      "Instant generation",
+      "Translation"
+    ],
+    "pricing": "Premium",
+    "link": "https://heygen.com",
+    "tags": [
+      "avatars",
+      "video gen",
+      "voice cloning"
+    ],
+    "color": "warning",
+    "icon": "accessibility_new",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/heygen/600/400"
+  },
+  {
+    "id": "pika",
+    "name": "Pika",
+    "category": "Video",
+    "description": "Idea-to-video platform that animates images and text.",
+    "features": [
+      "Text-to-video",
+      "Image-to-video",
+      "Lip sync",
+      "Style controls"
+    ],
+    "pricing": "Freemium",
+    "link": "https://pika.art",
+    "tags": [
+      "animation",
+      "VFX",
+      "generative"
+    ],
+    "color": "secondary",
+    "icon": "animation",
+    "isNew": true,
+    "img": "https://picsum.photos/seed/pika/600/400"
+  },
+  {
+    "id": "pictory",
+    "name": "Pictory",
+    "category": "Video",
+    "description": "Extract short, branded video snippets from long-form content.",
+    "features": [
+      "Script-to-video",
+      "Blog-to-video",
+      "Auto-captions",
+      "Webinar slicing"
+    ],
+    "pricing": "Premium",
+    "link": "https://pictory.ai",
+    "tags": [
+      "repurposing",
+      "editing",
+      "social"
+    ],
+    "color": "success",
+    "icon": "cut",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/pictory/600/400"
+  },
+  {
+    "id": "invideo",
+    "name": "InVideo AI",
+    "category": "Video",
+    "description": "Generate fully edited YouTube videos with just a prompt.",
+    "features": [
+      "AI scripting",
+      "Voiceovers",
+      "Stock footage matching",
+      "Editing"
+    ],
+    "pricing": "Freemium",
+    "link": "https://invideo.io",
+    "tags": [
+      "youtube",
+      "shorts",
+      "editing"
+    ],
+    "color": "primary",
+    "icon": "movie_creation",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/invideo/600/400"
+  },
+  {
+    "id": "descript",
+    "name": "Descript",
+    "category": "Video",
+    "description": "Edit your audio and video simply by editing the text transcript.",
+    "features": [
+      "Text-based editing",
+      "Overdub",
+      "Studio sound",
+      "Screen recording"
+    ],
+    "pricing": "Freemium",
+    "link": "https://descript.com",
+    "tags": [
+      "editing",
+      "audio",
+      "podcasts"
+    ],
+    "color": "warning",
+    "icon": "edit_audio",
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/descript/600/400"
+  },
+  {
+    "id": "opusclip",
+    "name": "Opus Clip",
+    "category": "Video",
+    "description": "Turn 1 long video into 10 viral clips automatically.",
+    "features": [
+      "Auto-clipping",
+      "Viral scoring",
+      "Dynamic captions",
+      "Subject tracking"
+    ],
+    "pricing": "Freemium",
+    "link": "https://opus.pro",
+    "tags": [
+      "shorts",
+      "tiktok",
+      "repurposing"
+    ],
+    "color": "danger",
+    "icon": "content_cut",
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/opusclip/600/400"
+  },
+  {
+    "id": "surferseo",
+    "name": "Surfer SEO",
+    "category": "Marketing",
+    "description": "AI-driven content optimization platform to boost organic traffic.",
+    "features": [
+      "Content editor",
+      "Keyword research",
+      "SERP analyzer",
+      "Audit tool"
+    ],
+    "pricing": "Premium",
+    "link": "https://surferseo.com",
+    "tags": [
+      "SEO",
+      "content",
+      "analytics"
+    ],
+    "color": "success",
+    "icon": "trending_up",
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/surferseo/600/400"
+  },
+  {
+    "id": "mutiny",
+    "name": "Mutiny",
+    "category": "Marketing",
+    "description": "No-code AI platform for B2B website personalization and conversion.",
+    "features": [
+      "Audience segmentation",
+      "A/B testing",
+      "AI copy recommendations",
+      "Analytics"
+    ],
+    "pricing": "Premium",
+    "link": "https://mutinyhq.com",
+    "tags": [
+      "B2B",
+      "conversion",
+      "personalization"
+    ],
+    "color": "danger",
+    "icon": "person_search",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/mutiny/600/400"
+  },
+  {
+    "id": "anyword",
+    "name": "Anyword",
+    "category": "Marketing",
+    "description": "AI writing tool built around predictive performance scoring.",
+    "features": [
+      "Predictive scoring",
+      "Ad copy",
+      "Landing page copy",
+      "Brand guidelines"
+    ],
+    "pricing": "Premium",
+    "link": "https://anyword.com",
+    "tags": [
+      "predictive",
+      "copywriting",
+      "ads"
+    ],
+    "color": "warning",
+    "icon": "insights",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/anyword/600/400"
+  },
+  {
+    "id": "adcreative",
+    "name": "AdCreative.ai",
+    "category": "Marketing",
+    "description": "Generate conversion-focused ad creatives and banners in seconds.",
+    "features": [
+      "Creative generation",
+      "Text generation",
+      "Creative insights",
+      "Social metrics"
+    ],
+    "pricing": "Premium",
+    "link": "https://adcreative.ai",
+    "tags": [
+      "ads",
+      "design",
+      "banners"
+    ],
+    "color": "primary",
+    "icon": "ads_click",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/adcreative/600/400"
+  },
+  {
+    "id": "smartwriter",
+    "name": "Smartwriter",
+    "category": "Marketing",
+    "description": "Automate personalized cold email outreach using AI.",
+    "features": [
+      "Personalized icebreakers",
+      "LinkedIn scraping",
+      "Backlink outreach",
+      "Email warming"
+    ],
+    "pricing": "Premium",
+    "link": "https://smartwriter.ai",
+    "tags": [
+      "cold email",
+      "sales",
+      "outreach"
+    ],
+    "color": "success",
+    "icon": "outgoing_mail",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/smartwriter/600/400"
+  },
+  {
+    "id": "udio",
+    "name": "Udio",
+    "category": "Music",
+    "description": "Next-gen AI music generator producing high-fidelity, emotional tracks.",
+    "features": [
+      "Full tracks",
+      "Vocal generation",
+      "Genre blending",
+      "Stem separation"
+    ],
+    "pricing": "Freemium",
+    "link": "https://udio.com",
+    "tags": [
+      "generation",
+      "high-fidelity",
+      "vocals"
+    ],
+    "color": "success",
+    "icon": "vocal_icon",
+    "isNew": true,
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/udio/600/400"
+  },
+  {
+    "id": "soundraw",
+    "name": "Soundraw",
+    "category": "Music",
+    "description": "Royalty-free AI music generator customized for video creators.",
+    "features": [
+      "Mood selection",
+      "Length customization",
+      "Tempo adjustments",
+      "Royalty-free"
+    ],
+    "pricing": "Freemium",
+    "link": "https://soundraw.io",
+    "tags": [
+      "royalty-free",
+      "bgm",
+      "creators"
+    ],
+    "color": "primary",
+    "icon": "queue_music",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/soundraw/600/400"
+  },
+  {
+    "id": "boomy",
+    "name": "Boomy",
+    "category": "Music",
+    "description": "Create original songs and monetize them across streaming platforms.",
+    "features": [
+      "Instant generation",
+      "Style selection",
+      "Distribution",
+      "Monetization"
+    ],
+    "pricing": "Freemium",
+    "link": "https://boomy.com",
+    "tags": [
+      "monetization",
+      "lo-fi",
+      "streaming"
+    ],
+    "color": "danger",
+    "icon": "monetization_on",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/boomy/600/400"
+  },
+  {
+    "id": "aiva",
+    "name": "Aiva",
+    "category": "Music",
+    "description": "Artificial Intelligence Virtual Artist composing emotional soundtracks.",
+    "features": [
+      "MIDI editing",
+      "Preset styles",
+      "Classical composition",
+      "Licensing"
+    ],
+    "pricing": "Freemium",
+    "link": "https://aiva.ai",
+    "tags": [
+      "composition",
+      "soundtracks",
+      "midi"
+    ],
+    "color": "warning",
+    "icon": "piano",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/aiva/600/400"
+  },
+  {
+    "id": "elevenlabs",
+    "name": "ElevenLabs",
+    "category": "Music",
+    "description": "Industry-leading AI voice generator and text-to-speech platform.",
+    "features": [
+      "Voice cloning",
+      "Realistic intonation",
+      "Multi-lingual",
+      "Audiobook production"
+    ],
+    "pricing": "Freemium",
+    "link": "https://elevenlabs.io",
+    "tags": [
+      "TTS",
+      "voice cloning",
+      "audio"
+    ],
+    "color": "secondary",
+    "icon": "record_voice_over",
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/elevenlabs/600/400"
+  },
+  {
+    "id": "dalle3",
+    "name": "DALL-E 3",
+    "category": "Image Gen",
+    "description": "OpenAI's latest image model, heavily integrated with ChatGPT.",
+    "features": [
+      "Prompt adherence",
+      "Text in images",
+      "Variations",
+      "Chat interface"
+    ],
+    "pricing": "Premium",
+    "link": "https://openai.com/dall-e-3",
+    "tags": [
+      "openai",
+      "art",
+      "accurate"
+    ],
+    "color": "warning",
+    "icon": "grid_view",
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/dalle3/600/400"
+  },
+  {
+    "id": "stablediffusion",
+    "name": "Stable Diffusion",
+    "category": "Image Gen",
+    "description": "Open-source image model runnable on consumer hardware.",
+    "features": [
+      "ControlNet",
+      "Inpainting",
+      "Local execution",
+      "Fast generation"
+    ],
+    "pricing": "Free",
+    "link": "https://stability.ai",
+    "tags": [
+      "open source",
+      "local",
+      "controlnet"
+    ],
+    "color": "success",
+    "icon": "architecture",
+    "isTopRated": true,
+    "isOpenSource": true,
+    "img": "https://picsum.photos/seed/stablediffusion/600/400"
+  },
+  {
+    "id": "leonardo",
+    "name": "Leonardo AI",
+    "category": "Image Gen",
+    "description": "Production-ready image generation platform for creative assets.",
+    "features": [
+      "Custom models",
+      "Real-time generation",
+      "Motion",
+      "Canvas editing"
+    ],
+    "pricing": "Freemium",
+    "link": "https://leonardo.ai",
+    "tags": [
+      "assets",
+      "game dev",
+      "fast"
+    ],
+    "color": "primary",
+    "icon": "palette",
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/leonardo/600/400"
+  },
+  {
+    "id": "ideogram",
+    "name": "Ideogram",
+    "category": "Image Gen",
+    "description": "State-of-the-art text rendering capabilities within AI images.",
+    "features": [
+      "Flawless typography",
+      "Logo design",
+      "Poster creation",
+      "Variations"
+    ],
+    "pricing": "Freemium",
+    "link": "https://ideogram.ai",
+    "tags": [
+      "typography",
+      "text",
+      "logos"
+    ],
+    "color": "danger",
+    "icon": "text_fields",
+    "isNew": true,
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/ideogram/600/400"
+  },
+  {
+    "id": "adobe-firefly",
+    "name": "Adobe Firefly",
+    "category": "Image Gen",
+    "description": "Commercially safe generative AI natively integrated into Creative Cloud.",
+    "features": [
+      "Generative Fill",
+      "Text effects",
+      "Vector generation",
+      "Safe for enterprise"
+    ],
+    "pricing": "Premium",
+    "link": "https://adobe.com/firefly",
+    "tags": [
+      "photoshop",
+      "enterprise safe",
+      "vectors"
+    ],
+    "color": "secondary",
+    "icon": "format_paint",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/adobe-firefly/600/400"
+  },
+  {
+    "id": "krea",
+    "name": "Krea",
+    "category": "Image Gen",
+    "description": "Real-time AI rendering and upscaling tool for immediate visual feedback.",
+    "features": [
+      "Real-time rendering",
+      "Enhance & Upscale",
+      "Screen capturing",
+      "Drawing interface"
+    ],
+    "pricing": "Freemium",
+    "link": "https://krea.ai",
+    "tags": [
+      "real-time",
+      "upscale",
+      "drawing"
+    ],
+    "color": "warning",
+    "icon": "speed",
+    "isNew": true,
+    "img": "https://picsum.photos/seed/krea/600/400"
+  },
+  {
+    "id": "hootsuite-owly",
+    "name": "OwlyWriter AI",
+    "category": "Social Media",
+    "description": "Hootsuite's built-in AI tool to generate social captions effortlessly.",
+    "features": [
+      "Caption generation",
+      "Idea generation",
+      "Repurposing",
+      "Compliance"
+    ],
+    "pricing": "Premium",
+    "link": "https://hootsuite.com",
+    "tags": [
+      "management",
+      "repurposing",
+      "enterprise"
+    ],
+    "color": "primary",
+    "icon": "share",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/hootsuite-owly/600/400"
+  },
+  {
+    "id": "buffer-ai",
+    "name": "Buffer AI",
+    "category": "Social Media",
+    "description": "AI assistant inside Buffer for quick social post drafting.",
+    "features": [
+      "Post rewriting",
+      "Idea generation",
+      "Translating",
+      "Engagement tracking"
+    ],
+    "pricing": "Freemium",
+    "link": "https://buffer.com",
+    "tags": [
+      "social scheduling",
+      "SME",
+      "writing"
+    ],
+    "color": "success",
+    "icon": "schedule_send",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/buffer-ai/600/400"
+  },
+  {
+    "id": "flick",
+    "name": "Flick AI",
+    "category": "Social Media",
+    "description": "AI Social Marketing Platform designed for faster copywriting and scheduling.",
+    "features": [
+      "Brainstorming",
+      "Caption writing",
+      "Hashtag research",
+      "Scheduling"
+    ],
+    "pricing": "Premium",
+    "link": "https://flick.social",
+    "tags": [
+      "instagram",
+      "hashtags",
+      "copy"
+    ],
+    "color": "danger",
+    "icon": "tag",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/flick/600/400"
+  },
+  {
+    "id": "taplio",
+    "name": "Taplio",
+    "category": "Social Media",
+    "description": "The premier AI tool to grow your personal brand on LinkedIn.",
+    "features": [
+      "Post scheduling",
+      "AI post generator",
+      "Engagement pods",
+      "Analytics"
+    ],
+    "pricing": "Premium",
+    "link": "https://taplio.com",
+    "tags": [
+      "linkedin",
+      "personal brand",
+      "growth"
+    ],
+    "color": "warning",
+    "icon": "work",
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/taplio/600/400"
+  },
+  {
+    "id": "tweethunter",
+    "name": "TweetHunter",
+    "category": "Social Media",
+    "description": "Twitter growth tool packed with AI generation and analytics.",
+    "features": [
+      "Tweet generation",
+      "Thread hooks",
+      "Scheduling",
+      "Auto-DMs"
+    ],
+    "pricing": "Premium",
+    "link": "https://tweethunter.io",
+    "tags": [
+      "twitter",
+      "x",
+      "growth"
+    ],
+    "color": "secondary",
+    "icon": "chat_bubble",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/tweethunter/600/400"
+  },
+  {
+    "id": "promptperfect",
+    "name": "PromptPerfect",
+    "category": "Prompt Gen",
+    "description": "Optimize prompts behind the scenes for ChatGPT, Midjourney, and more.",
+    "features": [
+      "Auto-optimization",
+      "API access",
+      "Model comparison",
+      "Few-shot templates"
+    ],
+    "pricing": "Freemium",
+    "link": "https://promptperfect.jina.ai",
+    "tags": [
+      "optimization",
+      "engineering",
+      "API"
+    ],
+    "color": "success",
+    "icon": "grade",
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/promptperfect/600/400"
+  },
+  {
+    "id": "promptbase",
+    "name": "PromptBase",
+    "category": "Prompt Gen",
+    "description": "Marketplace to buy and sell premium AI prompts.",
+    "features": [
+      "Prompt marketplace",
+      "DALL-E prompts",
+      "GPT-4 prompts",
+      "Monetization"
+    ],
+    "pricing": "Premium",
+    "link": "https://promptbase.com",
+    "tags": [
+      "marketplace",
+      "buy/sell",
+      "high-quality"
+    ],
+    "color": "warning",
+    "icon": "store",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/promptbase/600/400"
+  },
+  {
+    "id": "prompthero",
+    "name": "PromptHero",
+    "category": "Prompt Gen",
+    "description": "Search engine for AI image prompts and models.",
+    "features": [
+      "Image search",
+      "Prompt extraction",
+      "Model directories",
+      "Community"
+    ],
+    "pricing": "Free",
+    "link": "https://prompthero.com",
+    "tags": [
+      "search",
+      "images",
+      "inspiration"
+    ],
+    "color": "primary",
+    "icon": "image_search",
+    "isTopRated": false,
+    "img": "https://picsum.photos/seed/prompthero/600/400"
+  },
+  {
+    "id": "gemini",
+    "name": "Google Gemini",
+    "category": "Writing",
+    "description": "Google's most capable and general AI model built from the ground up to be multimodal.",
+    "features": [
+      "Multimodal search",
+      "Advanced reasoning",
+      "Code execution",
+      "Google Workspace integration"
+    ],
+    "pricing": "Freemium",
+    "link": "https://gemini.google.com",
+    "tags": [
+      "google",
+      "multimodal",
+      "LLM"
+    ],
+    "color": "primary",
+    "icon": "auto_awesome",
+    "isTopRated": true,
+    "isNew": true,
+    "img": "https://picsum.photos/seed/gemini/600/400"
+  },
+  {
+    "id": "copilot",
+    "name": "Microsoft Copilot",
+    "category": "Productivity",
+    "description": "Your everyday AI companion powered by GPT-4 and integrated into Microsoft 365.",
+    "features": [
+      "Web search",
+      "Code generation",
+      "Office integration",
+      "Image generation"
+    ],
+    "pricing": "Freemium",
+    "link": "https://copilot.microsoft.com",
+    "tags": [
+      "microsoft",
+      "work",
+      "gpt4"
+    ],
+    "color": "success",
+    "icon": "dashboard_customize",
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/copilot/600/400"
+  },
+  {
+    "id": "llama3",
+    "name": "Meta Llama",
+    "category": "Coding",
+    "description": "Open source, powerful large language models by Meta for building AI applications.",
+    "features": [
+      "Open weights",
+      "Code generation",
+      "Reasoning",
+      "Fine-tuning base"
+    ],
+    "pricing": "Free",
+    "link": "https://llama.meta.com",
+    "tags": [
+      "meta",
+      "open source",
+      "models"
+    ],
+    "color": "warning",
+    "icon": "hub",
+    "isTopRated": true,
+    "isOpenSource": true,
+    "img": "https://picsum.photos/seed/llama3/600/400"
+  },
+  {
+    "id": "mistral",
+    "name": "Mistral AI",
+    "category": "Coding",
+    "description": "Open and portable generative AI for developers and enterprises.",
+    "features": [
+      "Open weights models",
+      "Le Chat platform",
+      "Enterprise APIs",
+      "Edge capabilities"
+    ],
+    "pricing": "Freemium",
+    "link": "https://mistral.ai",
+    "tags": [
+      "open source",
+      "eu",
+      "efficient"
+    ],
+    "color": "danger",
+    "icon": "cloud_sync",
+    "isTopRated": true,
+    "isOpenSource": true,
+    "img": "https://picsum.photos/seed/mistral/600/400"
+  },
+  {
+    "id": "grok",
+    "name": "Grok by xAI",
+    "category": "Social Media",
+    "description": "A witty, rebellious AI that taps into real-time knowledge of the world via X.",
+    "features": [
+      "Real-time data",
+      "Humorous personality",
+      "X platform access",
+      "Coding"
+    ],
+    "pricing": "Premium",
+    "link": "https://x.ai",
+    "tags": [
+      "xai",
+      "twitter",
+      "real-time"
+    ],
+    "color": "secondary",
+    "icon": "public",
+    "isNew": true,
+    "img": "https://picsum.photos/seed/grok/600/400"
+  },
+  {
+    "id": "devin",
+    "name": "Devin",
+    "category": "Coding",
+    "description": "The world's first fully autonomous AI software engineer.",
+    "features": [
+      "Autonomous coding",
+      "Environment management",
+      "Debugging",
+      "Deployment"
+    ],
+    "pricing": "Premium",
+    "link": "https://cognition.ai",
+    "tags": [
+      "agent",
+      "engineer",
+      "autonomous"
+    ],
+    "color": "danger",
+    "icon": "smart_toy",
+    "isNew": true,
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/devin/600/400"
+  },
+  {
+    "id": "sora",
+    "name": "OpenAI Sora",
+    "category": "Video",
+    "description": "An AI model that can create realistic and imaginative scenes from text instructions.",
+    "features": [
+      "Text to video",
+      "High-fidelity generation",
+      "Physics simulation",
+      "Multi-shot consistency"
+    ],
+    "pricing": "Premium",
+    "link": "https://openai.com/sora",
+    "tags": [
+      "video",
+      "openai",
+      "generative"
+    ],
+    "color": "warning",
+    "icon": "videocam",
+    "isNew": true,
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/sora/600/400"
+  },
+  {
+    "id": "huggingface",
+    "name": "Hugging Face",
+    "category": "Coding",
+    "description": "The platform where the machine learning community collaborates on models and datasets.",
+    "features": [
+      "Model hosting",
+      "Datasets",
+      "Spaces (Gradio/Streamlit)",
+      "Inference API"
+    ],
+    "pricing": "Freemium",
+    "link": "https://huggingface.co",
+    "tags": [
+      "community",
+      "models",
+      "hosting"
+    ],
+    "color": "warning",
+    "icon": "emoji_people",
+    "isTopRated": true,
+    "isOpenSource": true,
+    "img": "https://picsum.photos/seed/huggingface/600/400"
+  },
+  {
+    "id": "aistudio",
+    "name": "Google AI Studio",
+    "category": "Coding",
+    "description": "The fastest way to start building with Google's Gemini models.",
+    "features": [
+      "Generative API",
+      "Prompt designing",
+      "Quickstart templates",
+      "Model tuning"
+    ],
+    "pricing": "Freemium",
+    "link": "https://aistudio.google.com",
+    "tags": [
+      "google",
+      "developers",
+      "api"
+    ],
+    "color": "primary",
+    "icon": "code_blocks",
+    "isTopRated": true,
+    "img": "https://picsum.photos/seed/aistudio/600/400"
+  },
+  {
+    "id": "whisper",
+    "name": "OpenAI Whisper",
+    "category": "Productivity",
+    "description": "A robust open-source neural net for speech recognition and translation.",
+    "features": [
+      "Speech-to-text",
+      "Multi-lingual",
+      "Translation",
+      "Open source"
+    ],
+    "pricing": "Free",
+    "link": "https://github.com/openai/whisper",
+    "tags": [
+      "audio",
+      "transcription",
+      "openai"
+    ],
+    "color": "success",
+    "icon": "record_voice_over",
+    "isOpenSource": true,
+    "img": "https://picsum.photos/seed/whisper/600/400"
+  },
+  {
+    "id": "aider",
+    "name": "Aider",
+    "category": "Coding",
+    "description": "Command-line driven AI pair programming tool that edits files in your local git repo.",
+    "features": [
+      "Extracted from UI",
+      "Aider",
+      "Coding",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://aider.chat",
+    "tags": [
+      "coding",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "computer",
+    "img": "https://picsum.photos/seed/aider/600/400"
+  },
+  {
+    "id": "windsurf",
+    "name": "Windsurf",
+    "category": "Coding",
+    "description": "Next-generation agentic IDE mixing code completion with autonomous file editing.",
+    "features": [
+      "Extracted from UI",
+      "Windsurf",
+      "Coding",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://codeium.com/windsurf",
+    "tags": [
+      "coding",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "integration_instructions",
+    "img": "https://picsum.photos/seed/windsurf/600/400"
+  },
+  {
+    "id": "claudecode",
+    "name": "Claude Code",
+    "category": "Coding",
+    "description": "Powerful command-line tool allowing Claude to directly investigate your codebase.",
+    "features": [
+      "Extracted from UI",
+      "Claude Code",
+      "Coding",
+      "Premium"
+    ],
+    "pricing": "Premium",
+    "link": "https://anthropic.com",
+    "tags": [
+      "coding",
+      "ui extraction"
+    ],
+    "color": "danger",
+    "icon": "smart_toy",
+    "img": "https://picsum.photos/seed/claudecode/600/400"
+  },
+  {
+    "id": "replitagent",
+    "name": "Replit Agent",
+    "category": "Coding",
+    "description": "Builds entire apps from natural language prompts; deploys full-stack products instantly.",
+    "features": [
+      "Extracted from UI",
+      "Replit Agent",
+      "Coding",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://replit.com",
+    "tags": [
+      "coding",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "code_blocks",
+    "img": "https://picsum.photos/seed/replitagent/600/400"
+  },
+  {
+    "id": "boltnew",
+    "name": "Bolt.new",
+    "category": "Coding",
+    "description": "No-code AI builder for MVPs and web apps; turns ideas into live products in minutes.",
+    "features": [
+      "Extracted from UI",
+      "Bolt.new",
+      "Coding",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://bolt.new",
+    "tags": [
+      "coding",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "bolt",
+    "img": "https://picsum.photos/seed/boltnew/600/400"
+  },
+  {
+    "id": "lovable",
+    "name": "Lovable",
+    "category": "Coding",
+    "description": "AI app builder with full-stack generation; handles backend, DB, and deployment.",
+    "features": [
+      "Extracted from UI",
+      "Lovable",
+      "Coding",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://lovable.dev",
+    "tags": [
+      "coding",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "favorite",
+    "img": "https://picsum.photos/seed/lovable/600/400"
+  },
+  {
+    "id": "supabaseai",
+    "name": "Supabase AI",
+    "category": "Coding",
+    "description": "Open-source Firebase alternative with AI vector search; accelerates product backends.",
+    "features": [
+      "Extracted from UI",
+      "Supabase AI",
+      "Coding",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://supabase.com",
+    "tags": [
+      "coding",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "database",
+    "img": "https://picsum.photos/seed/supabaseai/600/400"
+  },
+  {
+    "id": "linearai",
+    "name": "Linear AI",
+    "category": "Coding",
+    "description": "Automates issue triaging and product roadmaps; boosts dev productivity 2x.",
+    "features": [
+      "Extracted from UI",
+      "Linear AI",
+      "Coding",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://linear.app",
+    "tags": [
+      "coding",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "linear_scale",
+    "img": "https://picsum.photos/seed/linearai/600/400"
+  },
+  {
+    "id": "crunai",
+    "name": "Crun AI",
+    "category": "Coding",
+    "description": "Unified AI API platform providing OpenAI-compatible access to hundreds of generative AI models.",
+    "features": [
+      "Extracted from UI",
+      "Crun AI",
+      "Coding",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://crun.ai",
+    "tags": [
+      "coding",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "api",
+    "img": "https://picsum.photos/seed/crunai/600/400"
+  },
+  {
+    "id": "mistralsmall4",
+    "name": "Mistral Small 4",
+    "category": "Coding",
+    "description": "Lightning fast, 256k-context LLM by Mistral natively supporting code generation and deep reasoning.",
+    "features": [
+      "Extracted from UI",
+      "Mistral Small 4",
+      "Coding",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://mistral.ai",
+    "tags": [
+      "coding",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "psychology",
+    "img": "https://picsum.photos/seed/mistralsmall4/600/400"
+  },
+  {
+    "id": "phind",
+    "name": "Phind",
+    "category": "Coding",
+    "description": "A highly optimized, developer-focused AI search engine capable of parsing complex technical documentation.",
+    "features": [
+      "Extracted from UI",
+      "Phind",
+      "Coding",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://phind.com",
+    "tags": [
+      "coding",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "search",
+    "img": "https://picsum.photos/seed/phind/600/400"
+  },
+  {
+    "id": "kilocode",
+    "name": "Kilo Code",
+    "category": "Coding",
+    "description": "Autonomous AI pair programmer and VS Code extension that refactors, writes, and debugs your code.",
+    "features": [
+      "Extracted from UI",
+      "Kilo Code",
+      "Coding",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://kilo.ai",
+    "tags": [
+      "coding",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "terminal",
+    "img": "https://picsum.photos/seed/kilocode/600/400"
+  },
+  {
+    "id": "memex",
+    "name": "Memex",
+    "category": "Coding",
+    "description": "Conversational software builder converting natural language requests into fully functioning full-stack applications.",
+    "features": [
+      "Extracted from UI",
+      "Memex",
+      "Coding",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://memex.tech",
+    "tags": [
+      "coding",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "memory",
+    "img": "https://picsum.photos/seed/memex/600/400"
+  },
+  {
+    "id": "commai",
+    "name": "Comm AI",
+    "category": "Coding",
+    "description": "Omnichannel API for developers to seamlessly embed programmable digital telephony and AI messaging.",
+    "features": [
+      "Extracted from UI",
+      "Comm AI",
+      "Coding",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://comm.ai",
+    "tags": [
+      "coding",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "hub",
+    "img": "https://picsum.photos/seed/commai/600/400"
+  },
+  {
+    "id": "bashai",
+    "name": "Bash AI",
+    "category": "Coding",
+    "description": "Unix shell environment integrated with AI execution, simplifying prompt-based shell automation for ops.",
+    "features": [
+      "Extracted from UI",
+      "Bash AI",
+      "Coding",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "#",
+    "tags": [
+      "coding",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "code_blocks",
+    "img": "https://picsum.photos/seed/bashai/600/400"
+  },
+  {
+    "id": "nocodescrapper",
+    "name": "No Code Scrapper",
+    "category": "Coding",
+    "description": "Visually select elements on any webpage and instantly generate structured JSON data without writing scripts.",
+    "features": [
+      "Extracted from UI",
+      "No Code Scrapper",
+      "Coding",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "#",
+    "tags": [
+      "coding",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "data_object",
+    "img": "https://picsum.photos/seed/nocodescrapper/600/400"
+  },
+  {
+    "id": "aicodementor",
+    "name": "AI Code Mentor",
+    "category": "Coding",
+    "description": "Personalized virtual mentor that explains code blocks, architecture, and guides you through complex syntax.",
+    "features": [
+      "Extracted from UI",
+      "AI Code Mentor",
+      "Coding",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "#",
+    "tags": [
+      "coding",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "school",
+    "img": "https://picsum.photos/seed/aicodementor/600/400"
+  },
+  {
+    "id": "flux2pro",
+    "name": "Flux.2 Pro",
+    "category": "Image Gen",
+    "description": "State of the art open-weight and pro models for extreme photorealism and control.",
+    "features": [
+      "Extracted from UI",
+      "Flux.2 Pro",
+      "Image",
+      "Premium"
+    ],
+    "pricing": "Premium",
+    "link": "https://blackforestlabs.ai",
+    "tags": [
+      "image",
+      "ui extraction"
+    ],
+    "color": "danger",
+    "icon": "photo_camera",
+    "img": "https://picsum.photos/seed/flux2pro/600/400"
+  },
+  {
+    "id": "leonardoai",
+    "name": "Leonardo.ai",
+    "category": "Image Gen",
+    "description": "AI image generation platform offering granular control, models, and real-time generation.",
+    "features": [
+      "Extracted from UI",
+      "Leonardo.ai",
+      "Image",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://leonardo.ai",
+    "tags": [
+      "image",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "draw",
+    "img": "https://picsum.photos/seed/leonardoai/600/400"
+  },
+  {
+    "id": "civitai",
+    "name": "Civitai",
+    "category": "Image Gen",
+    "description": "The central hub and model repository for Stable Diffusion open source models and LoRAs.",
+    "features": [
+      "Extracted from UI",
+      "Civitai",
+      "Image",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://civitai.com",
+    "tags": [
+      "image",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "hub",
+    "img": "https://picsum.photos/seed/civitai/600/400"
+  },
+  {
+    "id": "canvaai",
+    "name": "Canva AI",
+    "category": "Image Gen",
+    "description": "Auto-generates design ideas built into Magic Design; seamless one-click image/text generation.",
+    "features": [
+      "Extracted from UI",
+      "Canva AI",
+      "Image",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://canva.com/ai-assistant",
+    "tags": [
+      "image",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "brush",
+    "img": "https://picsum.photos/seed/canvaai/600/400"
+  },
+  {
+    "id": "kittl",
+    "name": "Kittl",
+    "category": "Image Gen",
+    "description": "AI logo & t-shirt design tool equipped with free templates and intelligent text effects.",
+    "features": [
+      "Extracted from UI",
+      "Kittl",
+      "Image",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://kittl.com",
+    "tags": [
+      "image",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "checkroom",
+    "img": "https://picsum.photos/seed/kittl/600/400"
+  },
+  {
+    "id": "khroma",
+    "name": "Khroma",
+    "category": "Image Gen",
+    "description": "AI-powered color palette generator algorithmically personalized entirely to your design taste.",
+    "features": [
+      "Extracted from UI",
+      "Khroma",
+      "Image",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://khroma.co",
+    "tags": [
+      "image",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "format_paint",
+    "img": "https://picsum.photos/seed/khroma/600/400"
+  },
+  {
+    "id": "designsai",
+    "name": "Designs AI",
+    "category": "Image Gen",
+    "description": "Auto-create logos, graphics, and videos from an integrated suite of creative tools.",
+    "features": [
+      "Extracted from UI",
+      "Designs AI",
+      "Image",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://design.com",
+    "tags": [
+      "image",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "view_quilt",
+    "img": "https://picsum.photos/seed/designsai/600/400"
+  },
+  {
+    "id": "illustroke",
+    "name": "Illustroke",
+    "category": "Image Gen",
+    "description": "Phenomenal AI SVG illustration generator perfect for producing icons and scalable web design assets.",
+    "features": [
+      "Extracted from UI",
+      "Illustroke",
+      "Image",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://illustroke.com",
+    "tags": [
+      "image",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "gesture",
+    "img": "https://picsum.photos/seed/illustroke/600/400"
+  },
+  {
+    "id": "looka",
+    "name": "Looka",
+    "category": "Image Gen",
+    "description": "AI logo + automated brand kit generator; preview your entire graphical layout for free.",
+    "features": [
+      "Extracted from UI",
+      "Looka",
+      "Image",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://looka.com",
+    "tags": [
+      "image",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "verified",
+    "img": "https://picsum.photos/seed/looka/600/400"
+  },
+  {
+    "id": "thumbnailcreator",
+    "name": "ThumbnailCreator",
+    "category": "Image Gen",
+    "description": "High-converting, professional YouTube thumbnail AI featuring emotion analysis and custom style cloning.",
+    "features": [
+      "Extracted from UI",
+      "ThumbnailCreator",
+      "Image",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://thumbnailcreator.com",
+    "tags": [
+      "image",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "smart_display",
+    "img": "https://picsum.photos/seed/thumbnailcreator/600/400"
+  },
+  {
+    "id": "pixparkai",
+    "name": "Pixpark AI",
+    "category": "Image Gen",
+    "description": "All-in-one generation and editing platform running directly in your browser with zero sign-ups required.",
+    "features": [
+      "Extracted from UI",
+      "Pixpark AI",
+      "Image",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://pixpark.ai",
+    "tags": [
+      "image",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "nature_people",
+    "img": "https://picsum.photos/seed/pixparkai/600/400"
+  },
+  {
+    "id": "hitem3d",
+    "name": "Hitem3D",
+    "category": "Image Gen",
+    "description": "Transform standard 2D images or textures into print-ready, high-resolution 3D models using AI.",
+    "features": [
+      "Extracted from UI",
+      "Hitem3D",
+      "Image",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://hitem3d.ai",
+    "tags": [
+      "image",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "view_in_ar",
+    "img": "https://picsum.photos/seed/hitem3d/600/400"
+  },
+  {
+    "id": "creenai",
+    "name": "Creen AI",
+    "category": "Image Gen",
+    "description": "Accessible AI workflow platform for generating aesthetic concept art and unblurring photos up to 4K res.",
+    "features": [
+      "Extracted from UI",
+      "Creen AI",
+      "Image",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://creen.ai",
+    "tags": [
+      "image",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "blur_on",
+    "img": "https://picsum.photos/seed/creenai/600/400"
+  },
+  {
+    "id": "loraai",
+    "name": "LoRA AI",
+    "category": "Image Gen",
+    "description": "Not a standalone tool, but a crucial machine learning method (Low-Rank Adaptation) mapping styles to open models.",
+    "features": [
+      "Extracted from UI",
+      "LoRA AI",
+      "Image",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://civitai.com",
+    "tags": [
+      "image",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "extension",
+    "img": "https://picsum.photos/seed/loraai/600/400"
+  },
+  {
+    "id": "pixcanva",
+    "name": "PixCanva",
+    "category": "Image Gen",
+    "description": "AI-powered design platform that simplifies digital art and graphic creation with background removal and layouts.",
+    "features": [
+      "Extracted from UI",
+      "PixCanva",
+      "Image",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://pixcanva.com",
+    "tags": [
+      "image",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "brush",
+    "img": "https://picsum.photos/seed/pixcanva/600/400"
+  },
+  {
+    "id": "lavender",
+    "name": "Lavender",
+    "category": "Marketing",
+    "description": "AI email assistant for sales teams that helps write better emails faster.",
+    "features": [
+      "Extracted from UI",
+      "Lavender",
+      "Marketing",
+      "Premium"
+    ],
+    "pricing": "Premium",
+    "link": "https://lavender.ai",
+    "tags": [
+      "marketing",
+      "ui extraction"
+    ],
+    "color": "danger",
+    "icon": "mail",
+    "img": "https://picsum.photos/seed/lavender/600/400"
+  },
+  {
+    "id": "wabot",
+    "name": "WAbot",
+    "category": "Marketing",
+    "description": "AI Sales copilot for WhatsApp; detects buyer intent, suggests scripts, and syncs to CRM.",
+    "features": [
+      "Extracted from UI",
+      "WAbot",
+      "Marketing",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "#",
+    "tags": [
+      "marketing",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "chat",
+    "img": "https://picsum.photos/seed/wabot/600/400"
+  },
+  {
+    "id": "creatok",
+    "name": "CreatOK",
+    "category": "Marketing",
+    "description": "E-commerce video generator transforming product links directly into high-converting marketing shorts.",
+    "features": [
+      "Extracted from UI",
+      "CreatOK",
+      "Marketing",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "#",
+    "tags": [
+      "marketing",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "shopping_cart",
+    "img": "https://picsum.photos/seed/creatok/600/400"
+  },
+  {
+    "id": "conversica",
+    "name": "Conversica",
+    "category": "Marketing",
+    "description": "Enterprise virtual assistants that engage leads in two-way conversations to qualify them for sales teams.",
+    "features": [
+      "Extracted from UI",
+      "Conversica",
+      "Marketing",
+      "Premium"
+    ],
+    "pricing": "Premium",
+    "link": "https://conversica.com",
+    "tags": [
+      "marketing",
+      "ui extraction"
+    ],
+    "color": "danger",
+    "icon": "support_agent",
+    "img": "https://picsum.photos/seed/conversica/600/400"
+  },
+  {
+    "id": "chatfuel",
+    "name": "Chatfuel",
+    "category": "Marketing",
+    "description": "Leading no-code chatbot builder to automate marketing pipelines on Meta platforms like WhatsApp and Messenger.",
+    "features": [
+      "Extracted from UI",
+      "Chatfuel",
+      "Marketing",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://chatfuel.com",
+    "tags": [
+      "marketing",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "mark_chat_read",
+    "img": "https://picsum.photos/seed/chatfuel/600/400"
+  },
+  {
+    "id": "freeadcopy",
+    "name": "FreeAdCopy",
+    "category": "Marketing",
+    "description": "AI-powered ad copy generator built by copywriters to output high-converting promotional text rapidly.",
+    "features": [
+      "Extracted from UI",
+      "FreeAdCopy",
+      "Marketing",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://freeadcopy.com",
+    "tags": [
+      "marketing",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "assignment",
+    "img": "https://picsum.photos/seed/freeadcopy/600/400"
+  },
+  {
+    "id": "zocketai",
+    "name": "Zocket AI",
+    "category": "Marketing",
+    "description": "AI-native operating system for enterprise targeted at unifying ad creative, production, and paid media management.",
+    "features": [
+      "Extracted from UI",
+      "Zocket AI",
+      "Marketing",
+      "Premium"
+    ],
+    "pricing": "Premium",
+    "link": "https://zocket.com",
+    "tags": [
+      "marketing",
+      "ui extraction"
+    ],
+    "color": "danger",
+    "icon": "campaign",
+    "img": "https://picsum.photos/seed/zocketai/600/400"
+  },
+  {
+    "id": "dropbotai",
+    "name": "Dropbot AI",
+    "category": "Marketing",
+    "description": "Optimizes e-commerce and dropshipping businesses by finding winning products and auto-generating marketing angles.",
+    "features": [
+      "Extracted from UI",
+      "Dropbot AI",
+      "Marketing",
+      "Premium"
+    ],
+    "pricing": "Premium",
+    "link": "#",
+    "tags": [
+      "marketing",
+      "ui extraction"
+    ],
+    "color": "danger",
+    "icon": "smart_toy",
+    "img": "https://picsum.photos/seed/dropbotai/600/400"
+  },
+  {
+    "id": "replyio",
+    "name": "Reply.io",
+    "category": "Marketing",
+    "description": "Sales engagement platform utilizing specialized AI to automate and optimize multi-channel outreach limits.",
+    "features": [
+      "Extracted from UI",
+      "Reply.io",
+      "Marketing",
+      "Premium"
+    ],
+    "pricing": "Premium",
+    "link": "https://reply.io",
+    "tags": [
+      "marketing",
+      "ui extraction"
+    ],
+    "color": "danger",
+    "icon": "connect_without_contact",
+    "img": "https://picsum.photos/seed/replyio/600/400"
+  },
+  {
+    "id": "vocai",
+    "name": "VOC AI",
+    "category": "Marketing",
+    "description": "Analytics tool that breaks down \"Voice of Customer\" reviews and feedback, primarily optimized for Amazon sellers.",
+    "features": [
+      "Extracted from UI",
+      "VOC AI",
+      "Marketing",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "#",
+    "tags": [
+      "marketing",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "hearing",
+    "img": "https://picsum.photos/seed/vocai/600/400"
+  },
+  {
+    "id": "beatovenai",
+    "name": "Beatoven.ai",
+    "category": "Music",
+    "description": "Create mood-based, royalty-free background music for content creators.",
+    "features": [
+      "Extracted from UI",
+      "Beatoven.ai",
+      "Music",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://beatoven.ai",
+    "tags": [
+      "music",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "graphic_eq",
+    "img": "https://picsum.photos/seed/beatovenai/600/400"
+  },
+  {
+    "id": "mubert",
+    "name": "Mubert",
+    "category": "Music",
+    "description": "Instant royalty-free music generation tailored for streaming and background content.",
+    "features": [
+      "Extracted from UI",
+      "Mubert",
+      "Music",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://mubert.com",
+    "tags": [
+      "music",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "album",
+    "img": "https://picsum.photos/seed/mubert/600/400"
+  },
+  {
+    "id": "cassetteai",
+    "name": "CassetteAI",
+    "category": "Music",
+    "description": "Copilot for music creation using highly customized latent diffusion models.",
+    "features": [
+      "Extracted from UI",
+      "CassetteAI",
+      "Music",
+      "Premium"
+    ],
+    "pricing": "Premium",
+    "link": "https://cassetteai.com",
+    "tags": [
+      "music",
+      "ui extraction"
+    ],
+    "color": "danger",
+    "icon": "cassette",
+    "img": "https://picsum.photos/seed/cassetteai/600/400"
+  },
+  {
+    "id": "voxtraltts",
+    "name": "Voxtral TTS",
+    "category": "Music",
+    "description": "Mistral's advanced text-to-speech module enabling zero-shot voice cloning and hyper-realistic audio.",
+    "features": [
+      "Extracted from UI",
+      "Voxtral TTS",
+      "Music",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://mistral.ai",
+    "tags": [
+      "music",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "record_voice_over",
+    "img": "https://picsum.photos/seed/voxtraltts/600/400"
+  },
+  {
+    "id": "aicoustics",
+    "name": "AI Coustics",
+    "category": "Music",
+    "description": "Revolutionary AI audio enhancement technology transforming raw speech into pristine studio-quality audio.",
+    "features": [
+      "Extracted from UI",
+      "AI Coustics",
+      "Music",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://ai-coustics.com",
+    "tags": [
+      "music",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "graphic_eq",
+    "img": "https://picsum.photos/seed/aicoustics/600/400"
+  },
+  {
+    "id": "fineshare",
+    "name": "Fineshare",
+    "category": "Music",
+    "description": "All-in-one AI voice changer, recording suite, and audio modulation tool for creators and gamers.",
+    "features": [
+      "Extracted from UI",
+      "Fineshare",
+      "Music",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://fineshare.com",
+    "tags": [
+      "music",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "mic",
+    "img": "https://picsum.photos/seed/fineshare/600/400"
+  },
+  {
+    "id": "gammaai",
+    "name": "Gamma AI",
+    "category": "Presentation",
+    "description": "A new medium for presenting ideas, powered by AI to generate beautifully structured decks and webpages.",
+    "features": [
+      "Extracted from UI",
+      "Gamma AI",
+      "Presentation",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://gamma.app",
+    "tags": [
+      "presentation",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "web",
+    "img": "https://picsum.photos/seed/gammaai/600/400"
+  },
+  {
+    "id": "tomeai",
+    "name": "Tome AI",
+    "category": "Presentation",
+    "description": "Generative storytelling format designed to help you construct entirely new types of presentations and narratives.",
+    "features": [
+      "Extracted from UI",
+      "Tome AI",
+      "Presentation",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://tome.app",
+    "tags": [
+      "presentation",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "auto_stories",
+    "img": "https://picsum.photos/seed/tomeai/600/400"
+  },
+  {
+    "id": "deevid",
+    "name": "Deevid",
+    "category": "Presentation",
+    "description": "AI video platform allowing users to generate, animate, and convert presentations or slides into engaging talking-head videos.",
+    "features": [
+      "Extracted from UI",
+      "Deevid",
+      "Presentation",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://deevid.ai",
+    "tags": [
+      "presentation",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "video_camera_front",
+    "img": "https://picsum.photos/seed/deevid/600/400"
+  },
+  {
+    "id": "framerai",
+    "name": "Framer AI",
+    "category": "Presentation",
+    "description": "AI site generator to instantly design, build, and publish presentation-ready interactive websites.",
+    "features": [
+      "Extracted from UI",
+      "Framer AI",
+      "Presentation",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://framer.com",
+    "tags": [
+      "presentation",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "dashboard",
+    "img": "https://picsum.photos/seed/framerai/600/400"
+  },
+  {
+    "id": "beautifulai",
+    "name": "Beautiful.ai",
+    "category": "Presentation",
+    "description": "Expert-level presentation software with smart templates and generative AI styling features.",
+    "features": [
+      "Extracted from UI",
+      "Beautiful.ai",
+      "Presentation",
+      "Premium"
+    ],
+    "pricing": "Premium",
+    "link": "https://beautiful.ai",
+    "tags": [
+      "presentation",
+      "ui extraction"
+    ],
+    "color": "danger",
+    "icon": "brush",
+    "img": "https://picsum.photos/seed/beautifulai/600/400"
+  },
+  {
+    "id": "alai",
+    "name": "Alai",
+    "category": "Presentation",
+    "description": "AI-powered presentation platform ensuring flawless layout control, responsive canvases, and design consistency.",
+    "features": [
+      "Extracted from UI",
+      "Alai",
+      "Presentation",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://getalai.com",
+    "tags": [
+      "presentation",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "view_quilt",
+    "img": "https://picsum.photos/seed/alai/600/400"
+  },
+  {
+    "id": "canva",
+    "name": "Canva",
+    "category": "Presentation",
+    "description": "Harness Magic Design to automatically create beautiful, well-structured slide decks and graphics in seconds.",
+    "features": [
+      "Extracted from UI",
+      "Canva",
+      "Presentation",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://canva.com",
+    "tags": [
+      "presentation",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "palette",
+    "img": "https://picsum.photos/seed/canva/600/400"
+  },
+  {
+    "id": "chronicle",
+    "name": "Chronicle",
+    "category": "Presentation",
+    "description": "Modern storytelling format built for teams to craft highly immersive and interactive visual presentations.",
+    "features": [
+      "Extracted from UI",
+      "Chronicle",
+      "Presentation",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "#",
+    "tags": [
+      "presentation",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "history_edu",
+    "img": "https://picsum.photos/seed/chronicle/600/400"
+  },
+  {
+    "id": "magicslides",
+    "name": "MagicSlides",
+    "category": "Presentation",
+    "description": "AI text-to-presentation plugin running natively within Google Slides for instant content expansion.",
+    "features": [
+      "Extracted from UI",
+      "MagicSlides",
+      "Presentation",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://magicslides.app",
+    "tags": [
+      "presentation",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "extension",
+    "img": "https://picsum.photos/seed/magicslides/600/400"
+  },
+  {
+    "id": "autogpt",
+    "name": "AutoGPT",
+    "category": "Productivity",
+    "description": "Automates complex tasks by breaking goals into steps and executing them independently.",
+    "features": [
+      "Extracted from UI",
+      "AutoGPT",
+      "Productivity",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://agpt.co",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "precision_manufacturing",
+    "img": "https://picsum.photos/seed/autogpt/600/400"
+  },
+  {
+    "id": "agentgpt",
+    "name": "AgentGPT",
+    "category": "Productivity",
+    "description": "Run autonomous AI agents directly in your browser to complete research and execution tasks.",
+    "features": [
+      "Extracted from UI",
+      "AgentGPT",
+      "Productivity",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://agentgpt.reworkd.ai",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "assistant",
+    "img": "https://picsum.photos/seed/agentgpt/600/400"
+  },
+  {
+    "id": "superhumanai",
+    "name": "Superhuman AI",
+    "category": "Productivity",
+    "description": "Automates email replies, inbox management, and significantly boosts email productivity.",
+    "features": [
+      "Extracted from UI",
+      "Superhuman AI",
+      "Productivity",
+      "Premium"
+    ],
+    "pricing": "Premium",
+    "link": "https://superhuman.com",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "danger",
+    "icon": "mail",
+    "img": "https://picsum.photos/seed/superhumanai/600/400"
+  },
+  {
+    "id": "reclaimai",
+    "name": "Reclaim AI",
+    "category": "Productivity",
+    "description": "Smart scheduling tool that auto-plans your calendar, tasks, routines, and meetings.",
+    "features": [
+      "Extracted from UI",
+      "Reclaim AI",
+      "Productivity",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://reclaim.ai",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "event_available",
+    "img": "https://picsum.photos/seed/reclaimai/600/400"
+  },
+  {
+    "id": "bardeenai",
+    "name": "Bardeen AI",
+    "category": "Productivity",
+    "description": "Automates browser tasks like scraping data, filling forms, and workflow automation.",
+    "features": [
+      "Extracted from UI",
+      "Bardeen AI",
+      "Productivity",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://bardeen.ai",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "flowsheet",
+    "img": "https://picsum.photos/seed/bardeenai/600/400"
+  },
+  {
+    "id": "otterai",
+    "name": "Otter AI",
+    "category": "Productivity",
+    "description": "Automatically joins calls to record, transcribe, and natively summarize meetings.",
+    "features": [
+      "Extracted from UI",
+      "Otter AI",
+      "Productivity",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://otter.ai",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "record_voice_over",
+    "img": "https://picsum.photos/seed/otterai/600/400"
+  },
+  {
+    "id": "durableai",
+    "name": "Durable AI",
+    "category": "Productivity",
+    "description": "Build websites in seconds, automate business workflows, and manage online presence.",
+    "features": [
+      "Extracted from UI",
+      "Durable AI",
+      "Productivity",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://durable.co",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "store",
+    "img": "https://picsum.photos/seed/durableai/600/400"
+  },
+  {
+    "id": "savetoai",
+    "name": "Saveto AI",
+    "category": "Productivity",
+    "description": "Browser-based, zero-login media processing platform for rapid audio transcription and summarization.",
+    "features": [
+      "Extracted from UI",
+      "Saveto AI",
+      "Productivity",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://saveto.ai",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "summarize",
+    "img": "https://picsum.photos/seed/savetoai/600/400"
+  },
+  {
+    "id": "stacksoptai",
+    "name": "Stacksopt AI",
+    "category": "Productivity",
+    "description": "Advanced AI optimization tool tailored for streamlining complex operational technology stacks.",
+    "features": [
+      "Extracted from UI",
+      "Stacksopt AI",
+      "Productivity",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "#",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "layers",
+    "img": "https://picsum.photos/seed/stacksoptai/600/400"
+  },
+  {
+    "id": "finai",
+    "name": "Fin AI",
+    "category": "Productivity",
+    "description": "Intercom's advanced AI agent that uses your support knowledge base to resolve complex customer queries automatically.",
+    "features": [
+      "Extracted from UI",
+      "Fin AI",
+      "Productivity",
+      "Premium"
+    ],
+    "pricing": "Premium",
+    "link": "https://intercom.com/fin",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "danger",
+    "icon": "support_agent",
+    "img": "https://picsum.photos/seed/finai/600/400"
+  },
+  {
+    "id": "wonderchat",
+    "name": "Wonderchat",
+    "category": "Productivity",
+    "description": "No-code platform allowing users to rapidly build and deploy AI-powered customer support chatbots.",
+    "features": [
+      "Extracted from UI",
+      "Wonderchat",
+      "Productivity",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://wonderchat.io",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "chat_bubble",
+    "img": "https://picsum.photos/seed/wonderchat/600/400"
+  },
+  {
+    "id": "zaproai",
+    "name": "Zapro AI",
+    "category": "Productivity",
+    "description": "B2B AI-driven procurement and spend management platform designed to automate accounts payable and compliance.",
+    "features": [
+      "Extracted from UI",
+      "Zapro AI",
+      "Productivity",
+      "Premium"
+    ],
+    "pricing": "Premium",
+    "link": "https://zapro.ai",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "danger",
+    "icon": "account_balance",
+    "img": "https://picsum.photos/seed/zaproai/600/400"
+  },
+  {
+    "id": "tangoai",
+    "name": "Tango AI",
+    "category": "Productivity",
+    "description": "Captures manual processes in real-time to automatically create step-by-step documentation and workflows.",
+    "features": [
+      "Extracted from UI",
+      "Tango AI",
+      "Productivity",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://tango.us",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "library_books",
+    "img": "https://picsum.photos/seed/tangoai/600/400"
+  },
+  {
+    "id": "fortuneai",
+    "name": "Fortune AI",
+    "category": "Productivity",
+    "description": "Generative AI analyzing high-level business data and trends for competitive intelligence and research.",
+    "features": [
+      "Extracted from UI",
+      "Fortune AI",
+      "Productivity",
+      "Premium"
+    ],
+    "pricing": "Premium",
+    "link": "#",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "danger",
+    "icon": "query_stats",
+    "img": "https://picsum.photos/seed/fortuneai/600/400"
+  },
+  {
+    "id": "homeworkify",
+    "name": "Homeworkify",
+    "category": "Productivity",
+    "description": "Accessibility-focused education platform providing students with step-by-step study solutions.",
+    "features": [
+      "Extracted from UI",
+      "Homeworkify",
+      "Productivity",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "#",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "assignment_turned_in",
+    "img": "https://picsum.photos/seed/homeworkify/600/400"
+  },
+  {
+    "id": "victoriaai",
+    "name": "Victoria AI",
+    "category": "Productivity",
+    "description": "Workflow automation platform executing complex functional tasks triggered strictly by conversational chats.",
+    "features": [
+      "Extracted from UI",
+      "Victoria AI",
+      "Productivity",
+      "Premium"
+    ],
+    "pricing": "Premium",
+    "link": "#",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "danger",
+    "icon": "account_tree",
+    "img": "https://picsum.photos/seed/victoriaai/600/400"
+  },
+  {
+    "id": "krispai",
+    "name": "Krisp.ai",
+    "category": "Productivity",
+    "description": "Real-time AI voice isolation cutting out background noise, alongside automated meeting transcriptions.",
+    "features": [
+      "Extracted from UI",
+      "Krisp.ai",
+      "Productivity",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://krisp.ai",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "mic_off",
+    "img": "https://picsum.photos/seed/krispai/600/400"
+  },
+  {
+    "id": "sobriefcom",
+    "name": "Sobrief.com",
+    "category": "Productivity",
+    "description": "Delivers hyper-concise 10-minute summaries of thousands of non-fiction books via text and audio formats.",
+    "features": [
+      "Extracted from UI",
+      "Sobrief.com",
+      "Productivity",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://sobrief.com",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "menu_book",
+    "img": "https://picsum.photos/seed/sobriefcom/600/400"
+  },
+  {
+    "id": "chatbase",
+    "name": "Chatbase",
+    "category": "Productivity",
+    "description": "Instantly build secure, custom GPTs trained directly on your own internal documentation or website data.",
+    "features": [
+      "Extracted from UI",
+      "Chatbase",
+      "Productivity",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://chatbase.co",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "forum",
+    "img": "https://picsum.photos/seed/chatbase/600/400"
+  },
+  {
+    "id": "taskade",
+    "name": "Taskade",
+    "category": "Productivity",
+    "description": "AI-powered workspace blending tasks, mind maps, and live team collaboration into a single sleek app.",
+    "features": [
+      "Extracted from UI",
+      "Taskade",
+      "Productivity",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://taskade.com",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "checklist",
+    "img": "https://picsum.photos/seed/taskade/600/400"
+  },
+  {
+    "id": "textblaze",
+    "name": "Text Blaze",
+    "category": "Productivity",
+    "description": "Productivity extension employing text snippets and templates to automate repetitive data entry anywhere.",
+    "features": [
+      "Extracted from UI",
+      "Text Blaze",
+      "Productivity",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://blaze.today",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "keyboard",
+    "img": "https://picsum.photos/seed/textblaze/600/400"
+  },
+  {
+    "id": "askyourpdf",
+    "name": "AskYourPDF",
+    "category": "Productivity",
+    "description": "Upload massive PDF documents and use conversational AI to extract specific insights or summarize pages.",
+    "features": [
+      "Extracted from UI",
+      "AskYourPDF",
+      "Productivity",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://askyourpdf.com",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "picture_as_pdf",
+    "img": "https://picsum.photos/seed/askyourpdf/600/400"
+  },
+  {
+    "id": "asknowai",
+    "name": "AskNow AI",
+    "category": "Productivity",
+    "description": "An intuitive chat interface focusing purely on returning fast, accurate conversational answers to inquiries.",
+    "features": [
+      "Extracted from UI",
+      "AskNow AI",
+      "Productivity",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "#",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "quickreply",
+    "img": "https://picsum.photos/seed/asknowai/600/400"
+  },
+  {
+    "id": "audioreadcom",
+    "name": "AudioRead.com",
+    "category": "Productivity",
+    "description": "Turn any article, PDF document, or text excerpt into natural-sounding audio formats on the go.",
+    "features": [
+      "Extracted from UI",
+      "AudioRead.com",
+      "Productivity",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://audioread.com",
+    "tags": [
+      "productivity",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "play_circle",
+    "img": "https://picsum.photos/seed/audioreadcom/600/400"
+  },
+  {
+    "id": "aipromptbuilder",
+    "name": "AI Prompt Builder",
+    "category": "Prompt Gen",
+    "description": "Free, no sign-up required general purpose visual UI to logically structure prompts.",
+    "features": [
+      "Extracted from UI",
+      "AI Prompt Builder",
+      "Prompt",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://promptgenerator.ai",
+    "tags": [
+      "prompt",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "keyboard",
+    "img": "https://picsum.photos/seed/aipromptbuilder/600/400"
+  },
+  {
+    "id": "snazzyai",
+    "name": "Snazzy AI",
+    "category": "Prompt Gen",
+    "description": "AI prompt creation tool specifically tuned for marketing, SEO, and copywriting needs.",
+    "features": [
+      "Extracted from UI",
+      "Snazzy AI",
+      "Prompt",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://snazzy.ai/prompt-generator",
+    "tags": [
+      "prompt",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "star",
+    "img": "https://picsum.photos/seed/snazzyai/600/400"
+  },
+  {
+    "id": "octoaiprompts",
+    "name": "OctoAI Prompts",
+    "category": "Prompt Gen",
+    "description": "Interactive builder meant for generating perfect, complex system prompts on heavy models.",
+    "features": [
+      "Extracted from UI",
+      "OctoAI Prompts",
+      "Prompt",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://octo.ai",
+    "tags": [
+      "prompt",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "memory",
+    "img": "https://picsum.photos/seed/octoaiprompts/600/400"
+  },
+  {
+    "id": "aiepics",
+    "name": "AI Epics",
+    "category": "Prompt Gen",
+    "description": "Generate highly elaborate, expansive context prompts designed specifically for deep writing models.",
+    "features": [
+      "Extracted from UI",
+      "AI Epics",
+      "Prompt",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "#",
+    "tags": [
+      "prompt",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "auto_awesome",
+    "img": "https://picsum.photos/seed/aiepics/600/400"
+  },
+  {
+    "id": "socialbee",
+    "name": "SocialBee",
+    "category": "Social",
+    "description": "Highly praised for its AI Copilot features, content categorization, and scheduling.",
+    "features": [
+      "Extracted from UI",
+      "SocialBee",
+      "Social",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://socialbee.com",
+    "tags": [
+      "social",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "schedule",
+    "img": "https://picsum.photos/seed/socialbee/600/400"
+  },
+  {
+    "id": "predisai",
+    "name": "Predis.ai",
+    "category": "Social",
+    "description": "Best for generating full posts autonomously, including text, images, and video.",
+    "features": [
+      "Extracted from UI",
+      "Predis.ai",
+      "Social",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://predis.ai",
+    "tags": [
+      "social",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "smart_display",
+    "img": "https://picsum.photos/seed/predisai/600/400"
+  },
+  {
+    "id": "contentstudio",
+    "name": "ContentStudio",
+    "category": "Social",
+    "description": "A unified social media management tool containing deep AI content curation algorithms.",
+    "features": [
+      "Extracted from UI",
+      "ContentStudio",
+      "Social",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://contentstudio.io",
+    "tags": [
+      "social",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "campaign",
+    "img": "https://picsum.photos/seed/contentstudio/600/400"
+  },
+  {
+    "id": "vistasocial",
+    "name": "Vista Social",
+    "category": "Social",
+    "description": "Great value multi-platform tool with robust AI caption and reply generation.",
+    "features": [
+      "Extracted from UI",
+      "Vista Social",
+      "Social",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://vistasocial.com",
+    "tags": [
+      "social",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "public",
+    "img": "https://picsum.photos/seed/vistasocial/600/400"
+  },
+  {
+    "id": "publer",
+    "name": "Publer",
+    "category": "Social",
+    "description": "Your social media superhero. Schedule, collaborate, and generate posts with AI natively.",
+    "features": [
+      "Extracted from UI",
+      "Publer",
+      "Social",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://publer.io",
+    "tags": [
+      "social",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "send",
+    "img": "https://picsum.photos/seed/publer/600/400"
+  },
+  {
+    "id": "mimeticai",
+    "name": "Mimetic AI",
+    "category": "Social",
+    "description": "Innovative models trained to simulate individual behaviors and expressions for highly targeted social campaigns.",
+    "features": [
+      "Extracted from UI",
+      "Mimetic AI",
+      "Social",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "#",
+    "tags": [
+      "social",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "person_search",
+    "img": "https://picsum.photos/seed/mimeticai/600/400"
+  },
+  {
+    "id": "createosaurus",
+    "name": "Createosaurus",
+    "category": "Social",
+    "description": "All-in-one social media toolkit offering AI-powered copy generation, scheduling, and community management.",
+    "features": [
+      "Extracted from UI",
+      "Createosaurus",
+      "Social",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://createosaurus.io",
+    "tags": [
+      "social",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "post_add",
+    "img": "https://picsum.photos/seed/createosaurus/600/400"
+  },
+  {
+    "id": "characterai",
+    "name": "Character AI",
+    "category": "Social",
+    "description": "Pioneering conversational platform to interact with hyper-realistic AI personalities for entertainment value.",
+    "features": [
+      "Extracted from UI",
+      "Character AI",
+      "Social",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://character.ai",
+    "tags": [
+      "social",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "group",
+    "img": "https://picsum.photos/seed/characterai/600/400"
+  },
+  {
+    "id": "sora",
+    "name": "Sora",
+    "category": "Video",
+    "description": "OpenAI's text-to-video model capable of generating up to a minute of high-fidelity video.",
+    "features": [
+      "Extracted from UI",
+      "Sora",
+      "Video",
+      "Premium"
+    ],
+    "pricing": "Premium",
+    "link": "https://openai.com/sora",
+    "tags": [
+      "video",
+      "ui extraction"
+    ],
+    "color": "danger",
+    "icon": "auto_awesome_motion",
+    "img": "https://picsum.photos/seed/sora/600/400"
+  },
+  {
+    "id": "lumadreammachine",
+    "name": "Luma Dream Machine",
+    "category": "Video",
+    "description": "High quality, fast video generation directly from text prompts and images.",
+    "features": [
+      "Extracted from UI",
+      "Luma Dream Machine",
+      "Video",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://lumalabs.ai/dream-machine",
+    "tags": [
+      "video",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "view_in_ar",
+    "img": "https://picsum.photos/seed/lumadreammachine/600/400"
+  },
+  {
+    "id": "googleveo",
+    "name": "Google Veo",
+    "category": "Video",
+    "description": "Google's most capable generative video model for cinematic and consistent sequences.",
+    "features": [
+      "Extracted from UI",
+      "Google Veo",
+      "Video",
+      "Premium"
+    ],
+    "pricing": "Premium",
+    "link": "https://deepmind.google/technologies/veo",
+    "tags": [
+      "video",
+      "ui extraction"
+    ],
+    "color": "danger",
+    "icon": "camera",
+    "img": "https://picsum.photos/seed/googleveo/600/400"
+  },
+  {
+    "id": "pictoryai",
+    "name": "Pictory AI",
+    "category": "Video",
+    "description": "Converts text into videos, automates video summaries, and scales content creation.",
+    "features": [
+      "Extracted from UI",
+      "Pictory AI",
+      "Video",
+      "Premium"
+    ],
+    "pricing": "Premium",
+    "link": "https://pictory.ai",
+    "tags": [
+      "video",
+      "ui extraction"
+    ],
+    "color": "danger",
+    "icon": "slow_motion_video",
+    "img": "https://picsum.photos/seed/pictoryai/600/400"
+  },
+  {
+    "id": "pexo",
+    "name": "Pexo",
+    "category": "Video",
+    "description": "Autonomous AI video agent creating finished clips from natural language descriptions.",
+    "features": [
+      "Extracted from UI",
+      "Pexo",
+      "Video",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://pexo.ai",
+    "tags": [
+      "video",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "movie",
+    "img": "https://picsum.photos/seed/pexo/600/400"
+  },
+  {
+    "id": "weryai",
+    "name": "Wery AI",
+    "category": "Video",
+    "description": "Multi-model video and image generation suite for streamlining omni-channel media workflows.",
+    "features": [
+      "Extracted from UI",
+      "Wery AI",
+      "Video",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://wery.ai",
+    "tags": [
+      "video",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "animation",
+    "img": "https://picsum.photos/seed/weryai/600/400"
+  },
+  {
+    "id": "veme",
+    "name": "VEME",
+    "category": "Video",
+    "description": "AI text-to-video studio geared towards rapid short-form viral meme creation.",
+    "features": [
+      "Extracted from UI",
+      "VEME",
+      "Video",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://veme.pro",
+    "tags": [
+      "video",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "hub",
+    "img": "https://picsum.photos/seed/veme/600/400"
+  },
+  {
+    "id": "a2eai",
+    "name": "A2E AI",
+    "category": "Video",
+    "description": "An \"uncensored\" alternative for generating videos, animated avatars, and digital clones.",
+    "features": [
+      "Extracted from UI",
+      "A2E AI",
+      "Video",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://a2e.ai",
+    "tags": [
+      "video",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "face",
+    "img": "https://picsum.photos/seed/a2eai/600/400"
+  },
+  {
+    "id": "lipsyncai",
+    "name": "Lipsync AI",
+    "category": "Video",
+    "description": "High-fidelity audio-to-mouth synchronization to realistically animate faces in videos.",
+    "features": [
+      "Extracted from UI",
+      "Lipsync AI",
+      "Video",
+      "Premium"
+    ],
+    "pricing": "Premium",
+    "link": "#",
+    "tags": [
+      "video",
+      "ui extraction"
+    ],
+    "color": "danger",
+    "icon": "record_voice_over",
+    "img": "https://picsum.photos/seed/lipsyncai/600/400"
+  },
+  {
+    "id": "genfacelessai",
+    "name": "Genfaceless AI",
+    "category": "Video",
+    "description": "End-to-end automation tool for creating and scheduling faceless YouTube shorts & reels.",
+    "features": [
+      "Extracted from UI",
+      "Genfaceless AI",
+      "Video",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://genfaceless.com",
+    "tags": [
+      "video",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "auto_mode",
+    "img": "https://picsum.photos/seed/genfacelessai/600/400"
+  },
+  {
+    "id": "claude35",
+    "name": "Claude 3.5",
+    "category": "Writing",
+    "description": "Highly nuanced, human-like reasoning and extremely organic text generation.",
+    "features": [
+      "Extracted from UI",
+      "Claude 3.5",
+      "Writing",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://anthropic.com",
+    "tags": [
+      "writing",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "psychology",
+    "img": "https://picsum.photos/seed/claude35/600/400"
+  },
+  {
+    "id": "stealthwriter",
+    "name": "StealthWriter",
+    "category": "Writing",
+    "description": "Rewrites AI-generated text into human-like content that flawlessly bypasses detectors.",
+    "features": [
+      "Extracted from UI",
+      "StealthWriter",
+      "Writing",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://stealthwriter.ai",
+    "tags": [
+      "writing",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "visibility_off",
+    "img": "https://picsum.photos/seed/stealthwriter/600/400"
+  },
+  {
+    "id": "undetectableai",
+    "name": "Undetectable AI",
+    "category": "Writing",
+    "description": "Humanizes your AI text specifically to ensure it passes all major AI detection algorithms.",
+    "features": [
+      "Extracted from UI",
+      "Undetectable AI",
+      "Writing",
+      "Premium"
+    ],
+    "pricing": "Premium",
+    "link": "https://undetectable.ai",
+    "tags": [
+      "writing",
+      "ui extraction"
+    ],
+    "color": "danger",
+    "icon": "fingerprint",
+    "img": "https://picsum.photos/seed/undetectableai/600/400"
+  },
+  {
+    "id": "hixai",
+    "name": "HIX.AI",
+    "category": "Writing",
+    "description": "An all-in-one writing copilot that includes powerful AI detection bypassers.",
+    "features": [
+      "Extracted from UI",
+      "HIX.AI",
+      "Writing",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://hix.ai",
+    "tags": [
+      "writing",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "draw",
+    "img": "https://picsum.photos/seed/hixai/600/400"
+  },
+  {
+    "id": "bypassgpt",
+    "name": "BypassGPT",
+    "category": "Writing",
+    "description": "Specialized tool solely dedicated to rendering robotic AI text undetectable and human.",
+    "features": [
+      "Extracted from UI",
+      "BypassGPT",
+      "Writing",
+      "Premium"
+    ],
+    "pricing": "Premium",
+    "link": "https://bypassgpt.ai",
+    "tags": [
+      "writing",
+      "ui extraction"
+    ],
+    "color": "danger",
+    "icon": "find_replace",
+    "img": "https://picsum.photos/seed/bypassgpt/600/400"
+  },
+  {
+    "id": "grammarly",
+    "name": "Grammarly",
+    "category": "Writing",
+    "description": "Real-time grammar, spelling & tone check covering most writing needs.",
+    "features": [
+      "Extracted from UI",
+      "Grammarly",
+      "Writing",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://grammarly.com",
+    "tags": [
+      "writing",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "spellcheck",
+    "img": "https://picsum.photos/seed/grammarly/600/400"
+  },
+  {
+    "id": "hemingwayeditor",
+    "name": "Hemingway Editor",
+    "category": "Writing",
+    "description": "Simplify complex sentences for better readability; totally free web tool.",
+    "features": [
+      "Extracted from UI",
+      "Hemingway Editor",
+      "Writing",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://hemingwayapp.com",
+    "tags": [
+      "writing",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "description",
+    "img": "https://picsum.photos/seed/hemingwayeditor/600/400"
+  },
+  {
+    "id": "scribbrai",
+    "name": "Scribbr AI",
+    "category": "Writing",
+    "description": "Summarize texts & check academic tone; excellent free tools for short content.",
+    "features": [
+      "Extracted from UI",
+      "Scribbr AI",
+      "Writing",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://scribbr.com",
+    "tags": [
+      "writing",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "local_library",
+    "img": "https://picsum.photos/seed/scribbrai/600/400"
+  },
+  {
+    "id": "wordtune",
+    "name": "Wordtune",
+    "category": "Writing",
+    "description": "Rewrite with style and clarity; offers a powerful free tier for everyday basic use.",
+    "features": [
+      "Extracted from UI",
+      "Wordtune",
+      "Writing",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://wordtune.com",
+    "tags": [
+      "writing",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "auto_fix_high",
+    "img": "https://picsum.photos/seed/wordtune/600/400"
+  },
+  {
+    "id": "aidungeon",
+    "name": "AI Dungeon",
+    "category": "Writing",
+    "description": "Interactive tool for creative writing & freeform narratives with a capable free version.",
+    "features": [
+      "Extracted from UI",
+      "AI Dungeon",
+      "Writing",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://aidungeon.com",
+    "tags": [
+      "writing",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "sports_esports",
+    "img": "https://picsum.photos/seed/aidungeon/600/400"
+  },
+  {
+    "id": "copyai",
+    "name": "Copy AI",
+    "category": "Writing",
+    "description": "Create engaging marketing content, outlines, and captions using free templates.",
+    "features": [
+      "Extracted from UI",
+      "Copy AI",
+      "Writing",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://copy.ai",
+    "tags": [
+      "writing",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "content_copy",
+    "img": "https://picsum.photos/seed/copyai/600/400"
+  },
+  {
+    "id": "rehumanizeio",
+    "name": "Rehumanize.io",
+    "category": "Writing",
+    "description": "Specifically programmed to rewrite and restructure robotic AI-generated text to pass automated detectors.",
+    "features": [
+      "Extracted from UI",
+      "Rehumanize.io",
+      "Writing",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://rehumanize.io",
+    "tags": [
+      "writing",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "face",
+    "img": "https://picsum.photos/seed/rehumanizeio/600/400"
+  },
+  {
+    "id": "scriptai",
+    "name": "Script AI",
+    "category": "Writing",
+    "description": "AI-powered generator designed to structure and format high-converting scripts for videos, ads, and socials.",
+    "features": [
+      "Extracted from UI",
+      "Script AI",
+      "Writing",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "#",
+    "tags": [
+      "writing",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "description",
+    "img": "https://picsum.photos/seed/scriptai/600/400"
+  },
+  {
+    "id": "wordcopyai",
+    "name": "WordCopy AI",
+    "category": "Writing",
+    "description": "Mobile app that assists users in rapidly generating persuasive marketing copy, ad text, and article ideas.",
+    "features": [
+      "Extracted from UI",
+      "WordCopy AI",
+      "Writing",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "#",
+    "tags": [
+      "writing",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "rate_review",
+    "img": "https://picsum.photos/seed/wordcopyai/600/400"
+  },
+  {
+    "id": "juniaai",
+    "name": "Junia AI",
+    "category": "Writing",
+    "description": "Content creation platform built explicitly for creating long-form, search-engine-optimized blog post clusters.",
+    "features": [
+      "Extracted from UI",
+      "Junia AI",
+      "Writing",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://junia.ai",
+    "tags": [
+      "writing",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "search",
+    "img": "https://picsum.photos/seed/juniaai/600/400"
+  },
+  {
+    "id": "spicywriter",
+    "name": "Spicy Writer",
+    "category": "Writing",
+    "description": "Specialized AI approach for uncensored storytelling and incredibly detailed creative writing roleplays.",
+    "features": [
+      "Extracted from UI",
+      "Spicy Writer",
+      "Writing",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://spicywriter.com",
+    "tags": [
+      "writing",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "local_fire_department",
+    "img": "https://picsum.photos/seed/spicywriter/600/400"
+  },
+  {
+    "id": "linguix",
+    "name": "Linguix",
+    "category": "Writing",
+    "description": "Robust grammar checker and writing assistant extension optimizing professional communication in real-time.",
+    "features": [
+      "Extracted from UI",
+      "Linguix",
+      "Writing",
+      "Freemium"
+    ],
+    "pricing": "Freemium",
+    "link": "https://linguix.com",
+    "tags": [
+      "writing",
+      "ui extraction"
+    ],
+    "color": "warning",
+    "icon": "spellcheck",
+    "img": "https://picsum.photos/seed/linguix/600/400"
+  },
+  {
+    "id": "doclingo",
+    "name": "Doclingo",
+    "category": "Writing",
+    "description": "Revolutionary document translation that preserves formatting while rewriting in professional tones.",
+    "features": [
+      "Extracted from UI",
+      "Doclingo",
+      "Writing",
+      "Free"
+    ],
+    "pricing": "Free",
+    "link": "https://doclingo.io",
+    "tags": [
+      "writing",
+      "ui extraction"
+    ],
+    "color": "success",
+    "icon": "translate",
+    "img": "https://picsum.photos/seed/doclingo/600/400"
   }
 ]
