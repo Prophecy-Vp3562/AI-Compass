@@ -186,6 +186,21 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
             opacity: 0;
             animation: staggerFadeUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
+    
+        @keyframes ripple-wave {
+            0% { transform: translate(-50%, -50%) scale(0); opacity: 1; filter: blur(0px); }
+            100% { transform: translate(-50%, -50%) scale(50); opacity: 0; filter: blur(20px); }
+        }
+        .wave-effect {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, rgba(0,212,255,0.3) 0%, rgba(0,212,255,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: ripple-wave 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 10000;
+        }
     </style>
 </head>
 <body class="font-body selection:bg-primary-container selection:text-on-primary-container">
@@ -473,6 +488,18 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
         // Dynamically detects if you are on PC or Netlify!
         const isLocalHost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
         const API_BASE_URL = isLocalHost ? 'http://localhost:3000' : 'https://aicompass-635382.netlify.app';
+
+        searchInput.addEventListener('click', (e) => {
+            const wave = document.createElement('div');
+            wave.className = 'wave-effect';
+            wave.style.left = e.clientX + 'px';
+            wave.style.top = e.clientY + 'px';
+            document.body.appendChild(wave);
+            
+            setTimeout(() => {
+                wave.remove();
+            }, 1000);
+        });
 
         searchInput.addEventListener('input', (e) => {
             const query = e.target.value.trim();
