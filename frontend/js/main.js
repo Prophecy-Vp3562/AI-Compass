@@ -1,4 +1,5 @@
 let allTools = [];
+let savedTools = JSON.parse(localStorage.getItem('savedTools') || '[]');
 
 // DOM Elements
 const featuredGrid = document.getElementById('featuredGrid');
@@ -31,12 +32,16 @@ async function loadInitialTools() {
 
 function renderToolCard(tool) {
     if (tool.isNew) {
+        const isSaved = savedTools.includes(tool.id);
+        const fillStyle = isSaved ? "style=\"font-variation-settings: 'FILL' 1;\"" : "style=\"font-variation-settings: 'FILL' 0;\"";
+        const textColor = isSaved ? "text-primary" : "text-white/20";
+        
         return `<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
             <div class="relative h-56 flex items-center justify-center bg-gradient-to-br ${tool.gradient || 'from-indigo-900/40 to-black'} overflow-hidden relative">
-                ${tool.img ? `<div class="absolute inset-0 bg-[url('${tool.img}')] opacity-20"></div>` : ''}
+                ${tool.img ? `<div class="absolute inset-0 bg-[url('${tool.img}')] bg-cover bg-center opacity-20"></div>` : ''}
                 <span class="material-symbols-outlined text-6xl text-${tool.color || 'primary'}/80 z-10">${tool.icon || 'star'}</span>
                 <div class="absolute top-4 right-4 bg-${tool.color || 'primary'}/20 backdrop-blur-md px-3 py-1 rounded-full border border-${tool.color || 'primary'}/30 z-10">
-                    <span class="text-[10px] font-bold text-${tool.color || 'primary'} uppercase tracking-widest">${tool.pricing}</span>
+                    <span class="text-[10px] font-bold text-${tool.color || 'primary'} uppercase tracking-widest">${tool.pricing || 'Freemium'}</span>
                 </div>
             </div>
             <div class="p-6 flex flex-col flex-grow">
@@ -45,18 +50,23 @@ function renderToolCard(tool) {
                 <div class="flex flex-wrap gap-2 mb-8"><span class="px-2 py-1 rounded bg-white/5 text-[10px] font-medium text-white/60">${tool.category}</span></div>
                 <div class="mt-auto flex items-center justify-between">
                     <a href="${tool.link}" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span></a>
+                    <span class="material-symbols-outlined ${textColor} hover:text-primary cursor-pointer transition-colors" ${fillStyle} onclick="toggleSave('${tool.id}', this)">bookmark</span>
                 </div>
             </div>
         </div>`;
     } else {
+        const isSaved = savedTools.includes(tool.id);
+        const fillStyle = isSaved ? "style=\"font-variation-settings: 'FILL' 1;\"" : "style=\"font-variation-settings: 'FILL' 0;\"";
+        const textColor = isSaved ? "text-primary" : "text-white/20";
+        
         return `<div class="group flex flex-col glass-card rounded-lg overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,212,255,0.1)]">
             <div class="relative h-56 overflow-hidden">
                 <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="${tool.img}" alt="${tool.name}"/>
-                <div class="absolute top-4 right-4 bg-${tool.color || 'primary'}/20 backdrop-blur-md px-3 py-1 rounded-full border border-${tool.color || 'primary'}/30">
-                    <span class="text-[10px] font-bold text-${tool.color || 'primary'} uppercase tracking-widest">${tool.pricing}</span>
+                <div class="absolute top-4 right-4 bg-${tool.color || 'primary'}/20 backdrop-blur-md px-3 py-1 rounded-full border border-${tool.color || 'primary'}/30 z-10">
+                    <span class="text-[10px] font-bold text-${tool.color || 'primary'} uppercase tracking-widest">${tool.pricing || 'Freemium'}</span>
                 </div>
             </div>
-            <div class="p-6 flex flex-col flex-grow">
+            <div class="p-6 flex flex-col flex-grow z-20">
                 <div class="flex items-center gap-2 mb-2">
                     <h3 class="font-headline font-bold text-xl">${tool.name}</h3>
                 </div>
@@ -68,7 +78,7 @@ function renderToolCard(tool) {
                     <a href="${tool.link}" target="_blank" class="text-primary text-sm font-bold flex items-center gap-2 group/btn">
                         Visit Site <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
                     </a>
-                    <span class="material-symbols-outlined text-white/20 hover:text-primary cursor-pointer transition-colors">bookmark</span>
+                    <span class="material-symbols-outlined ${textColor} hover:text-primary cursor-pointer transition-colors" ${fillStyle} onclick="toggleSave('${tool.id}', this)">bookmark</span>
                 </div>
             </div>
         </div>`;
@@ -213,6 +223,38 @@ if(profileBtn && profileDropdown) {
         e.stopPropagation();
         profileDropdown.classList.toggle('hidden');
     });
+}
+
+document.getElementById('btnSavedTools')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (profileDropdown) profileDropdown.classList.add('hidden');
+    renderSavedToolsTab();
+    const sectionTitle = document.getElementById('sectionTitle');
+    if (sectionTitle) sectionTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+function toggleSave(id, element) {
+    const index = savedTools.indexOf(id);
+    if (index === -1) {
+        savedTools.push(id);
+        element.style.fontVariationSettings = "'FILL' 1";
+        element.classList.add('text-primary');
+        element.classList.remove('text-white/20');
+    } else {
+        savedTools.splice(index, 1);
+        element.style.fontVariationSettings = "'FILL' 0";
+        element.classList.add('text-white/20');
+        element.classList.remove('text-primary');
+    }
+    localStorage.setItem('savedTools', JSON.stringify(savedTools));
+}
+
+function renderSavedToolsTab() {
+    resetButtons();
+    sectionTitle.innerHTML = `<span class="w-12 h-0.5 bg-primary"></span> Saved Tools`;
+    const saved = allTools.filter(t => savedTools.includes(t.id));
+    searchResultsGrid.innerHTML = saved.length > 0 ? saved.map(renderToolCard).join('') : '<p class="col-span-full text-center text-white/50 text-lg">No tools saved yet. Click the bookmark icon on any tool to save it here!</p>';
+    showGrid(searchResultsGrid);
 }
 
 // Category Scrolling
