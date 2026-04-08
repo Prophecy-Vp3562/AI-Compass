@@ -370,5 +370,34 @@ if(searchInput) {
     });
 }
 
+const str1 = "Discover the ";
+const str2 = "Future of AI";
+let typeIndex = 0;
+
+function initTypewriter() {
+    const p1 = document.getElementById('textPart1');
+    const p2 = document.getElementById('textPart2');
+    const cursor = document.getElementById('typeCursor');
+    if(!p1 || !p2) return;
+    
+    function type() {
+        if (typeIndex < str1.length) {
+            p1.innerHTML += str1.charAt(typeIndex);
+            typeIndex++;
+            setTimeout(type, 70); // 70ms per character
+        } else if (typeIndex < str1.length + str2.length) {
+            p2.innerHTML += str2.charAt(typeIndex - str1.length);
+            typeIndex++;
+            setTimeout(type, 70);
+        } else {
+            setTimeout(() => { if(cursor) cursor.style.opacity = '0'; }, 3000);
+        }
+    }
+    setTimeout(type, 300); // 300ms initial delay
+}
+
 // Init
-window.addEventListener('DOMContentLoaded', loadInitialTools);
+window.addEventListener('DOMContentLoaded', () => {
+    loadInitialTools();
+    initTypewriter();
+});
