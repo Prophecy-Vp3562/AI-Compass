@@ -48,9 +48,9 @@
   },
   {
     "id": "codeium",
-    "name": "Codeium",
+    "name": "Windsurf (Codeium)",
     "category": "Coding",
-    "description": "Free AI code completion and chat that integrates into your favorite IDEs.",
+    "description": "Formerly Codeium — an AI-powered code editor and coding assistant with in-flow suggestions, chat, and agentic capabilities.",
     "features": [
       "Autocomplete in 70+ languages",
       "IDE extensions",
@@ -58,7 +58,7 @@
       "Code search"
     ],
     "pricing": "Free",
-    "link": "https://codeium.com",
+    "link": "https://windsurf.com",
     "tags": [
       "autocompletion",
       "free",
