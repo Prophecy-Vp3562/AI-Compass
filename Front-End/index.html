@@ -8,7 +8,7 @@
         // --- Dynamic Initialization ---
         async function loadInitialTools() {
             try {
-                const response = await fetch('http://localhost:3000/tools');
+                const response = await fetch('http://localhost:3000/api/tools');
                 const tools = await response.json();
                 
                 const renderTool = (tool) => {
@@ -487,7 +487,7 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
 
         // Dynamically detects if you are on PC or Netlify!
         const isLocalHost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:';
-        const API_BASE_URL = isLocalHost ? 'http://localhost:3000' : 'https://aicompass-635382.netlify.app';
+        const API_BASE_URL = isLocalHost ? 'http://localhost:3000' : 'https://sage-centaur-4e1fef.netlify.app';
 
         searchInput.addEventListener('click', (e) => {
             const wave = document.createElement('div');
@@ -527,7 +527,7 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
             // Debounce the search request
             searchTimeout = setTimeout(async () => {
                 try {
-                    const response = await fetch(`${API_BASE_URL}/search?q=${encodeURIComponent(query)}`);
+                    const response = await fetch(`${API_BASE_URL}/api/search?q=${encodeURIComponent(query)}`);
                     const tools = await response.json();
                     
                     // Populate dropdown
@@ -618,8 +618,8 @@ Visit Site <span class="material-symbols-outlined text-lg transition-transform g
         // --- Dynamic Initialization (Revived) ---
         async function loadInitialTools() {
             try {
-                const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:' ? 'http://localhost:3000' : 'https://aicompass-635382.netlify.app';
-                const response = await fetch(`${API_BASE_URL}/tools`);
+                const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:' ? 'http://localhost:3000' : 'https://sage-centaur-4e1fef.netlify.app';
+                const response = await fetch(`${API_BASE_URL}/api/tools`);
                 const tools = await response.json();
                 
                 const renderTool = (tool) => {
