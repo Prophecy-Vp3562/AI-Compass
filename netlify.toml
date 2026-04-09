@@ -1,5 +1,5 @@
 [build]
-  publish = "Front-End"
+  publish = "frontend"
   # This tells Netlify where your serverless functions are located
   functions = "netlify/functions"
   command = "npm install"

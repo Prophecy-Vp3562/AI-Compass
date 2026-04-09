@@ -1,17 +1,16 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const fs = require('fs');
+const path = require('path');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 // Load tools data
-const dataPath = path.join(__dirname, '../data/tools.json');
 let tools = [];
 try {
-    tools = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+    tools = require('../data/tools.json');
 } catch (err) {
     console.error('Error reading tools data:', err);
 }
