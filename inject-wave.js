@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 try {
-  let content = fs.readFileSync('Front-End/index.html', 'utf8');
+  let content = fs.readFileSync('frontend/index.html', 'utf8');
 
   // Insert CSS if it doesn't already exist
   if (!content.includes('ripple-wave')) {
@@ -42,7 +42,7 @@ try {
       content = content.replace("searchInput.addEventListener('input'", jsToInject);
   }
 
-  fs.writeFileSync('Front-End/index.html', content);
+  fs.writeFileSync('frontend/index.html', content);
   console.log("Wave effect injected successfully.");
 
 } catch(e) {
