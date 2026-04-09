@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Login | AI Compass</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#0a0a0f",
+            "surface": "#131318",
+            "primary": "#00d4ff",
+            "secondary": "#a855f7"
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk"],
+            "body": ["Inter"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Mesh Gradient matches Main Page */
+    .mesh-gradient {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: #0a0a0f;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 212, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.08) 0%, transparent 40%);
+    }
+
+    /* Glass Effect UI */
+    .glass-card {
+      background: rgba(19, 19, 24, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+    }
+
+    /* Glowing Border Effects using custom pseudo elements */
+    .glow-border::before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border-radius: inherit;
+        padding: 1px;
+        background: linear-gradient(45deg, #00d4ff, transparent 40%, transparent 60%, #a855f7);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0.5;
+        transition: opacity 0.3s ease;
+    }
+
+    .glow-border:hover::before, .glow-border:focus-within::before {
+        opacity: 1;
+    }
+
+    /* Input styling reset */
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 100px #0a0a0f inset !important;
+        -webkit-text-fill-color: white !important;
+        background-color: transparent !important;
+    }
+
+    /* Spinner Animation */
+    .spinner {
+        animation: spin 1s linear infinite;
+    }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+  </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center font-body text-white selection:bg-primary/30">
+  
+  <div class="mesh-gradient"></div>
+
+  <!-- Background Animated Shapes -->
+  <div class="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[140px] z-0 pointer-events-none animate-pulse"></div>
+  <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-secondary/20 rounded-full blur-[140px] z-0 pointer-events-none animate-pulse" style="animation-delay: 2s;"></div>
+
+  <!-- Main Login Card -->
+  <div class="relative z-10 w-full max-w-md p-8 md:p-10 mx-4 glass-card glow-border rounded-[2rem] shadow-[0_30px_60px_-15px_rgba(0,212,255,0.1)] text-left transform transition-all">
+    
+    <!-- Header Icon -->
+    <div class="flex justify-center mb-8">
+      <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center shadow-[0_0_30px_rgba(0,212,255,0.3)] cursor-pointer hover:scale-105 transition-transform" onclick="window.location.href='index.html'">
+        <span class="material-symbols-outlined text-black text-3xl">api</span>
+      </div>
+    </div>
+
+    <!-- Title Area -->
+    <div class="text-center mb-8">
+      <h1 class="text-2xl md:text-3xl font-bold font-headline tracking-tighter text-white mb-2">Welcome Back</h1>
+      <p class="text-white/50 text-sm">Sign in to access the Platform for AI</p>
+    </div>
+
+    <!-- Feedback Alerts -->
+    <div id="alertBox" class="mb-6 text-sm py-3 px-4 rounded-xl hidden font-medium transition-all opacity-0 flex items-center gap-3">
+        <span class="material-symbols-outlined" id="alertIcon">info</span>
+        <span id="alertMessage"></span>
+    </div>
+
+    <!-- Auth Form -->
+    <form id="loginForm" class="space-y-5">
+      
+      <!-- Username Field -->
+      <div>
+        <label for="username" class="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-2 ml-1">Username / Email</label>
+        <div class="relative group">
+          <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+            <span class="material-symbols-outlined text-white/30 group-focus-within:text-primary transition-colors">person</span>
+          </div>
+          <input type="text" id="username" name="username" required
+            class="block w-full pl-12 pr-4 py-3.5 bg-black/40 border border-white/10 rounded-xl text-white placeholder-white/20 focus:ring-0 focus:border-primary/50 transition-colors sm:text-sm"
+            placeholder="admin">
+        </div>
+      </div>
+
+      <!-- Password Field -->
+      <div>
+        <label for="password" class="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-2 ml-1">Password</label>
+        <div class="relative group">
+          <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+            <span class="material-symbols-outlined text-white/30 group-focus-within:text-secondary transition-colors">lock</span>
+          </div>
+          <input type="password" id="password" name="password" required
+            class="block w-full pl-12 pr-4 py-3.5 bg-black/40 border border-white/10 rounded-xl text-white placeholder-white/20 focus:ring-0 focus:border-secondary/50 transition-colors sm:text-sm"
+            placeholder="••••••••">
+        </div>
+      </div>
+
+      <!-- Utilities Row -->
+      <div class="flex items-center justify-between text-sm mt-4 mb-2">
+        <label class="flex items-center gap-2 cursor-pointer group">
+          <input type="checkbox" id="remember" class="rounded border-white/20 bg-black/40 text-primary focus:ring-0 cursor-pointer w-4 h-4">
+          <span class="text-white/60 group-hover:text-white transition-colors">Remember me</span>
+        </label>
+        <a href="#" class="text-primary hover:text-white font-medium transition-colors">Forgot password?</a>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" id="submitBtn" class="w-full flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-black px-6 py-3.5 rounded-xl font-bold transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] active:scale-[0.98] mt-6">
+        <span id="btnText">Sign In Securely</span>
+        <span class="material-symbols-outlined" id="btnIcon">arrow_forward</span>
+      </button>
+
+    </form>
+
+    <!-- Footer Links -->
+    <div class="mt-8 text-center border-t border-white/5 pt-6">
+      <p class="text-sm text-white/40">Don't have an account? <a href="#" class="text-white hover:text-primary font-semibold transition-colors">Apply for Access</a></p>
+    </div>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const btnIcon = document.getElementById('btnIcon');
+    const alertBox = document.getElementById('alertBox');
+    const alertIcon = document.getElementById('alertIcon');
+    const alertMessage = document.getElementById('alertMessage');
+
+    function showAlert(message, type = 'success') {
+      alertMessage.textContent = message;
+      alertBox.classList.remove('hidden', 'bg-success/20', 'text-success', 'bg-danger/20', 'text-danger', 'border-success/30', 'border-danger/30');
+      alertBox.classList.add('flex', 'border');
+      
+      if (type === 'success') {
+        alertIcon.textContent = 'check_circle';
+        alertBox.classList.add('bg-emerald-500/10', 'text-emerald-400', 'border-emerald-500/20');
+      } else {
+        alertIcon.textContent = 'warning';
+        alertBox.classList.add('bg-rose-500/10', 'text-rose-400', 'border-rose-500/20');
+      }
+      
+      setTimeout(() => alertBox.classList.remove('opacity-0'), 10);
+    }
+
+    function setFormLoading(isLoading) {
+        if (isLoading) {
+            submitBtn.disabled = true;
+            btnText.textContent = "Authenticating...";
+            btnIcon.textContent = "progress_activity";
+            btnIcon.classList.add('spinner');
+            submitBtn.classList.add('opacity-80', 'cursor-not-allowed');
+        } else {
+            submitBtn.disabled = false;
+            btnText.textContent = "Sign In Securely";
+            btnIcon.textContent = "arrow_forward";
+            btnIcon.classList.remove('spinner');
+            submitBtn.classList.remove('opacity-80', 'cursor-not-allowed');
+        }
+    }
+
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        setFormLoading(true);
+        alertBox.classList.add('opacity-0'); // Hide previous alerts
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Automatically configure base URL depending on environment
+        const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:' 
+          ? '' 
+          : 'https://sage-centaur-4e1fef.netlify.app';
+
+        try {
+            // Send fetch request to new serverless endpoint
+            const response = await fetch(`${API_BASE_URL}/api/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            });
+
+            const data = await response.json();
+
+            // Simulate slight network delay for UI sleekness
+            setTimeout(() => {
+                setFormLoading(false);
+                
+                if (response.ok && data.success) {
+                    showAlert(data.message + " Redirecting...", "success");
+                    // Mock redirect to main application
+                    setTimeout(() => window.location.href = "index.html", 1500);
+                } else {
+                    showAlert(data.message || "Authentication failed.", "error");
+                    // Add slight shake animation to error state
+                    document.getElementById('password').value = '';
+                    loginForm.classList.add('animate-[shake_0.4s_ease-in-out]');
+                    setTimeout(() => loginForm.classList.remove('animate-[shake_0.4s_ease-in-out]'), 400);
+                }
+            }, 600);
+
+        } catch (error) {
+            setFormLoading(false);
+            showAlert("Network Error: Could not connect to API.", "error");
+        }
+    });
+
+    // Simple shake animation injection
+    const style = document.createElement('style');
+    style.innerHTML = `@keyframes shake { 0%, 100% {transform: translateX(0);} 25% {transform: translateX(-5px);} 75% {transform: translateX(5px);} }`;
+    document.head.appendChild(style);
+
+  </script>
+</body>
+</html>
