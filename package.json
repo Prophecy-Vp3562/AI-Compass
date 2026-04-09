@@ -4,8 +4,8 @@
   "description": "Your intelligent guide to the AI universe",
   "main": "backend/src/server.js",
   "scripts": {
-    "start": "node backend/src/server.js",
-    "dev": "node backend/src/server.js",
+    "start": "netlify dev",
+    "dev": "netlify dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
