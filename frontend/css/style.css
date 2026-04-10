@@ -14,17 +14,17 @@
 }
 
 body.light-mode {
-    /* Premium tech light theme */
-    --bg-primary: #FBFBFD; /* Apple signature color */
-    --text-main: #1D1D1F; /* High-contrast Slate Gray */
+    /* Premium Apple Workspace Light Theme */
+    --bg-primary: #FBFBFD;
+    --text-main: #1D1D1F;
     --text-variant: #6E6E73;
-    --card-bg: rgba(255, 255, 255, 1);
-    --card-border: rgba(0, 0, 0, 0.06);
-    --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
-    --nav-bg: rgba(255, 255, 255, 0.8);
+    --card-bg: #FFFFFF;
+    --card-border: #E5E5E7;
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --nav-bg: rgba(255, 255, 255, 0.7);
     --mesh-color-1: #ffffff;
     --mesh-color-2: #FBFBFD;
-    --primary: #0071e3; /* Premium blue */
+    --primary: #0071e3;
     --secondary: #86868b;
 }
 
@@ -66,12 +66,111 @@ body {
     transition: background 0.5s ease-in-out;
 }
 
-/* Update standard navigation colors for light mode fallback */
+/* =============================================
+   LIGHT MODE: DOT-GRID OVERLAY
+   Push mesh-gradient behind the orbs so orbs
+   are ALWAYS visible — not just during transition.
+   ============================================= */
+body.light-mode .mesh-gradient {
+    background: #FBFBFD;
+    z-index: -2;  /* ← drop below orbs (z-index: -1) */
+}
+
+body.light-mode .mesh-gradient::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23000000' fill-opacity='0.03'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* =============================================
+   LIGHT MODE: DRIFTING AMBIENT ORBS
+   ============================================= */
+@keyframes orbDrift1 {
+    0%   { transform: translate(0px, 0px) scale(1); }
+    33%  { transform: translate(18px, -25px) scale(1.04); }
+    66%  { transform: translate(-12px, 15px) scale(0.97); }
+    100% { transform: translate(0px, 0px) scale(1); }
+}
+@keyframes orbDrift2 {
+    0%   { transform: translate(0px, 0px) scale(1); }
+    30%  { transform: translate(-20px, 18px) scale(1.06); }
+    70%  { transform: translate(15px, -10px) scale(0.96); }
+    100% { transform: translate(0px, 0px) scale(1); }
+}
+@keyframes orbDrift3 {
+    0%   { transform: translate(0px, 0px) scale(1); }
+    40%  { transform: translate(10px, 22px) scale(1.03); }
+    80%  { transform: translate(-18px, -8px) scale(0.98); }
+    100% { transform: translate(0px, 0px) scale(1); }
+}
+@keyframes orbDrift4 {
+    0%   { transform: translate(0px, 0px) scale(1); }
+    50%  { transform: translate(-14px, -20px) scale(1.05); }
+    100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.light-orb {
+    display: none;
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1; /* sits above mesh-gradient (-2) but below all page content */
+    filter: blur(90px);
+    opacity: 1;
+}
+
+body.light-mode .light-orb { display: block; }
+
+/* Orb 1 — Soft Blue top-left (matches reference image) */
+.light-orb-1 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(180, 210, 255, 0.85) 0%, rgba(214, 228, 255, 0.55) 60%, transparent 100%);
+    top: -120px;
+    left: -120px;
+    animation: orbDrift1 120s ease-in-out infinite;
+}
+/* Orb 2 — Soft Lavender right-side */
+.light-orb-2 {
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle, rgba(220, 195, 255, 0.80) 0%, rgba(242, 232, 255, 0.50) 60%, transparent 100%);
+    top: 20%;
+    right: -120px;
+    animation: orbDrift2 140s ease-in-out infinite;
+}
+/* Orb 3 — Soft White/Blue center-bottom */
+.light-orb-3 {
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(200, 220, 255, 0.60) 0%, rgba(240, 245, 255, 0.40) 60%, transparent 100%);
+    bottom: 5%;
+    left: 15%;
+    animation: orbDrift3 160s ease-in-out infinite;
+}
+/* Orb 4 — Lavender/Blue bottom-right accent */
+.light-orb-4 {
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(195, 165, 255, 0.70) 0%, rgba(214, 228, 255, 0.45) 60%, transparent 100%);
+    bottom: -80px;
+    right: 20%;
+    animation: orbDrift4 130s ease-in-out infinite;
+}
+
+/* =============================================
+   LIGHT MODE: GLASSMORPHIC NAVBAR
+   ============================================= */
 body.light-mode nav {
-    background-color: var(--nav-bg) !important;
-    border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
     backdrop-filter: blur(20px) !important;
     -webkit-backdrop-filter: blur(20px) !important;
+    box-shadow: none !important;
 }
 
 body.light-mode .text-white { color: var(--text-main) !important; }
@@ -87,25 +186,61 @@ body.light-mode .bg-white\/10 { background-color: rgba(0, 0, 0, 0.08) !important
 body.light-mode .border-white\/10 { border-color: rgba(0, 0, 0, 0.08) !important; }
 body.light-mode .border-white\/15 { border-color: rgba(0, 0, 0, 0.1) !important; }
 
-/* Floating icons shadow in light mode */
-body.light-mode #themeToggleTrigger img,
-body.light-mode .lg\:block img {
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+/* =============================================
+   LIGHT MODE: HERO HEADING TYPOGRAPHY
+   ============================================= */
+body.light-mode h1 {
+    color: #1D1D1F;
+    letter-spacing: -0.015em;
 }
 
-/* Force search bar to stay dark in light mode */
+/* =============================================
+   LIGHT MODE: SEARCH BAR — PILL + SOFT SHADOW
+   ============================================= */
+body.light-mode .relative.w-full.max-w-2xl .relative.flex.items-center {
+    background-color: #FFFFFF !important;
+    border-radius: 9999px !important;
+    border-color: rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+    backdrop-filter: none !important;
+}
+
+/* =============================================
+   LIGHT MODE: GLASS CARDS — WHITE + LIFT HOVER
+   ============================================= */
+body.light-mode .glass-card {
+    background: #FFFFFF !important;
+    border: 1px solid #E5E5E7 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+    backdrop-filter: none !important;
+}
+
+body.light-mode .glass-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.10) !important;
+}
+
+/* =============================================
+   LIGHT MODE: FLOATING ICON DROP-SHADOW GLOW
+   ============================================= */
+body.light-mode #themeToggleTrigger img {
+    filter: drop-shadow(0 0 16px rgba(0, 113, 227, 0.20)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.10));
+}
+
+body.light-mode .lg\:block img {
+    filter: drop-shadow(0 0 16px rgba(168, 85, 247, 0.18)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.10));
+}
+
+/* Search input: dark text on white bar in light mode */
 body.light-mode #searchInput {
-    color: white !important;
+    color: #1D1D1F !important;
 }
 
 body.light-mode #searchInput::placeholder {
-    color: rgba(255, 255, 255, 0.4) !important;
+    color: rgba(0, 0, 0, 0.30) !important;
 }
 
-body.light-mode .relative.max-w-2xl .bg-surface-container-lowest\/40 {
-    background-color: rgba(19, 19, 24, 0.8) !important;
-    border-color: rgba(255, 255, 255, 0.1) !important;
-}
+/* Search bar container \u2014 white pill (handled by the .relative.flex.items-center rule above) */
 
 body.light-mode #searchDropdown {
     background-color: rgba(19, 19, 24, 0.95) !important;
