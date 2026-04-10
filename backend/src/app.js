@@ -1,8 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-
-
+const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 app.use(cors());
@@ -17,6 +16,9 @@ try {
 }
 
 const router = express.Router();
+
+app.use('/api', authRoutes);
+app.use('/.netlify/functions/api', authRoutes);
 
 router.get('/tools', (req, res) => {
     try {

@@ -1,5 +1,6 @@
 let allTools = [];
 let savedTools = JSON.parse(localStorage.getItem('savedTools') || '[]');
+const SESSION_KEY = 'aiCompassUser';
 
 // DOM Elements
 const featuredGrid = document.getElementById('featuredGrid');
@@ -23,6 +24,45 @@ const searchDropdown = document.getElementById('searchDropdown');
 const navExplore = document.getElementById('navExplore');
 const navCategories = document.getElementById('navCategories');
 const btnSavedTools = document.getElementById('btnSavedTools');
+const loginBtn = document.getElementById('loginBtn');
+const profileWrapper = document.getElementById('profileWrapper');
+const profileBtn = document.getElementById('profileBtn');
+const profileDropdown = document.getElementById('profileDropdown');
+const profileEmail = document.getElementById('profileEmail');
+const profileLabel = document.getElementById('profileLabel');
+const logoutBtn = document.getElementById('logoutBtn');
+
+function getCurrentUser() {
+    try {
+        return JSON.parse(localStorage.getItem(SESSION_KEY) || 'null');
+    } catch (error) {
+        console.error('Failed to parse saved session:', error);
+        localStorage.removeItem(SESSION_KEY);
+        return null;
+    }
+}
+
+function updateAuthUI() {
+    const currentUser = getCurrentUser();
+
+    if (currentUser?.email) {
+        loginBtn?.classList.add('hidden');
+        profileWrapper?.classList.remove('hidden');
+        if (profileEmail) profileEmail.textContent = currentUser.email;
+        if (profileLabel) profileLabel.textContent = currentUser.email;
+        return;
+    }
+
+    loginBtn?.classList.remove('hidden');
+    profileWrapper?.classList.add('hidden');
+    profileDropdown?.classList.add('hidden');
+}
+
+function logout() {
+    localStorage.removeItem(SESSION_KEY);
+    updateAuthUI();
+    window.location.href = 'login.html';
+}
 
 function updateTopNavActive(activeId) {
     [navExplore, navCategories, btnSavedTools].forEach(nav => {
@@ -236,16 +276,17 @@ if(btnOpenSource) btnOpenSource.addEventListener('click', renderOpenSourceTab);
 if(btnFree) btnFree.addEventListener('click', renderFreeTab);
 if(btnPremium) btnPremium.addEventListener('click', renderPremiumTab);
 
-// Profile Dropdown functionality
-const profileBtn = document.getElementById('profileBtn');
-const profileDropdown = document.getElementById('profileDropdown');
-
 if(profileBtn && profileDropdown) {
     profileBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         profileDropdown.classList.toggle('hidden');
     });
 }
+
+logoutBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    logout();
+});
 
 document.getElementById('btnSavedTools')?.addEventListener('click', (e) => {
     e.preventDefault();
@@ -405,6 +446,54 @@ if(searchInput) {
     });
 }
 
+function updateAuthUI() {
+    const userEmail = localStorage.getItem('userEmail');
+    const accountWrapper = document.getElementById('accountWrapper');
+    const userProfile = document.getElementById('userProfile');
+    const userEmailDisplay = document.getElementById('userEmailDisplay');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    if (userEmail) {
+        if (accountWrapper) accountWrapper.classList.add('hidden');
+        if (userProfile) {
+            userProfile.classList.remove('hidden');
+            userProfile.classList.add('flex');
+        }
+        if (userEmailDisplay) userEmailDisplay.textContent = userEmail.split('@')[0];
+        
+        if (logoutBtn) {
+            logoutBtn.onclick = (e) => {
+                e.stopPropagation();
+                localStorage.removeItem('userEmail');
+                window.location.reload();
+            };
+        }
+    } else {
+        if (accountWrapper) accountWrapper.classList.remove('hidden');
+        if (userProfile) {
+            userProfile.classList.add('hidden');
+            userProfile.classList.remove('flex');
+        }
+    }
+}
+
+// Dropdown Toggle Logic
+function initAccountDropdown() {
+    const accountBtn = document.getElementById('accountBtn');
+    const accountDropdown = document.getElementById('accountDropdown');
+    
+    if (!accountBtn || !accountDropdown) return;
+    
+    accountBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        accountDropdown.classList.toggle('hidden');
+    });
+    
+    document.addEventListener('click', () => {
+        accountDropdown.classList.add('hidden');
+    });
+}
+
 const str1 = "Discover the ";
 const str2 = "Future of AI";
 let typeIndex = 0;
@@ -452,6 +541,8 @@ function toggleTheme() {
 
 // Init
 window.addEventListener('DOMContentLoaded', () => {
+    updateAuthUI();
+    initAccountDropdown();
     loadInitialTools();
     initTypewriter();
     initTheme();

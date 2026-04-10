@@ -9,10 +9,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Backward-compatible login function wrapper for old redirects.
 app.use((req, res, next) => {
-    if (req.method === 'POST' && (req.url === '/' || req.url.endsWith('/login'))) {
-        req.url = '/login';
+    if (req.method === 'POST' && (req.url === '/' || req.url.endsWith('/signup'))) {
+        req.url = '/signup';
     }
     next();
 });
