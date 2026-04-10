@@ -139,6 +139,11 @@ body.light-mode #searchDropdown .text-white\/50 {
     animation: staggerFadeUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
+/* Ensure Category Card labels stay white in light mode */
+#categoryContainer .text-white {
+    color: white !important;
+}
+
 @keyframes expandFluidWave {
     0% {
         transform: translate(-50%, -50%) scale(0.01);
