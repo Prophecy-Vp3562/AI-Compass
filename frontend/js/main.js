@@ -431,8 +431,28 @@ function initTypewriter() {
     setTimeout(type, 300); // 300ms initial delay
 }
 
+// Theme Toggle Logic
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+    }
+    
+    const trigger = document.getElementById('themeToggleTrigger');
+    if (trigger) {
+        trigger.addEventListener('click', toggleTheme);
+    }
+}
+
+function toggleTheme() {
+    document.body.classList.toggle('light-mode');
+    const isLight = document.body.classList.contains('light-mode');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+}
+
 // Init
 window.addEventListener('DOMContentLoaded', () => {
     loadInitialTools();
     initTypewriter();
+    initTheme();
 });

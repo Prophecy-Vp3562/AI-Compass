@@ -1,30 +1,123 @@
+:root {
+    /* Dark Theme (Default) - UNCHANGED */
+    --bg-primary: #0a0a0f;
+    --text-main: #e4e1e9;
+    --text-variant: #bbc9cf;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: none;
+    --nav-bg: rgba(0, 0, 0, 0.2);
+    --mesh-color-1: #1a1a2e;
+    --mesh-color-2: #0a0a0f;
+    --primary: #a8e8ff;
+    --secondary: #ddb7ff;
+}
+
+body.light-mode {
+    /* Premium tech light theme */
+    --bg-primary: #FBFBFD; /* Apple signature color */
+    --text-main: #1D1D1F; /* High-contrast Slate Gray */
+    --text-variant: #6E6E73;
+    --card-bg: rgba(255, 255, 255, 1);
+    --card-border: rgba(0, 0, 0, 0.06);
+    --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    --nav-bg: rgba(255, 255, 255, 0.8);
+    --mesh-color-1: #ffffff;
+    --mesh-color-2: #FBFBFD;
+    --primary: #0071e3; /* Premium blue */
+    --secondary: #86868b;
+}
+
 body {
-    background-color: #0a0a0f;
-    color: #e4e1e9;
-    cursor: auto !important; /* Ensure cursor is visible if user had hidden it before */
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    cursor: auto !important;
+    transition: background 0.5s ease-in-out, color 0.3s ease;
 }
 
 .glass-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+    transition: background-color 0.5s ease-in-out, border-color 0.5s ease, box-shadow 0.5s ease, color 0.3s ease;
+}
+
+.text-on-surface-variant {
+    color: var(--text-variant) !important;
+    transition: color 0.3s ease;
 }
 
 .text-gradient {
-    background: linear-gradient(to right, #a8e8ff, #00d4ff);
+    background: linear-gradient(to right, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .mesh-gradient {
-    background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0a0a0f 100%);
+    background: radial-gradient(circle at 50% 50%, var(--mesh-color-1) 0%, var(--mesh-color-2) 100%);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
+    transition: background 0.5s ease-in-out;
+}
+
+/* Update standard navigation colors for light mode fallback */
+body.light-mode nav {
+    background-color: var(--nav-bg) !important;
+    border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+}
+
+body.light-mode .text-white { color: var(--text-main) !important; }
+body.light-mode .text-white\/60 { color: var(--text-variant) !important; }
+body.light-mode .text-white\/50 { color: var(--text-variant) !important; opacity: 0.8; }
+body.light-mode .text-white\/30 { color: var(--text-variant) !important; opacity: 0.6; }
+body.light-mode .text-white\/20 { color: var(--text-variant) !important; opacity: 0.4; }
+body.light-mode .text-white\/10 { color: var(--text-variant) !important; opacity: 0.2; }
+body.light-mode .text-white\/5 { color: var(--text-variant) !important; opacity: 0.1; }
+
+body.light-mode .bg-white\/5 { background-color: rgba(0, 0, 0, 0.04) !important; }
+body.light-mode .bg-white\/10 { background-color: rgba(0, 0, 0, 0.08) !important; }
+body.light-mode .border-white\/10 { border-color: rgba(0, 0, 0, 0.08) !important; }
+body.light-mode .border-white\/15 { border-color: rgba(0, 0, 0, 0.1) !important; }
+
+/* Floating icons shadow in light mode */
+body.light-mode #themeToggleTrigger img,
+body.light-mode .lg\:block img {
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+}
+
+/* Force search bar to stay dark in light mode */
+body.light-mode #searchInput {
+    color: white !important;
+}
+
+body.light-mode #searchInput::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+body.light-mode .relative.max-w-2xl .bg-surface-container-lowest\/40 {
+    background-color: rgba(19, 19, 24, 0.8) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.light-mode #searchDropdown {
+    background-color: rgba(19, 19, 24, 0.95) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.light-mode #searchDropdown .text-white {
+    color: white !important;
+}
+
+body.light-mode #searchDropdown .text-white\/50 {
+    color: rgba(255, 255, 255, 0.5) !important;
 }
 
 .bento-scroll::-webkit-scrollbar {
@@ -76,3 +169,5 @@ body {
     backdrop-filter: blur(6px) saturate(120%);
     -webkit-backdrop-filter: blur(6px) saturate(120%);
 }
+
+
