@@ -19,6 +19,26 @@ const btnPremium = document.getElementById('btnPremium');
 const searchInput = document.getElementById('searchInput');
 const searchDropdown = document.getElementById('searchDropdown');
 
+// Top Nav Elements
+const navExplore = document.getElementById('navExplore');
+const navCategories = document.getElementById('navCategories');
+const btnSavedTools = document.getElementById('btnSavedTools');
+
+function updateTopNavActive(activeId) {
+    [navExplore, navCategories, btnSavedTools].forEach(nav => {
+        if (!nav) return;
+        if (nav.id === activeId) {
+            nav.className = nav.id === 'btnSavedTools' 
+                ? "text-white font-bold border-b-2 border-[#00d4ff] pb-1 font-headline flex items-center gap-1.5 cursor-pointer"
+                : "text-white font-bold border-b-2 border-[#00d4ff] pb-1 font-headline cursor-pointer";
+        } else {
+            nav.className = nav.id === 'btnSavedTools'
+                ? "text-white/60 hover:text-white transition-colors font-headline flex items-center gap-1.5 cursor-pointer"
+                : "text-white/60 hover:text-white transition-colors font-headline cursor-pointer";
+        }
+    });
+}
+
 // Initial Load
 async function loadInitialTools() {
     try {
@@ -145,6 +165,7 @@ window.filterByCategory = (categoryName) => {
     sectionTitle.innerHTML = `<span class="w-12 h-0.5 bg-primary"></span> ${categoryName} Tools`;
     searchResultsGrid.innerHTML = filteredTools.length > 0 ? filteredTools.map(renderToolCard).join('') : '<p class="col-span-full text-center text-white/50 text-lg">No tools found in this category.</p>';
     showGrid(searchResultsGrid);
+    updateTopNavActive('navCategories');
 };
 
 // Render Functions for Tabs
@@ -169,6 +190,7 @@ function renderFeaturedTab() {
     sectionTitle.innerHTML = `<span class="w-12 h-0.5 bg-primary"></span> Featured Selections`;
     if(featuredGrid) featuredGrid.innerHTML = allTools.filter(t => !t.isNew).map(renderToolCard).join('');
     showGrid(featuredGrid);
+    updateTopNavActive('navExplore');
 }
 
 function renderNewestTab() {
@@ -231,6 +253,18 @@ document.getElementById('btnSavedTools')?.addEventListener('click', (e) => {
     renderSavedToolsTab();
     const sectionTitle = document.getElementById('sectionTitle');
     if (sectionTitle) sectionTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    updateTopNavActive('btnSavedTools');
+});
+
+navExplore?.addEventListener('click', (e) => {
+    e.preventDefault();
+    renderFeaturedTab();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+navCategories?.addEventListener('click', (e) => {
+    // Categories naturally scrolls to #categories because of the href in HTML
+    updateTopNavActive('navCategories');
 });
 
 function toggleSave(id, element) {
@@ -255,6 +289,7 @@ function renderSavedToolsTab() {
     const saved = allTools.filter(t => savedTools.includes(t.id));
     searchResultsGrid.innerHTML = saved.length > 0 ? saved.map(renderToolCard).join('') : '<p class="col-span-full text-center text-white/50 text-lg">No tools saved yet. Click the bookmark icon on any tool to save it here!</p>';
     showGrid(searchResultsGrid);
+    updateTopNavActive('btnSavedTools');
 }
 
 // Category Scrolling

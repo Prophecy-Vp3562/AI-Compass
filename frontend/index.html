@@ -54,10 +54,12 @@
         onclick="window.location.reload()">
         Ai Compass
       </div>
-      <div class="hidden md:flex gap-8 items-center ml-auto mr-4">
-        <a class="text-white font-bold border-b-2 border-[#00d4ff] pb-1 font-headline" href="#">Explore</a>
-        <a class="text-white/60 hover:text-white transition-colors font-headline" href="#categories">Categories</a>
-        <a class="text-white/60 hover:text-white transition-colors font-headline" href="#">Pricing</a>
+      <div id="topNavLinks" class="hidden md:flex gap-8 items-center ml-auto mr-4">
+        <a id="navExplore" class="text-white font-bold border-b-2 border-[#00d4ff] pb-1 font-headline cursor-pointer">Explore</a>
+        <a id="navCategories" class="text-white/60 hover:text-white transition-colors font-headline cursor-pointer" href="#categories">Categories</a>
+        <a id="btnSavedTools" class="text-white/60 hover:text-white transition-colors font-headline flex items-center gap-1.5 cursor-pointer">
+          <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">bookmark</span>Bookmark
+        </a>
       </div>
       <!-- Login Button -->
       <a href="login.html" id="loginBtn" class="relative flex items-center gap-2.5 group cursor-pointer hover:bg-white/5 px-3 py-1.5 rounded-full transition-colors border border-white/10 bg-white/5">
