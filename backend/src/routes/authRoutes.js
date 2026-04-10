@@ -111,4 +111,43 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// Bookmark Endpoints
+router.get('/bookmarks', async (req, res) => {
+  try {
+    const email = req.query.email;
+    if (!email) return res.status(400).json({ success: false, message: 'Email required' });
+
+    await connectToDatabase();
+    const user = await User.findOne({ email });
+    if (!user) return res.status(404).json({ success: false, message: 'User not found' });
+
+    res.json({ success: true, bookmarks: user.bookmarks || [] });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+router.post('/bookmarks/toggle', async (req, res) => {
+  try {
+    const { email, toolId } = req.body;
+    if (!email || !toolId) return res.status(400).json({ success: false, message: 'Email and toolId required' });
+
+    await connectToDatabase();
+    const user = await User.findOne({ email });
+    if (!user) return res.status(404).json({ success: false, message: 'User not found' });
+
+    const index = user.bookmarks.indexOf(toolId);
+    if (index === -1) {
+      user.bookmarks.push(toolId);
+    } else {
+      user.bookmarks.splice(index, 1);
+    }
+
+    await user.save();
+    res.json({ success: true, bookmarks: user.bookmarks });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
 module.exports = router;

@@ -8,7 +8,7 @@ const alertMessage = document.getElementById('alertMessage');
 const emailInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 const LOGIN_ENDPOINT = '/api/login';
-const SESSION_KEY = 'aiCompassUser';
+const SESSION_KEY = 'userEmail';
 
 function showAlert(message, type = 'success') {
   alertMessage.textContent = message;
@@ -96,11 +96,8 @@ async function handleLogin(event) {
       return;
     }
 
-    localStorage.setItem(SESSION_KEY, JSON.stringify({ email }));
+    localStorage.setItem(SESSION_KEY, email);
     showAlert(data.message || 'Login successful. Redirecting...', 'success');
-    
-    // Save login state
-    localStorage.setItem('userEmail', email);
     
     setTimeout(() => {
       window.location.href = 'index.html';

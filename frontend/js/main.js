@@ -1,6 +1,6 @@
 let allTools = [];
-let savedTools = JSON.parse(localStorage.getItem('savedTools') || '[]');
-const SESSION_KEY = 'aiCompassUser';
+let savedTools = []; // Now defaults to empty for guests
+const SESSION_KEY = 'userEmail';
 
 // DOM Elements
 const featuredGrid = document.getElementById('featuredGrid');
@@ -59,9 +59,10 @@ function updateAuthUI() {
 }
 
 function logout() {
-    localStorage.removeItem(SESSION_KEY);
+    localStorage.clear(); // Clear all keys (userEmail, theme, etc.) for a full reset
+    savedTools = [];
     updateAuthUI();
-    window.location.href = 'login.html';
+    window.location.reload();
 }
 
 function updateTopNavActive(activeId) {
@@ -309,7 +310,9 @@ navCategories?.addEventListener('click', (e) => {
 });
 
 function toggleSave(id, element) {
+    const userEmail = localStorage.getItem('userEmail');
     const index = savedTools.indexOf(id);
+    
     if (index === -1) {
         savedTools.push(id);
         element.style.fontVariationSettings = "'FILL' 1";
@@ -321,7 +324,17 @@ function toggleSave(id, element) {
         element.classList.add('text-white/20');
         element.classList.remove('text-primary');
     }
-    localStorage.setItem('savedTools', JSON.stringify(savedTools));
+
+    // Sync to backend if logged in
+    if (userEmail) {
+        fetch('/api/bookmarks/toggle', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: userEmail, toolId: id })
+        }).catch(err => console.error("Failed to sync bookmark toggle:", err));
+    }
+    
+    // Note: We no longer save to localStorage to ensure guest sessions are temporary
 }
 
 function renderSavedToolsTab() {
@@ -461,10 +474,22 @@ function updateAuthUI() {
         }
         if (userEmailDisplay) userEmailDisplay.textContent = userEmail.split('@')[0];
         
+        // Sync Bookmarks from Database
+        fetch(`/api/bookmarks?email=${encodeURIComponent(userEmail)}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    savedTools = data.bookmarks;
+                    renderActiveTab(); // Refresh UI to show saved state
+                }
+            })
+            .catch(err => console.error("Failed to sync bookmarks:", err));
+
         if (logoutBtn) {
             logoutBtn.onclick = (e) => {
                 e.stopPropagation();
                 localStorage.removeItem('userEmail');
+                savedTools = []; // Reset in-memory state
                 window.location.reload();
             };
         }
@@ -474,6 +499,7 @@ function updateAuthUI() {
             userProfile.classList.add('hidden');
             userProfile.classList.remove('flex');
         }
+        savedTools = []; // Reset for guests
     }
 }
 
