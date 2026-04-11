@@ -304,6 +304,30 @@ navExplore?.addEventListener('click', (e) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
+function showToast(message, icon = 'info') {
+    let container = document.querySelector('.toast-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.className = 'toast-container';
+        document.body.appendChild(container);
+    }
+
+    const toast = document.createElement('div');
+    toast.className = 'toast-message';
+    toast.innerHTML = `
+        <span class="material-symbols-outlined text-primary">${icon}</span>
+        <span>${message}</span>
+    `;
+
+    container.appendChild(toast);
+
+    // Auto-remove
+    setTimeout(() => {
+        toast.classList.add('closing');
+        toast.addEventListener('animationend', () => toast.remove());
+    }, 4000);
+}
+
 navCategories?.addEventListener('click', (e) => {
     // Categories naturally scrolls to #categories because of the href in HTML
     updateTopNavActive('navCategories');
@@ -318,6 +342,11 @@ function toggleSave(id, element) {
         element.style.fontVariationSettings = "'FILL' 1";
         element.classList.add('text-primary');
         element.classList.remove('text-white/20');
+        
+        // Alert guest users
+        if (!userEmail) {
+            showToast('Sign in to save your bookmarks permanently!', 'account_circle');
+        }
     } else {
         savedTools.splice(index, 1);
         element.style.fontVariationSettings = "'FILL' 0";
@@ -333,8 +362,6 @@ function toggleSave(id, element) {
             body: JSON.stringify({ email: userEmail, toolId: id })
         }).catch(err => console.error("Failed to sync bookmark toggle:", err));
     }
-    
-    // Note: We no longer save to localStorage to ensure guest sessions are temporary
 }
 
 function renderSavedToolsTab() {
