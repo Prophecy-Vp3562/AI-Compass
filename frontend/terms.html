@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Terms of Service | AI Compass</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "background": "#0a0a0f",
+            "surface": "#131318",
+            "primary": "#00d4ff",
+            "secondary": "#a855f7"
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk"],
+            "body": ["Inter"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .mesh-gradient {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: #0a0a0f;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 212, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.08) 0%, transparent 40%);
+    }
+
+    .glass-card {
+      background: rgba(19, 19, 24, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .scroll-hide::-webkit-scrollbar { display: none; }
+    .scroll-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+
+<body class="min-h-screen font-body text-white selection:bg-primary/30">
+  
+  <div class="mesh-gradient"></div>
+
+  <div class="max-w-3xl mx-auto px-6 py-20">
+    
+    <!-- Header -->
+    <div class="mb-16">
+        <button onclick="window.history.back()" class="flex items-center gap-2 text-white/40 hover:text-primary transition-colors mb-8 group">
+            <span class="material-symbols-outlined transition-transform group-hover:-translate-x-1">arrow_back</span>
+            <span class="text-sm font-medium">Back to Registration</span>
+        </button>
+        <h1 class="text-4xl md:text-5xl font-bold font-headline tracking-tighter mb-4">Terms of Service</h1>
+        <p class="text-white/50">Last updated: April 12, 2026 • 2 minute read</p>
+    </div>
+
+    <!-- Content Card -->
+    <div class="glass-card rounded-[2.5rem] p-8 md:p-12 space-y-12">
+        
+        <!-- Summary Section -->
+        <section class="space-y-4">
+            <div class="flex items-center gap-3 text-primary">
+                <span class="material-symbols-outlined">auto_awesome</span>
+                <h2 class="font-headline font-bold text-xl uppercase tracking-widest">Introduction</h2>
+            </div>
+            <p class="text-white/70 leading-relaxed">
+                Welcome to AI Compass. By using our platform, you agree to these terms. We've kept them short and simple because we value your time and clarity.
+            </p>
+        </section>
+
+        <!-- Terms Grid -->
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
+                <span class="material-symbols-outlined text-secondary">verified_user</span>
+                <h3 class="font-bold text-white">Your Data</h3>
+                <p class="text-sm text-white/50 leading-relaxed">We only save what you explicitly bookmark. Your login data is encrypted and never sold to third parties.</p>
+            </div>
+            <div class="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
+                <span class="material-symbols-outlined text-primary">terminal</span>
+                <h3 class="font-bold text-white">Usage</h3>
+                <p class="text-sm text-white/50 leading-relaxed">AI Compass is a directory. We are not responsible for the content or performance of the external AI tools listed.</p>
+            </div>
+            <div class="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
+                <span class="material-symbols-outlined text-indigo-400">shield</span>
+                <h3 class="font-bold text-white">Security</h3>
+                <p class="text-sm text-white/50 leading-relaxed">You are responsible for maintaining the security of your account credentials.</p>
+            </div>
+            <div class="space-y-4 p-6 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
+                <span class="material-symbols-outlined text-emerald-400">update</span>
+                <h3 class="font-bold text-white">Updates</h3>
+                <p class="text-sm text-white/50 leading-relaxed">We may update these terms occasionally. Continued use of the platform implies acceptance of new terms.</p>
+            </div>
+        </div>
+
+        <div class="pt-8 border-t border-white/5">
+            <p class="text-xs text-white/30 text-center italic">
+                If you have questions about these terms, please contact our support team.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-12 text-center">
+        <a href="signup.html" class="inline-flex items-center justify-center bg-white text-black px-8 py-3 rounded-xl font-bold hover:bg-gray-200 transition-all shadow-lg active:scale-95">
+            I Understand, Take Me Back
+        </a>
+    </div>
+
+  </div>
+
+</body>
+</html>
