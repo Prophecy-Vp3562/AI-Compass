@@ -150,4 +150,71 @@ router.post('/bookmarks/toggle', async (req, res) => {
   }
 });
 
+// Search History Endpoints
+router.get('/search/history', async (req, res) => {
+  try {
+    const email = req.query.email;
+    if (!email) return res.status(400).json({ success: false, message: 'Email required' });
+
+    await connectToDatabase();
+    const user = await User.findOne({ email });
+    if (!user) return res.status(404).json({ success: false, message: 'User not found' });
+
+    res.json({ success: true, history: user.recentSearches || [] });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+router.post('/search/history', async (req, res) => {
+  try {
+    const { email, query } = req.body;
+    if (!email || !query) return res.status(400).json({ success: false, message: 'Email and query required' });
+
+    await connectToDatabase();
+    const user = await User.findOne({ email });
+    if (!user) return res.status(404).json({ success: false, message: 'User not found' });
+
+    // Clean query
+    const cleanQuery = query.trim();
+    if (!cleanQuery) return res.json({ success: true, history: user.recentSearches });
+
+    // Remove if already exists (to move to top)
+    const index = user.recentSearches.indexOf(cleanQuery);
+    if (index !== -1) {
+      user.recentSearches.splice(index, 1);
+    }
+
+    // Add to top
+    user.recentSearches.unshift(cleanQuery);
+
+    // Limit to 10 items
+    if (user.recentSearches.length > 10) {
+      user.recentSearches = user.recentSearches.slice(0, 10);
+    }
+
+    await user.save();
+    res.json({ success: true, history: user.recentSearches });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+router.delete('/search/history', async (req, res) => {
+  try {
+    const { email } = req.body;
+    if (!email) return res.status(400).json({ success: false, message: 'Email required' });
+
+    await connectToDatabase();
+    const user = await User.findOne({ email });
+    if (!user) return res.status(404).json({ success: false, message: 'User not found' });
+
+    user.recentSearches = [];
+    await user.save();
+    res.json({ success: true, message: 'Search history cleared' });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
 module.exports = router;

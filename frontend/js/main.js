@@ -414,13 +414,39 @@ if(searchInput) {
         wave.addEventListener('animationend', () => wave.remove());
     });
 
-    searchInput.addEventListener('focus', () => {
+    searchInput.addEventListener('focus', async () => {
+        const userEmail = localStorage.getItem('userEmail');
         const searchOverlay = document.getElementById('searchOverlay');
         const searchContainer = document.getElementById('searchContainer');
+        
         if (searchOverlay && searchContainer) {
             searchOverlay.classList.remove('hidden');
             setTimeout(() => searchOverlay.classList.remove('opacity-0'), 10);
             searchContainer.classList.add('scale-105', '-translate-y-2');
+        }
+
+        // Show Recent Searches if empty and logged in
+        if (userEmail && searchInput.value.trim() === '') {
+            try {
+                const response = await fetch(`/api/search/history?email=${encodeURIComponent(userEmail)}`);
+                const data = await response.json();
+                
+                if (data.success && data.history && data.history.length > 0) {
+                    searchDropdown.innerHTML = `
+                        <div class="px-4 py-2 text-[10px] uppercase tracking-widest text-white/30 font-bold border-b border-white/5 mb-1">Recent Searches</div>
+                        ${data.history.map(term => `
+                            <div class="flex items-center gap-3 px-4 py-3 hover:bg-white/10 rounded-xl cursor-pointer transition-colors group" 
+                                 onclick="document.getElementById('searchInput').value='${term.replace(/'/g, "\\'")}'; document.getElementById('searchInput').dispatchEvent(new Event('input')); setTimeout(() => document.getElementById('searchInput').dispatchEvent(new KeyboardEvent('keydown', {key: 'Enter'})), 100);">
+                                <span class="material-symbols-outlined text-white/30 text-xl group-hover:text-primary transition-colors">history</span>
+                                <span class="text-white font-medium text-sm font-headline">${term}</span>
+                            </div>
+                        `).join('')}
+                    `;
+                    searchDropdown.classList.remove('hidden');
+                }
+            } catch (err) {
+                console.error("Failed to fetch search history:", err);
+            }
         }
     });
 
@@ -429,6 +455,15 @@ if(searchInput) {
             e.preventDefault();
             const query = e.target.value.trim();
             if (query !== '') {
+                const userEmail = localStorage.getItem('userEmail');
+                if (userEmail) {
+                    fetch('/api/search/history', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email: userEmail, query })
+                    }).catch(err => console.error("Failed to save search history:", err));
+                }
+
                 const sectionTitle = document.getElementById('sectionTitle');
                 if (sectionTitle) sectionTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 
@@ -534,16 +569,43 @@ function updateAuthUI() {
 function initAccountDropdown() {
     const accountBtn = document.getElementById('accountBtn');
     const accountDropdown = document.getElementById('accountDropdown');
+    const clearHistoryBtn = document.getElementById('clearHistoryBtn');
     
-    if (!accountBtn || !accountDropdown) return;
-    
-    accountBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        accountDropdown.classList.toggle('hidden');
-    });
+    if (accountBtn && accountDropdown) {
+        accountBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            accountDropdown.classList.toggle('hidden');
+        });
+    }
+
+    if (clearHistoryBtn) {
+        clearHistoryBtn.addEventListener('click', async (e) => {
+            e.stopPropagation();
+            const userEmail = localStorage.getItem('userEmail');
+            if (!userEmail) return;
+
+            if (confirm('Are you sure you want to clear your entire search history?')) {
+                try {
+                    const response = await fetch('/api/search/history', {
+                        method: 'DELETE',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email: userEmail })
+                    });
+                    const data = await response.json();
+                    if (data.success) {
+                        showToast('Search history cleared!', 'history');
+                        if (accountDropdown) accountDropdown.classList.add('hidden');
+                    }
+                } catch (err) {
+                    console.error("Failed to clear search history:", err);
+                }
+            }
+        });
+    }
     
     document.addEventListener('click', () => {
-        accountDropdown.classList.add('hidden');
+        if (accountDropdown) accountDropdown.classList.add('hidden');
+        if (profileDropdown) profileDropdown.classList.add('hidden');
     });
 }
 

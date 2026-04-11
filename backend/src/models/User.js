@@ -16,6 +16,10 @@ const userSchema = new mongoose.Schema(
     bookmarks: {
       type: [String],
       default: []
+    },
+    recentSearches: {
+      type: [String],
+      default: []
     }
   },
   {
